@@ -13,7 +13,7 @@
       title: "The Names We Don't Say: Mapping Kenya's Femicide Crisis",
       excerpt:
         "A data investigation into the epidemic of gender-based violence across Kenya's counties — told through the women lost.",
-      date: "March 2025",
+      date: "March 2026",
       tag: "Data Investigation",
       bg: "#C1440E",
       link: "/femicide",
