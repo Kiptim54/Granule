@@ -204,7 +204,7 @@
       The<br /><span class="italic text-gold"> Granule</span>
     </h1>
     <p
-      class="font-serif font-light italic text-paper/80 max-w-lg leading-relaxed text-base md:text-lg"
+      class="font-serif font-light italic text-paper/80 leading-relaxed text-base md:text-lg w-full"
     >
       We uncover the stories hidden in Africa's data — using journalism,
       technology, and design to reveal what the numbers mean for real people.
