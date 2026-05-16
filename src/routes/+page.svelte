@@ -14,7 +14,7 @@
       excerpt:
         "A data investigation into the epidemic of gender-based violence across Kenya's counties — told through the women lost.",
       date: "March 2026",
-      tag: "Data Investigation",
+      tag: "Data Analysis",
       bg: "#C1440E",
       link: "/femicide",
       image: "/Femicide.png",
@@ -404,7 +404,8 @@
           class="font-display font-bold leading-tight"
           style="font-size:clamp(2rem,5vw,3.2rem);"
         >
-          We make data<br /><span class="italic text-rust">legible</span>
+          We turn data into<br /><span class="italic text-rust">narratives</span
+          >
         </h2>
       </div>
 
