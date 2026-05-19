@@ -197,7 +197,7 @@ export default function PieChart(props: IPieChartProps) {
       .attr("font-size", "28px")
       .attr("font-weight", "bold")
       .attr("fill", "black")
-      .text("797");
+      .text("979");
 
     centerGroup
       .selectAll("text.center-label-text")
