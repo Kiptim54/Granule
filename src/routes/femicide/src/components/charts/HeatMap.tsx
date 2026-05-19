@@ -102,8 +102,8 @@ export default function HeatmapChart({ step }: HeatmapChartProps) {
   useEffect(() => {
     if (!svgRef.current) return;
 
-    const W = 680,
-      H = 520;
+    const W = 780,
+      H = 620;
     const m = { top: 32, right: 110, bottom: 56, left: 86 };
     const iw = W - m.left - m.right;
     const ih = H - m.top - m.bottom;
@@ -318,7 +318,7 @@ export default function HeatmapChart({ step }: HeatmapChartProps) {
         borderRadius: 8,
         padding: "20px 16px 12px",
         width: "100%",
-        maxWidth: 640,
+        maxWidth: 840,
       }}
     >
       <p

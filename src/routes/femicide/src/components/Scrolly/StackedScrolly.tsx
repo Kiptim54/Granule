@@ -22,16 +22,21 @@ export default function StackedScrolly() {
     {
       id: 1,
       title: "",
-      chartTitle: "",
-      content: `Whilst the age of women being killed is largely unrecorded, women between the age of `,
+      chartTitle: "Which age groups are dying?",
+      content: `There is a huge under-reporting in the age group of most deaths with 513 victims not having their ages recorded. 
+<br/> <br/>
+With the existing data, we can see that the group most at risk is women between <b>15-29 years</b>. Dying at the prime of their life`,
     },
 
     {
       id: 2,
       title: "",
-      chartTitle: "Women are dying at Home",
-      content:
-        "Femicide is defined as an intentional killing with a gender-related motivation. It is different from homicide, where the motivation may not be gender-related. It is mostly driven by hatred of women (misogyny), possessiveness or patriarchal norms, rather than random violence. It is a universal problem.  In 2024, 50,000 women and girls were killed by intimate partners or family members – one every 10 minutes – according to the  UNODC and UN Women.",
+      chartTitle: "Who is killing them?",
+      content: `
+       For younger (under 15) and older victims (60+), They are <b>more likely to be killed by strangers</b>.
+<br/><br/>
+Whereas between the ages of 15-59, the women are <b>more likely to be killed by intimate partners</b>
+       `,
     },
   ];
 

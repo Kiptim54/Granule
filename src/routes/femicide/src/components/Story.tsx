@@ -54,25 +54,51 @@ export default function Story() {
         <h2 className='font-bold text-center titlecase font-headline md:text-h1 text-xl text-primary-red'>
           Not an Outlier
         </h2>
+        <LadyProfile />
+
         <p className=' text-lg'>
           Rebecca Cheptegei, an Olympic athlete, died at the age of 33 after her
-          supposed ex-boyfriend doused her in petrol and set her on fire. The
-          athlete's family said that they had reported the ex-boyfriend to
+          supposed <b>ex-boyfriend doused her in petrol and set her on fire</b>.
+          The athlete's family said that they had reported the ex-boyfriend to
           authorities over harassment, but no action had been taken. Rebecca's
           story is one of many victims of femicide. Her story is not an outlier
           but a harsh reality that many Kenyan women face at the hands of those
           closest to them.
           <br />
           <br />
-          Victims range in age from a 3-year-old child to a 95-year-old
-          grandmother, with an average age of 33 and a standard deviation of
-          16.4 — confirming that this crisis does not spare any stage of life,
-          though women aged 15–29 remain the most affected.
+          Femicide which is defined as an intentional killing with a
+          gender-related motivation. Is a global problem and is greatly
+          under-reported. Women are more likely to be killed by those closest to
+          them. Thus far the data in Kenya has been sparse and unreliable but
+          after an initiative by Africa Uncensored, Odipo Dev and Africa Data
+          Hub to track femicide data in Kenya, we are now seeing a clearer
+          picture of the situation. <br />
+          <br />
+          The granule was able to scrape this data and after analysing it came
+          up with the following findings:
+          <ul className='list-disc list-inside'>
+            <li>
+              The average age of victims is <b>33 years.</b>
+            </li>
+            <li>
+              <b>15-29 year old women</b> are the most affected age group.
+            </li>
+            <li>
+              The data shows a high standard deviation in age (σ 16.4) - proving
+              that this is a crisis across all stages of life.
+            </li>
+            <li>
+              The youngest victim is <b>a 3 year old.</b>
+            </li>
+
+            <li>
+              The oldest is <b>95-year-old grandmother</b>a .
+            </li>
+          </ul>
           <br />
           <br />
         </p>
       </div>
-      <LadyProfile />
     </div>
   );
 }

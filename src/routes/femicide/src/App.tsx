@@ -11,6 +11,7 @@ import HeatmapScrolly from "./components/Scrolly/HeatMapScrolly";
 import Conclusion from "./components/Conclusion";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import Methodology from "./components/Methodology";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <TemporalScrolly />
           <HeatmapScrolly />
           <Conclusion />
+          <Methodology />
         </div>
       </section>
       <Footer />

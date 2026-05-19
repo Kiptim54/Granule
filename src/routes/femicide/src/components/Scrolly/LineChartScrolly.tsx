@@ -21,19 +21,33 @@ export default function LineChartScrolly() {
       id: 1,
       title: "",
       chartTitle: "",
-      content: `After an initiative by Africa Uncensored, Odipo Dev and Africa Data
-          Hub to track femicide data in Kenya, we are now seeing a clearer
-          picture of the situation.`,
+      content: `There is an upward trajectory in documented femicide cases over the last two decades. This may be attributed to increased reporting.`,
     },
     {
       id: 2,
       title: "",
       chartTitle: "",
-      content: `There is an upward trajectory in documented femicide cases over the last two decades. This may be attributed to increased reporting.
+      content: `There was a significant dip in cases in 2020 which was a lockdown/covid-19 year. Femicide cases may have been overshadowed by the covid-19 case reportings. <br/> <br/>
 
-There was a significant dip in cases in 2020 which was a lockdown/covid-19 year.
+Additionally, the 2025 data only covers through September and therefore  it may approach or even surpass the 2024 record once all the data is compiled.
+`,
+    },
+    {
+      id: 3,
+      title: "The Possible Impact of Political Instability",
+      chartTitle: "",
+      content: `<b>The Possible Impact of Political Instability</b>
+      <br/> <br/>
 
-The 2025 data only covers through September and therefore  it may approach or even surpass the 2024 record.
+      There appears to be a correlation between periods of national political  turbulence and spikes in femicide:
+       <br/> 
+<ul class="list-disc list-inside">
+<li>In <b>2018 (106 deaths)</b> which was the second-highest peak, and marked the fallout of the contested 2017 elections and the subsequent "Handshake" agreement which led to a lot of protests and political unrest in the country. </li>
+
+<br/>
+<li><b>2024 (131 deaths)</b> was similarly marked by significant civil unrest and Gen-Z-led protests. </li>
+</ul>
+<br/>Political instability and public demonstrations can lead to a breakdown in community security and a diversion of law enforcement resources, potentially increasing the vulnerability of women.
 `,
     },
   ];

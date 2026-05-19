@@ -5,11 +5,11 @@ interface IPieChartProps {
   step: number | null;
 }
 const perpetratorColors = {
-  Husband: "#8b1a1a", // deep crimson
+  "Intimate Partner": "#8b1a1a", // deep crimson
   Partner: "#b5451b", // burnt orange-red
-  Family: "#5c4033", // dark espresso brown
+  "Known Associate": "#5c4033", // dark espresso brown
   Stranger: "#a0845c", // warm tan
-  Other: "#d9cfc4", // lightest warm gray
+  "Other/Unknown": "#d9cfc4", // lightest warm gray
 };
 export default function PieChart(props: IPieChartProps) {
   const stepHightlightOpacity = (
@@ -21,18 +21,19 @@ export default function PieChart(props: IPieChartProps) {
   ) => {
     if (step === 1) return 1;
     if (step === 2) {
-      if (d?.data?.name === "Husband" || d?.data?.name === "Partner") return 1;
+      if (d?.data?.name === "Intimate Partner" || d?.data?.name === "Partner")
+        return 1;
       return 0;
     }
     return 1;
   };
   const { step } = props;
   const [data] = React.useState<{ name: string; value: number }[]>([
-    { name: "Stranger", value: 20 },
-    { name: "Partner", value: 40 },
-    { name: "Family", value: 25 },
-    { name: "Husband", value: 50 },
-    { name: "Other", value: 5 },
+    { name: "Stranger", value: 25 },
+    { name: "intimate Partner", value: 65 },
+    { name: "Family", value: 0.4 },
+    { name: "Known Associate", value: 6.2 },
+    { name: "Other/Unknown", value: 3.6 },
   ]);
 
   useEffect(() => {
@@ -111,8 +112,7 @@ export default function PieChart(props: IPieChartProps) {
       .duration(500)
       .ease(d3.easeCubicInOut)
       .attrTween("d", function (d) {
-        const highlighted =
-          step === 1 || d.data.name === "Husband" || d.data.name === "Partner";
+        const highlighted = step === 1 || d.data.name === "Intimate Partner";
         const targetR = highlighted ? outerR + 22 : outerR;
         const startR: number = (this as any)._outerR ?? outerR;
         (this as any)._outerR = targetR;
@@ -123,8 +123,7 @@ export default function PieChart(props: IPieChartProps) {
             .outerRadius(startR + (targetR - startR) * t)(d)!;
       })
       .attr("opacity", (d) => {
-        const highlighted =
-          step === 1 || d.data.name === "Husband" || d.data.name === "Partner";
+        const highlighted = step === 1 || d.data.name === "Intimate Partner";
         return highlighted ? 1 : 0.35;
       });
 
@@ -238,7 +237,7 @@ export default function PieChart(props: IPieChartProps) {
       .attr("opacity", (d) => {
         if (step === 2) return 1;
         if (step === 3) {
-          if (d.name === "Husband" || d.name === "Partner") return 1;
+          if (d.name === "Husband" || d.name === "Intimate Partner") return 1;
           return 1;
         }
         return 1;
@@ -257,7 +256,7 @@ export default function PieChart(props: IPieChartProps) {
       .attr("opacity", (d) => {
         if (step === 2) return 1;
         if (step === 3) {
-          if (d.name === "Husband" || d.name === "Partner") return 1;
+          if (d.name === "Husband" || d.name === "Intimate Partner") return 1;
           return 1;
         }
         return 1;
