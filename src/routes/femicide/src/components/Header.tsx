@@ -1,20 +1,11 @@
 import { ChevronDown } from "lucide-react";
-const items = [
-  { name: "Wanjiru Kamau Jepchumba", age: 28, image: "/icons/afro-curly.svg" },
-  { name: "Akinyi Odhiambo", age: 34, image: "/icons/Afro.svg" },
-  { name: "Chebet Rono", age: 22, image: "/icons/big-afro.svg" },
-  { name: "Fatuma Hassan", age: 41, image: "/icons/older.svg" },
-  { name: "Njeri Mwangi", age: 19, image: "/icons/Pony.svg" },
-];
+import victims from "../assets/victims.json";
 
-// Duplicate for seamless loop
-const loopedItems = [
-  ...items,
-  ...items,
-  ...items,
-  ...items,
-  ...items,
-  ...items,
+const chunk = Math.ceil(victims.length / 3);
+const rows = [
+  victims.slice(0, chunk),
+  victims.slice(chunk, chunk * 2),
+  victims.slice(chunk * 2),
 ];
 
 type Direction = "left" | "right";
@@ -22,13 +13,16 @@ type Direction = "left" | "right";
 export function MarqueeRow({
   direction,
   duration = 20,
+  items,
 }: {
   direction: Direction;
   duration?: number;
+  items: typeof victims;
 }) {
+  const looped = [...items, ...items];
   return (
     <div
-      className='overflow-x-hidden w-full relative pb-5'
+      className='overflow-x-clip w-full relative pb-5'
       style={{
         maskImage:
           "linear-gradient(to right, transparent, black 5%, black 85%, transparent)",
@@ -42,7 +36,7 @@ export function MarqueeRow({
           animation: `marquee-${direction} ${duration}s linear infinite`,
         }}
       >
-        {loopedItems.map((person, index) => (
+        {looped.map((person, index) => (
           <div
             key={index}
             className='relative group px-3 shrink-0 transition-transform duration-200 group-hover:scale-110 hover:scale-105 hover:z-50'
@@ -80,9 +74,9 @@ export default function Header() {
             <sub className='text-xs text-center tracking-widest uppercase text-gray-400 font-semibold'>
               VICTIMS - Case Files
             </sub>
-            <MarqueeRow direction='right' duration={35} />
-            <MarqueeRow direction='left' duration={50} />
-            <MarqueeRow direction='right' duration={28} />
+            <MarqueeRow direction='right' duration={35} items={rows[0]} />
+            <MarqueeRow direction='left' duration={50} items={rows[1]} />
+            <MarqueeRow direction='right' duration={28} items={rows[2]} />
 
             <sub className='self-end text-gray-400 tracking-widest'>
               001/979

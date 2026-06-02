@@ -9,6 +9,14 @@ export default defineConfig({
     jsxImportSource: "react",
   },
   optimizeDeps: {
-    include: ["react", "react-dom", "react-dom/client"],
+    include: [
+      "react",
+      "react-dom",
+      "react-dom/client",
+      "react/jsx-runtime",
+      "react/jsx-dev-runtime",
+      "react-scrollama",
+      "lucide-react",
+    ],
   },
 });

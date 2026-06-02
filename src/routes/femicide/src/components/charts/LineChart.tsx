@@ -207,16 +207,6 @@ export default function LineChart() {
       .attr("font-size", "12px")
       .attr("fill", AXIS_TEXT)
       .text("Year");
-
-    // svg
-    //   .append("text")
-    //   .attr("x", margin.left + width / 2)
-    //   .attr("y", 20)
-    //   .attr("text-anchor", "middle")
-    //   .attr("font-size", "15px")
-    //   .attr("font-weight", "700")
-    //   .attr("fill", CRIMSON)
-    //   .text("Trend of Deaths (2005–2025)");
   }, []);
 
   // Animate the chart when it enters the viewport

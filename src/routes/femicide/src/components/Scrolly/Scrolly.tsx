@@ -40,7 +40,7 @@ export default function Scrolly() {
       title: "",
       chartTitle: "Intimate Partners are the main perpetrators",
       content:
-        "The majority of femicide victims are killed by intimate partners or family members. In Kenya, 40% of femicide victims are killed by their partners, and 25% by family members. This highlights the need for stronger legal protections and support for victims of domestic violence.",
+        "The majority of femicide victims are killed by intimate partners. In Kenya, 65% of femicide victims are killed by their intimate partners. This highlights the need for stronger legal protections and support for victims of domestic violence.",
     },
   ];
 
