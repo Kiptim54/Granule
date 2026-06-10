@@ -11,7 +11,7 @@ export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className='fixed top-0 left-0 right-0 z-50 bg-paper border-b-0 border-ink'>
+    <nav className='fixed top-0 left-0 right-0 z-50 bg-background/80 border-b-0 border-ink'>
       <div className='flex items-center justify-between px-6 md:px-12 py-4'>
         <a
           href='/'
@@ -41,20 +41,20 @@ export default function Nav() {
           aria-label='Toggle menu'
         >
           <span
-            className={`block w-6 h-px bg-ink transition-all duration-200 ${menuOpen ? "rotate-45 translate-y-1.5" : ""}`}
+            className={`block w-6 h-px bg-black transition-all duration-200 ${menuOpen ? "rotate-45 translate-y-1.5" : ""}`}
           />
           <span
-            className={`block w-6 h-px bg-ink transition-all duration-200 ${menuOpen ? "opacity-0" : ""}`}
+            className={`block w-6 h-px bg-black transition-all duration-200 ${menuOpen ? "opacity-0" : ""}`}
           />
           <span
-            className={`block w-6 h-px bg-ink transition-all duration-200 ${menuOpen ? "-rotate-45 -translate-y-1.5" : ""}`}
+            className={`block w-6 h-px bg-black transition-all duration-200 ${menuOpen ? "-rotate-45 -translate-y-1.5" : ""}`}
           />
         </button>
       </div>
 
       {/* mobile dropdown */}
       {menuOpen && (
-        <div className='md:hidden absolute top-full left-0 right-0 bg-paper border-b-2 border-ink'>
+        <div className='md:hidden absolute top-full left-0 right-0 bg-background border-b-0 border-ink'>
           <ul className='list-none m-0 p-0 flex flex-col'>
             {links.map(([href, label]) => (
               <li key={href} className='border-b border-ink/10'>

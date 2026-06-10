@@ -58,7 +58,7 @@ export function MarqueeRow({
 
 export default function Header() {
   return (
-    <section className='header flex flex-col min-h-screen md:items-center md:justify-center gap-10 py-10'>
+    <section className='header flex flex-col min-h-screen md:items-center md:justify-center gap-10 pt-10 '>
       <div className='text-center flex flex-col gap-4'>
         <h1 className='font-semibold titlecase font-headline md:text-display text-4xl'>
           <span className='text-primary-red font-bold'>Femicide </span>In Kenya
@@ -87,7 +87,7 @@ export default function Header() {
         <div className='papers absolute inset-0 bg-white w-full min-h-96 h-full shadow-md -rotate-1 z-10'></div>
       </div>
       <div className='flex flex-col  items-center justify-center gap-4'>
-        <p className='font-light uppercase text-sm'>
+        <p className='font-light uppercase text-base'>
           {" "}
           Brenda Kiptim , Eunice Magwambo
         </p>
