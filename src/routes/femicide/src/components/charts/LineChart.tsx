@@ -340,7 +340,7 @@ export default function LineChart({
     if (!introComplete || !ref.current || !xRef.current || !yRef.current)
       return;
 
-    const isZoomed = stepIndex === 2;
+    const isZoomed = stepIndex === 3 || stepIndex === 2;
     const targetDomain = isZoomed ? [2017, 2025] : [2005, 2025];
     const height = 420 - 40 - 64;
 

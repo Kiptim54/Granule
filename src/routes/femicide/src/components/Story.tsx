@@ -91,7 +91,7 @@ export default function Story() {
         </p>
 
         <Quote
-          text='When a society normalises violence and oppression between men and women, the two halves of humanity, whether in households or communities, will'
+          text='When a society normalises violence and oppression between men and women, the two halves of humanity, whether in households or communities, will feel adverse effects nationally'
           author='― Valerie M. Hudson'
         />
         <p>
@@ -172,15 +172,11 @@ export default function Story() {
           safe houses. Advocacy timed to when women are most at risk.  We do not
           need to fully understand something to act against it.
           <br /> <br />
-          In some regions in Europe, it is said that there is a common myth
-          amongst police officers and medics that the full moon leads to an
-          increase in erratic behaviour. On those days, they brace themselves to
-          be busy and more alert for more emergencies. 
-          <br /> <br />
-          Whilst these are mostly myths, the very act of acting in the face of
-          uncertainty to protect others is in itself noble. While we work to
-          fully understand femicide in Kenya, acting with the little data we
-          have can help push the needle in protecting women.
+          Rebecca made the news because she was an Olympian. Many women in this
+          data did not. What they shared with her was not athletic promise but
+          the ordinary fact of being a woman in Kenya, close to a man who
+          believed her life was his to take. The data shows us when. The data
+          shows us who. What it cannot show us is why we keep letting it happen.
         </p>
       </div>
     </div>
