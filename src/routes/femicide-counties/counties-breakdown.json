@@ -1,0 +1,4499 @@
+{
+  "metadata": {
+    "source_dataframe": "femicide_kenya_enhanced",
+    "total_located_cases": 964,
+    "location_count": 54,
+    "age_groups": {
+      "child_0_12": "0-12",
+      "teen_13_17": "13-17",
+      "young_adult_18_24": "18-24",
+      "adult_25_34": "25-34",
+      "middle_age_35_44": "35-44",
+      "older_adult_45_59": "45-59",
+      "senior_60_plus": "60+",
+      "unknown_age": "missing or invalid age"
+    },
+    "relationship_note": "Major perpetrators are derived from suspect_relationship_clean categories, not legally adjudicated perpetrator identities."
+  },
+  "overall_top_hotspots": [
+    {
+      "location": "Nairobi",
+      "case_count": 146,
+      "pct_of_all_located_cases": 15.1
+    },
+    {
+      "location": "Nakuru",
+      "case_count": 85,
+      "pct_of_all_located_cases": 8.8
+    },
+    {
+      "location": "Kiambu",
+      "case_count": 64,
+      "pct_of_all_located_cases": 6.6
+    },
+    {
+      "location": "Kirinyaga",
+      "case_count": 36,
+      "pct_of_all_located_cases": 3.7
+    },
+    {
+      "location": "Kisumu",
+      "case_count": 31,
+      "pct_of_all_located_cases": 3.2
+    },
+    {
+      "location": "Siaya",
+      "case_count": 29,
+      "pct_of_all_located_cases": 3.0
+    },
+    {
+      "location": "Murang'a",
+      "case_count": 28,
+      "pct_of_all_located_cases": 2.9
+    },
+    {
+      "location": "Kakamega",
+      "case_count": 28,
+      "pct_of_all_located_cases": 2.9
+    },
+    {
+      "location": "Homa Bay",
+      "case_count": 27,
+      "pct_of_all_located_cases": 2.8
+    },
+    {
+      "location": "Bungoma",
+      "case_count": 27,
+      "pct_of_all_located_cases": 2.8
+    }
+  ],
+  "location_breakdown": [
+    {
+      "location": "Nairobi",
+      "case_count": 146,
+      "pct_of_all_located_cases": 15.1,
+      "rank_by_case_count": 1,
+      "date_range": {
+        "first_case": "2008-01-06",
+        "latest_case": "2025-11-01"
+      },
+      "major_perpetrators": [
+        {
+          "category": "husband",
+          "case_count": 47,
+          "pct_of_location_cases": 32.2
+        },
+        {
+          "category": "boyfriend",
+          "case_count": 41,
+          "pct_of_location_cases": 28.1
+        },
+        {
+          "category": "stranger/unknown relationship",
+          "case_count": 20,
+          "pct_of_location_cases": 13.7
+        },
+        {
+          "category": "stranger/unknown to victim",
+          "case_count": 16,
+          "pct_of_location_cases": 11.0
+        },
+        {
+          "category": "friend/known to victim",
+          "case_count": 11,
+          "pct_of_location_cases": 7.5
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "adult_25_34",
+        "case_count": 27,
+        "pct_of_known_age_cases": 42.9
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 83,
+          "pct_of_location_cases": 56.8
+        },
+        {
+          "age_group": "adult_25_34",
+          "case_count": 27,
+          "pct_of_location_cases": 18.5
+        },
+        {
+          "age_group": "young_adult_18_24",
+          "case_count": 17,
+          "pct_of_location_cases": 11.6
+        },
+        {
+          "age_group": "middle_age_35_44",
+          "case_count": 10,
+          "pct_of_location_cases": 6.8
+        },
+        {
+          "age_group": "teen_13_17",
+          "case_count": 4,
+          "pct_of_location_cases": 2.7
+        },
+        {
+          "age_group": "child_0_12",
+          "case_count": 2,
+          "pct_of_location_cases": 1.4
+        },
+        {
+          "age_group": "older_adult_45_59",
+          "case_count": 2,
+          "pct_of_location_cases": 1.4
+        },
+        {
+          "age_group": "senior_60_plus",
+          "case_count": 1,
+          "pct_of_location_cases": 0.7
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 63,
+        "unknown_age_count": 83,
+        "pct_age_unknown": 56.8,
+        "minor_cases_known_age": 6,
+        "pct_known_age_under_18": 9.5,
+        "average_known_age": 28.5
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 95,
+        "pct_intimate_partner": 65.1,
+        "stranger_unknown_cases": 36,
+        "pct_stranger_unknown": 24.7
+      },
+      "recent_activity": {
+        "cases_2024_2025": 45,
+        "pct_cases_2024_2025": 30.8
+      },
+      "notable_same_day_clusters": [
+        {
+          "date": "2025-01-04",
+          "case_count": 3,
+          "victims": ["Lydia Tokesa", "Nancy Bonke Chacha", "Winnie Akusuha"],
+          "relationship_types": ["boyfriend"]
+        },
+        {
+          "date": "2024-10-22",
+          "case_count": 3,
+          "victims": [
+            "Amina Abdirashid Dahir",
+            "Dahabo Daud Said",
+            "Nusayba Abdi Mohammed"
+          ],
+          "relationship_types": ["stranger/unknown relationship"]
+        },
+        {
+          "date": "2025-07-15",
+          "case_count": 2,
+          "victims": ["Dorcas Nyangiri", "Susan Kamengere Njoki"],
+          "relationship_types": ["husband", "stranger/unknown relationship"]
+        }
+      ],
+      "insight_flags": [
+        "largest_hotspot_by_case_count",
+        "has_same_day_location_cluster",
+        "age_data_often_missing"
+      ]
+    },
+    {
+      "location": "Nakuru",
+      "case_count": 85,
+      "pct_of_all_located_cases": 8.8,
+      "rank_by_case_count": 2,
+      "date_range": {
+        "first_case": "2012-04-16",
+        "latest_case": "2025-12-19"
+      },
+      "major_perpetrators": [
+        {
+          "category": "husband",
+          "case_count": 31,
+          "pct_of_location_cases": 36.5
+        },
+        {
+          "category": "boyfriend",
+          "case_count": 19,
+          "pct_of_location_cases": 22.4
+        },
+        {
+          "category": "stranger/unknown relationship",
+          "case_count": 15,
+          "pct_of_location_cases": 17.6
+        },
+        {
+          "category": "stranger/unknown to victim",
+          "case_count": 8,
+          "pct_of_location_cases": 9.4
+        },
+        {
+          "category": "friend/known to victim",
+          "case_count": 6,
+          "pct_of_location_cases": 7.1
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "adult_25_34",
+        "case_count": 19,
+        "pct_of_known_age_cases": 45.2
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 43,
+          "pct_of_location_cases": 50.6
+        },
+        {
+          "age_group": "adult_25_34",
+          "case_count": 19,
+          "pct_of_location_cases": 22.4
+        },
+        {
+          "age_group": "young_adult_18_24",
+          "case_count": 9,
+          "pct_of_location_cases": 10.6
+        },
+        {
+          "age_group": "middle_age_35_44",
+          "case_count": 6,
+          "pct_of_location_cases": 7.1
+        },
+        {
+          "age_group": "teen_13_17",
+          "case_count": 2,
+          "pct_of_location_cases": 2.4
+        },
+        {
+          "age_group": "older_adult_45_59",
+          "case_count": 2,
+          "pct_of_location_cases": 2.4
+        },
+        {
+          "age_group": "child_0_12",
+          "case_count": 2,
+          "pct_of_location_cases": 2.4
+        },
+        {
+          "age_group": "senior_60_plus",
+          "case_count": 2,
+          "pct_of_location_cases": 2.4
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 42,
+        "unknown_age_count": 43,
+        "pct_age_unknown": 50.6,
+        "minor_cases_known_age": 4,
+        "pct_known_age_under_18": 9.5,
+        "average_known_age": 29.9
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 53,
+        "pct_intimate_partner": 62.4,
+        "stranger_unknown_cases": 23,
+        "pct_stranger_unknown": 27.1
+      },
+      "recent_activity": {
+        "cases_2024_2025": 15,
+        "pct_cases_2024_2025": 17.6
+      },
+      "notable_same_day_clusters": [
+        {
+          "date": "2024-08-08",
+          "case_count": 4,
+          "victims": [
+            "Alice Ayuma Blessing",
+            "Eunice Chepkaitany Koima",
+            "Moraa Mugambi",
+            "Mueni Mwalimu"
+          ],
+          "relationship_types": ["husband", "stranger/unknown relationship"]
+        },
+        {
+          "date": "2018-05-14",
+          "case_count": 2,
+          "victims": [
+            "Mary Wanjiku Mureithi and Francis Mureithi Waweru (child)",
+            "Not available"
+          ],
+          "relationship_types": ["family member", "husband"]
+        },
+        {
+          "date": "2018-01-04",
+          "case_count": 2,
+          "victims": ["Beatrice Mutura", "Beatrice Nyokabi Mutura"],
+          "relationship_types": ["boyfriend"]
+        }
+      ],
+      "insight_flags": [
+        "has_same_day_location_cluster",
+        "age_data_often_missing"
+      ]
+    },
+    {
+      "location": "Kiambu",
+      "case_count": 64,
+      "pct_of_all_located_cases": 6.6,
+      "rank_by_case_count": 3,
+      "date_range": {
+        "first_case": "2014-07-11",
+        "latest_case": "2025-11-08"
+      },
+      "major_perpetrators": [
+        {
+          "category": "husband",
+          "case_count": 16,
+          "pct_of_location_cases": 25.0
+        },
+        {
+          "category": "stranger/unknown relationship",
+          "case_count": 15,
+          "pct_of_location_cases": 23.4
+        },
+        {
+          "category": "boyfriend",
+          "case_count": 11,
+          "pct_of_location_cases": 17.2
+        },
+        {
+          "category": "friend/known to victim",
+          "case_count": 5,
+          "pct_of_location_cases": 7.8
+        },
+        {
+          "category": "stranger/unknown to victim",
+          "case_count": 5,
+          "pct_of_location_cases": 7.8
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "young_adult_18_24",
+        "case_count": 17,
+        "pct_of_known_age_cases": 38.6
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 20,
+          "pct_of_location_cases": 31.2
+        },
+        {
+          "age_group": "young_adult_18_24",
+          "case_count": 17,
+          "pct_of_location_cases": 26.6
+        },
+        {
+          "age_group": "adult_25_34",
+          "case_count": 12,
+          "pct_of_location_cases": 18.8
+        },
+        {
+          "age_group": "senior_60_plus",
+          "case_count": 6,
+          "pct_of_location_cases": 9.4
+        },
+        {
+          "age_group": "middle_age_35_44",
+          "case_count": 4,
+          "pct_of_location_cases": 6.2
+        },
+        {
+          "age_group": "older_adult_45_59",
+          "case_count": 4,
+          "pct_of_location_cases": 6.2
+        },
+        {
+          "age_group": "child_0_12",
+          "case_count": 1,
+          "pct_of_location_cases": 1.6
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 44,
+        "unknown_age_count": 20,
+        "pct_age_unknown": 31.2,
+        "minor_cases_known_age": 1,
+        "pct_known_age_under_18": 2.3,
+        "average_known_age": 35.2
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 35,
+        "pct_intimate_partner": 54.7,
+        "stranger_unknown_cases": 20,
+        "pct_stranger_unknown": 31.2
+      },
+      "recent_activity": {
+        "cases_2024_2025": 18,
+        "pct_cases_2024_2025": 28.1
+      },
+      "notable_same_day_clusters": [
+        {
+          "date": "2022-01-01",
+          "case_count": 2,
+          "victims": ["Everlyn Wanjiru", "Everlyne Wanjiru Waweru"],
+          "relationship_types": ["boyfriend", "ex-boyfriend"]
+        }
+      ],
+      "insight_flags": ["has_same_day_location_cluster"]
+    },
+    {
+      "location": "Kirinyaga",
+      "case_count": 36,
+      "pct_of_all_located_cases": 3.7,
+      "rank_by_case_count": 4,
+      "date_range": {
+        "first_case": "2015-05-27",
+        "latest_case": "2025-12-13"
+      },
+      "major_perpetrators": [
+        {
+          "category": "husband",
+          "case_count": 20,
+          "pct_of_location_cases": 55.6
+        },
+        {
+          "category": "stranger/unknown relationship",
+          "case_count": 7,
+          "pct_of_location_cases": 19.4
+        },
+        {
+          "category": "boyfriend",
+          "case_count": 4,
+          "pct_of_location_cases": 11.1
+        },
+        {
+          "category": "ex-husband",
+          "case_count": 2,
+          "pct_of_location_cases": 5.6
+        },
+        {
+          "category": "family member",
+          "case_count": 1,
+          "pct_of_location_cases": 2.8
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "middle_age_35_44",
+        "case_count": 5,
+        "pct_of_known_age_cases": 23.8
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 15,
+          "pct_of_location_cases": 41.7
+        },
+        {
+          "age_group": "middle_age_35_44",
+          "case_count": 5,
+          "pct_of_location_cases": 13.9
+        },
+        {
+          "age_group": "senior_60_plus",
+          "case_count": 4,
+          "pct_of_location_cases": 11.1
+        },
+        {
+          "age_group": "adult_25_34",
+          "case_count": 4,
+          "pct_of_location_cases": 11.1
+        },
+        {
+          "age_group": "older_adult_45_59",
+          "case_count": 4,
+          "pct_of_location_cases": 11.1
+        },
+        {
+          "age_group": "young_adult_18_24",
+          "case_count": 2,
+          "pct_of_location_cases": 5.6
+        },
+        {
+          "age_group": "child_0_12",
+          "case_count": 1,
+          "pct_of_location_cases": 2.8
+        },
+        {
+          "age_group": "teen_13_17",
+          "case_count": 1,
+          "pct_of_location_cases": 2.8
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 21,
+        "unknown_age_count": 15,
+        "pct_age_unknown": 41.7,
+        "minor_cases_known_age": 2,
+        "pct_known_age_under_18": 9.5,
+        "average_known_age": 42.7
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 26,
+        "pct_intimate_partner": 72.2,
+        "stranger_unknown_cases": 8,
+        "pct_stranger_unknown": 22.2
+      },
+      "recent_activity": {
+        "cases_2024_2025": 12,
+        "pct_cases_2024_2025": 33.3
+      },
+      "notable_same_day_clusters": [
+        {
+          "date": "2023-07-02",
+          "case_count": 2,
+          "victims": ["Ann Njoki", "Ann Njoki Irungu"],
+          "relationship_types": ["husband"]
+        }
+      ],
+      "insight_flags": [
+        "intimate_partner_cases_dominate",
+        "has_same_day_location_cluster"
+      ]
+    },
+    {
+      "location": "Kisumu",
+      "case_count": 31,
+      "pct_of_all_located_cases": 3.2,
+      "rank_by_case_count": 5,
+      "date_range": {
+        "first_case": "2016-10-16",
+        "latest_case": "2025-09-27"
+      },
+      "major_perpetrators": [
+        {
+          "category": "husband",
+          "case_count": 14,
+          "pct_of_location_cases": 45.2
+        },
+        {
+          "category": "boyfriend",
+          "case_count": 8,
+          "pct_of_location_cases": 25.8
+        },
+        {
+          "category": "friend/known to victim",
+          "case_count": 3,
+          "pct_of_location_cases": 9.7
+        },
+        {
+          "category": "stranger/unknown to victim",
+          "case_count": 3,
+          "pct_of_location_cases": 9.7
+        },
+        {
+          "category": "family member",
+          "case_count": 2,
+          "pct_of_location_cases": 6.5
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "adult_25_34",
+        "case_count": 6,
+        "pct_of_known_age_cases": 42.9
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 17,
+          "pct_of_location_cases": 54.8
+        },
+        {
+          "age_group": "adult_25_34",
+          "case_count": 6,
+          "pct_of_location_cases": 19.4
+        },
+        {
+          "age_group": "young_adult_18_24",
+          "case_count": 3,
+          "pct_of_location_cases": 9.7
+        },
+        {
+          "age_group": "older_adult_45_59",
+          "case_count": 2,
+          "pct_of_location_cases": 6.5
+        },
+        {
+          "age_group": "senior_60_plus",
+          "case_count": 1,
+          "pct_of_location_cases": 3.2
+        },
+        {
+          "age_group": "child_0_12",
+          "case_count": 1,
+          "pct_of_location_cases": 3.2
+        },
+        {
+          "age_group": "teen_13_17",
+          "case_count": 1,
+          "pct_of_location_cases": 3.2
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 14,
+        "unknown_age_count": 17,
+        "pct_age_unknown": 54.8,
+        "minor_cases_known_age": 2,
+        "pct_known_age_under_18": 14.3,
+        "average_known_age": 30.2
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 23,
+        "pct_intimate_partner": 74.2,
+        "stranger_unknown_cases": 3,
+        "pct_stranger_unknown": 9.7
+      },
+      "recent_activity": {
+        "cases_2024_2025": 9,
+        "pct_cases_2024_2025": 29.0
+      },
+      "notable_same_day_clusters": [],
+      "insight_flags": [
+        "intimate_partner_cases_dominate",
+        "age_data_often_missing"
+      ]
+    },
+    {
+      "location": "Siaya",
+      "case_count": 29,
+      "pct_of_all_located_cases": 3.0,
+      "rank_by_case_count": 6,
+      "date_range": {
+        "first_case": "2012-04-02",
+        "latest_case": "2025-12-19"
+      },
+      "major_perpetrators": [
+        {
+          "category": "husband",
+          "case_count": 13,
+          "pct_of_location_cases": 44.8
+        },
+        {
+          "category": "boyfriend",
+          "case_count": 6,
+          "pct_of_location_cases": 20.7
+        },
+        {
+          "category": "stranger/unknown relationship",
+          "case_count": 5,
+          "pct_of_location_cases": 17.2
+        },
+        {
+          "category": "friend/known to victim",
+          "case_count": 3,
+          "pct_of_location_cases": 10.3
+        },
+        {
+          "category": "stranger/unknown to victim",
+          "case_count": 1,
+          "pct_of_location_cases": 3.4
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "young_adult_18_24",
+        "case_count": 6,
+        "pct_of_known_age_cases": 42.9
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 15,
+          "pct_of_location_cases": 51.7
+        },
+        {
+          "age_group": "young_adult_18_24",
+          "case_count": 6,
+          "pct_of_location_cases": 20.7
+        },
+        {
+          "age_group": "adult_25_34",
+          "case_count": 3,
+          "pct_of_location_cases": 10.3
+        },
+        {
+          "age_group": "middle_age_35_44",
+          "case_count": 2,
+          "pct_of_location_cases": 6.9
+        },
+        {
+          "age_group": "teen_13_17",
+          "case_count": 1,
+          "pct_of_location_cases": 3.4
+        },
+        {
+          "age_group": "older_adult_45_59",
+          "case_count": 1,
+          "pct_of_location_cases": 3.4
+        },
+        {
+          "age_group": "child_0_12",
+          "case_count": 1,
+          "pct_of_location_cases": 3.4
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 14,
+        "unknown_age_count": 15,
+        "pct_age_unknown": 51.7,
+        "minor_cases_known_age": 2,
+        "pct_known_age_under_18": 14.3,
+        "average_known_age": 26.3
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 19,
+        "pct_intimate_partner": 65.5,
+        "stranger_unknown_cases": 6,
+        "pct_stranger_unknown": 20.7
+      },
+      "recent_activity": {
+        "cases_2024_2025": 10,
+        "pct_cases_2024_2025": 34.5
+      },
+      "notable_same_day_clusters": [
+        {
+          "date": "2017-12-09",
+          "case_count": 2,
+          "victims": ["Valerie Apondi", "Vallery Apondi Odhiambo"],
+          "relationship_types": ["boyfriend"]
+        }
+      ],
+      "insight_flags": [
+        "has_same_day_location_cluster",
+        "age_data_often_missing"
+      ]
+    },
+    {
+      "location": "Kakamega",
+      "case_count": 28,
+      "pct_of_all_located_cases": 2.9,
+      "rank_by_case_count": 7,
+      "date_range": {
+        "first_case": "2011-02-10",
+        "latest_case": "2025-11-18"
+      },
+      "major_perpetrators": [
+        {
+          "category": "husband",
+          "case_count": 19,
+          "pct_of_location_cases": 67.9
+        },
+        {
+          "category": "stranger/unknown to victim",
+          "case_count": 3,
+          "pct_of_location_cases": 10.7
+        },
+        {
+          "category": "stranger/unknown relationship",
+          "case_count": 2,
+          "pct_of_location_cases": 7.1
+        },
+        {
+          "category": "boyfriend",
+          "case_count": 2,
+          "pct_of_location_cases": 7.1
+        },
+        {
+          "category": "friend/known to victim",
+          "case_count": 1,
+          "pct_of_location_cases": 3.6
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "middle_age_35_44",
+        "case_count": 6,
+        "pct_of_known_age_cases": 50.0
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 16,
+          "pct_of_location_cases": 57.1
+        },
+        {
+          "age_group": "middle_age_35_44",
+          "case_count": 6,
+          "pct_of_location_cases": 21.4
+        },
+        {
+          "age_group": "adult_25_34",
+          "case_count": 3,
+          "pct_of_location_cases": 10.7
+        },
+        {
+          "age_group": "senior_60_plus",
+          "case_count": 2,
+          "pct_of_location_cases": 7.1
+        },
+        {
+          "age_group": "older_adult_45_59",
+          "case_count": 1,
+          "pct_of_location_cases": 3.6
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 12,
+        "unknown_age_count": 16,
+        "pct_age_unknown": 57.1,
+        "minor_cases_known_age": 0,
+        "pct_known_age_under_18": 0.0,
+        "average_known_age": 43.7
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 21,
+        "pct_intimate_partner": 75.0,
+        "stranger_unknown_cases": 5,
+        "pct_stranger_unknown": 17.9
+      },
+      "recent_activity": {
+        "cases_2024_2025": 5,
+        "pct_cases_2024_2025": 17.9
+      },
+      "notable_same_day_clusters": [],
+      "insight_flags": [
+        "intimate_partner_cases_dominate",
+        "age_data_often_missing"
+      ]
+    },
+    {
+      "location": "Murang'a",
+      "case_count": 28,
+      "pct_of_all_located_cases": 2.9,
+      "rank_by_case_count": 7,
+      "date_range": {
+        "first_case": "2013-04-03",
+        "latest_case": "2025-12-16"
+      },
+      "major_perpetrators": [
+        {
+          "category": "husband",
+          "case_count": 10,
+          "pct_of_location_cases": 35.7
+        },
+        {
+          "category": "stranger/unknown relationship",
+          "case_count": 9,
+          "pct_of_location_cases": 32.1
+        },
+        {
+          "category": "boyfriend",
+          "case_count": 3,
+          "pct_of_location_cases": 10.7
+        },
+        {
+          "category": "family member",
+          "case_count": 3,
+          "pct_of_location_cases": 10.7
+        },
+        {
+          "category": "friend/known to victim",
+          "case_count": 2,
+          "pct_of_location_cases": 7.1
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "senior_60_plus",
+        "case_count": 6,
+        "pct_of_known_age_cases": 28.6
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 7,
+          "pct_of_location_cases": 25.0
+        },
+        {
+          "age_group": "senior_60_plus",
+          "case_count": 6,
+          "pct_of_location_cases": 21.4
+        },
+        {
+          "age_group": "older_adult_45_59",
+          "case_count": 4,
+          "pct_of_location_cases": 14.3
+        },
+        {
+          "age_group": "middle_age_35_44",
+          "case_count": 3,
+          "pct_of_location_cases": 10.7
+        },
+        {
+          "age_group": "adult_25_34",
+          "case_count": 3,
+          "pct_of_location_cases": 10.7
+        },
+        {
+          "age_group": "teen_13_17",
+          "case_count": 2,
+          "pct_of_location_cases": 7.1
+        },
+        {
+          "age_group": "child_0_12",
+          "case_count": 2,
+          "pct_of_location_cases": 7.1
+        },
+        {
+          "age_group": "young_adult_18_24",
+          "case_count": 1,
+          "pct_of_location_cases": 3.6
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 21,
+        "unknown_age_count": 7,
+        "pct_age_unknown": 25.0,
+        "minor_cases_known_age": 4,
+        "pct_known_age_under_18": 19.0,
+        "average_known_age": 45.9
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 13,
+        "pct_intimate_partner": 46.4,
+        "stranger_unknown_cases": 10,
+        "pct_stranger_unknown": 35.7
+      },
+      "recent_activity": {
+        "cases_2024_2025": 4,
+        "pct_cases_2024_2025": 14.3
+      },
+      "notable_same_day_clusters": [
+        {
+          "date": "2023-02-22",
+          "case_count": 2,
+          "victims": ["Jane Wambui", "Mary Njoki"],
+          "relationship_types": ["stranger/unknown relationship"]
+        },
+        {
+          "date": "2015-08-29",
+          "case_count": 2,
+          "victims": ["Cecelia Wambui Wahome", "Not available"],
+          "relationship_types": ["husband"]
+        }
+      ],
+      "insight_flags": ["has_same_day_location_cluster"]
+    },
+    {
+      "location": "Bungoma",
+      "case_count": 27,
+      "pct_of_all_located_cases": 2.8,
+      "rank_by_case_count": 9,
+      "date_range": {
+        "first_case": "2012-09-08",
+        "latest_case": "2024-08-17"
+      },
+      "major_perpetrators": [
+        {
+          "category": "husband",
+          "case_count": 16,
+          "pct_of_location_cases": 59.3
+        },
+        {
+          "category": "stranger/unknown to victim",
+          "case_count": 5,
+          "pct_of_location_cases": 18.5
+        },
+        {
+          "category": "boyfriend",
+          "case_count": 2,
+          "pct_of_location_cases": 7.4
+        },
+        {
+          "category": "stranger/unknown relationship",
+          "case_count": 2,
+          "pct_of_location_cases": 7.4
+        },
+        {
+          "category": "friend/known to victim",
+          "case_count": 1,
+          "pct_of_location_cases": 3.7
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "adult_25_34",
+        "case_count": 3,
+        "pct_of_known_age_cases": 37.5
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 19,
+          "pct_of_location_cases": 70.4
+        },
+        {
+          "age_group": "adult_25_34",
+          "case_count": 3,
+          "pct_of_location_cases": 11.1
+        },
+        {
+          "age_group": "young_adult_18_24",
+          "case_count": 2,
+          "pct_of_location_cases": 7.4
+        },
+        {
+          "age_group": "middle_age_35_44",
+          "case_count": 2,
+          "pct_of_location_cases": 7.4
+        },
+        {
+          "age_group": "teen_13_17",
+          "case_count": 1,
+          "pct_of_location_cases": 3.7
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 8,
+        "unknown_age_count": 19,
+        "pct_age_unknown": 70.4,
+        "minor_cases_known_age": 1,
+        "pct_known_age_under_18": 12.5,
+        "average_known_age": 29.0
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 18,
+        "pct_intimate_partner": 66.7,
+        "stranger_unknown_cases": 7,
+        "pct_stranger_unknown": 25.9
+      },
+      "recent_activity": {
+        "cases_2024_2025": 4,
+        "pct_cases_2024_2025": 14.8
+      },
+      "notable_same_day_clusters": [
+        {
+          "date": "2024-08-17",
+          "case_count": 2,
+          "victims": ["Belinda Wanjala", "Milicent Akinyi"],
+          "relationship_types": ["husband"]
+        }
+      ],
+      "insight_flags": [
+        "has_same_day_location_cluster",
+        "age_data_often_missing"
+      ]
+    },
+    {
+      "location": "Homa Bay",
+      "case_count": 27,
+      "pct_of_all_located_cases": 2.8,
+      "rank_by_case_count": 9,
+      "date_range": {
+        "first_case": "2015-06-07",
+        "latest_case": "2025-09-15"
+      },
+      "major_perpetrators": [
+        {
+          "category": "stranger/unknown relationship",
+          "case_count": 9,
+          "pct_of_location_cases": 33.3
+        },
+        {
+          "category": "husband",
+          "case_count": 7,
+          "pct_of_location_cases": 25.9
+        },
+        {
+          "category": "boyfriend",
+          "case_count": 5,
+          "pct_of_location_cases": 18.5
+        },
+        {
+          "category": "family member",
+          "case_count": 3,
+          "pct_of_location_cases": 11.1
+        },
+        {
+          "category": "stranger/unknown to victim",
+          "case_count": 2,
+          "pct_of_location_cases": 7.4
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "young_adult_18_24",
+        "case_count": 5,
+        "pct_of_known_age_cases": 29.4
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 10,
+          "pct_of_location_cases": 37.0
+        },
+        {
+          "age_group": "young_adult_18_24",
+          "case_count": 5,
+          "pct_of_location_cases": 18.5
+        },
+        {
+          "age_group": "adult_25_34",
+          "case_count": 4,
+          "pct_of_location_cases": 14.8
+        },
+        {
+          "age_group": "senior_60_plus",
+          "case_count": 4,
+          "pct_of_location_cases": 14.8
+        },
+        {
+          "age_group": "teen_13_17",
+          "case_count": 2,
+          "pct_of_location_cases": 7.4
+        },
+        {
+          "age_group": "older_adult_45_59",
+          "case_count": 1,
+          "pct_of_location_cases": 3.7
+        },
+        {
+          "age_group": "middle_age_35_44",
+          "case_count": 1,
+          "pct_of_location_cases": 3.7
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 17,
+        "unknown_age_count": 10,
+        "pct_age_unknown": 37.0,
+        "minor_cases_known_age": 2,
+        "pct_known_age_under_18": 11.8,
+        "average_known_age": 35.5
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 13,
+        "pct_intimate_partner": 48.1,
+        "stranger_unknown_cases": 11,
+        "pct_stranger_unknown": 40.7
+      },
+      "recent_activity": {
+        "cases_2024_2025": 5,
+        "pct_cases_2024_2025": 18.5
+      },
+      "notable_same_day_clusters": [],
+      "insight_flags": ["high_stranger_unknown_share"]
+    },
+    {
+      "location": "Uasin Gishu",
+      "case_count": 27,
+      "pct_of_all_located_cases": 2.8,
+      "rank_by_case_count": 9,
+      "date_range": {
+        "first_case": "2012-03-04",
+        "latest_case": "2024-06-23"
+      },
+      "major_perpetrators": [
+        {
+          "category": "husband",
+          "case_count": 13,
+          "pct_of_location_cases": 48.1
+        },
+        {
+          "category": "boyfriend",
+          "case_count": 4,
+          "pct_of_location_cases": 14.8
+        },
+        {
+          "category": "stranger/unknown relationship",
+          "case_count": 3,
+          "pct_of_location_cases": 11.1
+        },
+        {
+          "category": "stranger/unknown to victim",
+          "case_count": 2,
+          "pct_of_location_cases": 7.4
+        },
+        {
+          "category": "friend/known to victim",
+          "case_count": 2,
+          "pct_of_location_cases": 7.4
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "adult_25_34",
+        "case_count": 7,
+        "pct_of_known_age_cases": 58.3
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 15,
+          "pct_of_location_cases": 55.6
+        },
+        {
+          "age_group": "adult_25_34",
+          "case_count": 7,
+          "pct_of_location_cases": 25.9
+        },
+        {
+          "age_group": "young_adult_18_24",
+          "case_count": 3,
+          "pct_of_location_cases": 11.1
+        },
+        {
+          "age_group": "middle_age_35_44",
+          "case_count": 2,
+          "pct_of_location_cases": 7.4
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 12,
+        "unknown_age_count": 15,
+        "pct_age_unknown": 55.6,
+        "minor_cases_known_age": 0,
+        "pct_known_age_under_18": 0.0,
+        "average_known_age": 28.1
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 20,
+        "pct_intimate_partner": 74.1,
+        "stranger_unknown_cases": 5,
+        "pct_stranger_unknown": 18.5
+      },
+      "recent_activity": {
+        "cases_2024_2025": 2,
+        "pct_cases_2024_2025": 7.4
+      },
+      "notable_same_day_clusters": [],
+      "insight_flags": [
+        "intimate_partner_cases_dominate",
+        "age_data_often_missing"
+      ]
+    },
+    {
+      "location": "Machakos",
+      "case_count": 25,
+      "pct_of_all_located_cases": 2.6,
+      "rank_by_case_count": 12,
+      "date_range": {
+        "first_case": "2011-08-26",
+        "latest_case": "2025-10-27"
+      },
+      "major_perpetrators": [
+        {
+          "category": "husband",
+          "case_count": 7,
+          "pct_of_location_cases": 28.0
+        },
+        {
+          "category": "boyfriend",
+          "case_count": 6,
+          "pct_of_location_cases": 24.0
+        },
+        {
+          "category": "stranger/unknown relationship",
+          "case_count": 3,
+          "pct_of_location_cases": 12.0
+        },
+        {
+          "category": "stranger/unknown to victim",
+          "case_count": 3,
+          "pct_of_location_cases": 12.0
+        },
+        {
+          "category": "ex-husband",
+          "case_count": 2,
+          "pct_of_location_cases": 8.0
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "adult_25_34",
+        "case_count": 3,
+        "pct_of_known_age_cases": 30.0
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 15,
+          "pct_of_location_cases": 60.0
+        },
+        {
+          "age_group": "young_adult_18_24",
+          "case_count": 3,
+          "pct_of_location_cases": 12.0
+        },
+        {
+          "age_group": "middle_age_35_44",
+          "case_count": 3,
+          "pct_of_location_cases": 12.0
+        },
+        {
+          "age_group": "adult_25_34",
+          "case_count": 3,
+          "pct_of_location_cases": 12.0
+        },
+        {
+          "age_group": "senior_60_plus",
+          "case_count": 1,
+          "pct_of_location_cases": 4.0
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 10,
+        "unknown_age_count": 15,
+        "pct_age_unknown": 60.0,
+        "minor_cases_known_age": 0,
+        "pct_known_age_under_18": 0.0,
+        "average_known_age": 32.7
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 16,
+        "pct_intimate_partner": 64.0,
+        "stranger_unknown_cases": 6,
+        "pct_stranger_unknown": 24.0
+      },
+      "recent_activity": {
+        "cases_2024_2025": 7,
+        "pct_cases_2024_2025": 28.0
+      },
+      "notable_same_day_clusters": [],
+      "insight_flags": ["age_data_often_missing"]
+    },
+    {
+      "location": "Kisii",
+      "case_count": 24,
+      "pct_of_all_located_cases": 2.5,
+      "rank_by_case_count": 13,
+      "date_range": {
+        "first_case": "2010-06-19",
+        "latest_case": "2025-07-02"
+      },
+      "major_perpetrators": [
+        {
+          "category": "husband",
+          "case_count": 9,
+          "pct_of_location_cases": 37.5
+        },
+        {
+          "category": "stranger/unknown relationship",
+          "case_count": 5,
+          "pct_of_location_cases": 20.8
+        },
+        {
+          "category": "boyfriend",
+          "case_count": 4,
+          "pct_of_location_cases": 16.7
+        },
+        {
+          "category": "stranger/unknown to victim",
+          "case_count": 2,
+          "pct_of_location_cases": 8.3
+        },
+        {
+          "category": "ex-boyfriend",
+          "case_count": 2,
+          "pct_of_location_cases": 8.3
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "young_adult_18_24",
+        "case_count": 5,
+        "pct_of_known_age_cases": 38.5
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 11,
+          "pct_of_location_cases": 45.8
+        },
+        {
+          "age_group": "young_adult_18_24",
+          "case_count": 5,
+          "pct_of_location_cases": 20.8
+        },
+        {
+          "age_group": "adult_25_34",
+          "case_count": 4,
+          "pct_of_location_cases": 16.7
+        },
+        {
+          "age_group": "senior_60_plus",
+          "case_count": 2,
+          "pct_of_location_cases": 8.3
+        },
+        {
+          "age_group": "teen_13_17",
+          "case_count": 1,
+          "pct_of_location_cases": 4.2
+        },
+        {
+          "age_group": "child_0_12",
+          "case_count": 1,
+          "pct_of_location_cases": 4.2
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 13,
+        "unknown_age_count": 11,
+        "pct_age_unknown": 45.8,
+        "minor_cases_known_age": 2,
+        "pct_known_age_under_18": 15.4,
+        "average_known_age": 31.0
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 15,
+        "pct_intimate_partner": 62.5,
+        "stranger_unknown_cases": 7,
+        "pct_stranger_unknown": 29.2
+      },
+      "recent_activity": {
+        "cases_2024_2025": 5,
+        "pct_cases_2024_2025": 20.8
+      },
+      "notable_same_day_clusters": [
+        {
+          "date": "2021-01-14",
+          "case_count": 3,
+          "victims": [
+            "Esther Nyambusi",
+            "Hyline Nyambusi Nyakwara",
+            "Irine Nyakwara"
+          ],
+          "relationship_types": ["husband"]
+        }
+      ],
+      "insight_flags": ["has_same_day_location_cluster"]
+    },
+    {
+      "location": "Nyeri",
+      "case_count": 22,
+      "pct_of_all_located_cases": 2.3,
+      "rank_by_case_count": 14,
+      "date_range": {
+        "first_case": "2011-10-26",
+        "latest_case": "2025-05-26"
+      },
+      "major_perpetrators": [
+        {
+          "category": "husband",
+          "case_count": 9,
+          "pct_of_location_cases": 40.9
+        },
+        {
+          "category": "friend/known to victim",
+          "case_count": 4,
+          "pct_of_location_cases": 18.2
+        },
+        {
+          "category": "stranger/unknown relationship",
+          "case_count": 3,
+          "pct_of_location_cases": 13.6
+        },
+        {
+          "category": "boyfriend",
+          "case_count": 3,
+          "pct_of_location_cases": 13.6
+        },
+        {
+          "category": "ex-husband",
+          "case_count": 1,
+          "pct_of_location_cases": 4.5
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "young_adult_18_24",
+        "case_count": 4,
+        "pct_of_known_age_cases": 33.3
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 10,
+          "pct_of_location_cases": 45.5
+        },
+        {
+          "age_group": "young_adult_18_24",
+          "case_count": 4,
+          "pct_of_location_cases": 18.2
+        },
+        {
+          "age_group": "adult_25_34",
+          "case_count": 3,
+          "pct_of_location_cases": 13.6
+        },
+        {
+          "age_group": "child_0_12",
+          "case_count": 2,
+          "pct_of_location_cases": 9.1
+        },
+        {
+          "age_group": "middle_age_35_44",
+          "case_count": 2,
+          "pct_of_location_cases": 9.1
+        },
+        {
+          "age_group": "teen_13_17",
+          "case_count": 1,
+          "pct_of_location_cases": 4.5
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 12,
+        "unknown_age_count": 10,
+        "pct_age_unknown": 45.5,
+        "minor_cases_known_age": 3,
+        "pct_known_age_under_18": 25.0,
+        "average_known_age": 23.4
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 13,
+        "pct_intimate_partner": 59.1,
+        "stranger_unknown_cases": 3,
+        "pct_stranger_unknown": 13.6
+      },
+      "recent_activity": {
+        "cases_2024_2025": 5,
+        "pct_cases_2024_2025": 22.7
+      },
+      "notable_same_day_clusters": [],
+      "insight_flags": ["high_share_of_minors_among_known_ages"]
+    },
+    {
+      "location": "Kericho",
+      "case_count": 21,
+      "pct_of_all_located_cases": 2.2,
+      "rank_by_case_count": 15,
+      "date_range": {
+        "first_case": "2013-08-03",
+        "latest_case": "2025-12-15"
+      },
+      "major_perpetrators": [
+        {
+          "category": "husband",
+          "case_count": 15,
+          "pct_of_location_cases": 71.4
+        },
+        {
+          "category": "stranger/unknown to victim",
+          "case_count": 4,
+          "pct_of_location_cases": 19.0
+        },
+        {
+          "category": "boyfriend",
+          "case_count": 2,
+          "pct_of_location_cases": 9.5
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "adult_25_34",
+        "case_count": 4,
+        "pct_of_known_age_cases": 66.7
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 15,
+          "pct_of_location_cases": 71.4
+        },
+        {
+          "age_group": "adult_25_34",
+          "case_count": 4,
+          "pct_of_location_cases": 19.0
+        },
+        {
+          "age_group": "young_adult_18_24",
+          "case_count": 1,
+          "pct_of_location_cases": 4.8
+        },
+        {
+          "age_group": "middle_age_35_44",
+          "case_count": 1,
+          "pct_of_location_cases": 4.8
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 6,
+        "unknown_age_count": 15,
+        "pct_age_unknown": 71.4,
+        "minor_cases_known_age": 0,
+        "pct_known_age_under_18": 0.0,
+        "average_known_age": 27.5
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 17,
+        "pct_intimate_partner": 81.0,
+        "stranger_unknown_cases": 4,
+        "pct_stranger_unknown": 19.0
+      },
+      "recent_activity": {
+        "cases_2024_2025": 3,
+        "pct_cases_2024_2025": 14.3
+      },
+      "notable_same_day_clusters": [],
+      "insight_flags": [
+        "intimate_partner_cases_dominate",
+        "age_data_often_missing"
+      ]
+    },
+    {
+      "location": "Meru",
+      "case_count": 21,
+      "pct_of_all_located_cases": 2.2,
+      "rank_by_case_count": 15,
+      "date_range": {
+        "first_case": "2005-05-12",
+        "latest_case": "2024-04-16"
+      },
+      "major_perpetrators": [
+        {
+          "category": "husband",
+          "case_count": 11,
+          "pct_of_location_cases": 52.4
+        },
+        {
+          "category": "stranger/unknown relationship",
+          "case_count": 5,
+          "pct_of_location_cases": 23.8
+        },
+        {
+          "category": "boyfriend",
+          "case_count": 3,
+          "pct_of_location_cases": 14.3
+        },
+        {
+          "category": "friend/known to victim",
+          "case_count": 1,
+          "pct_of_location_cases": 4.8
+        },
+        {
+          "category": "family member",
+          "case_count": 1,
+          "pct_of_location_cases": 4.8
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "young_adult_18_24",
+        "case_count": 4,
+        "pct_of_known_age_cases": 44.4
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 12,
+          "pct_of_location_cases": 57.1
+        },
+        {
+          "age_group": "young_adult_18_24",
+          "case_count": 4,
+          "pct_of_location_cases": 19.0
+        },
+        {
+          "age_group": "adult_25_34",
+          "case_count": 3,
+          "pct_of_location_cases": 14.3
+        },
+        {
+          "age_group": "middle_age_35_44",
+          "case_count": 2,
+          "pct_of_location_cases": 9.5
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 9,
+        "unknown_age_count": 12,
+        "pct_age_unknown": 57.1,
+        "minor_cases_known_age": 0,
+        "pct_known_age_under_18": 0.0,
+        "average_known_age": 27.4
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 14,
+        "pct_intimate_partner": 66.7,
+        "stranger_unknown_cases": 5,
+        "pct_stranger_unknown": 23.8
+      },
+      "recent_activity": {
+        "cases_2024_2025": 4,
+        "pct_cases_2024_2025": 19.0
+      },
+      "notable_same_day_clusters": [
+        {
+          "date": "2024-04-16",
+          "case_count": 2,
+          "victims": ["Diana Gakli Mutegi", "Lucy Makena Ndujo"],
+          "relationship_types": ["stranger/unknown relationship"]
+        }
+      ],
+      "insight_flags": [
+        "has_same_day_location_cluster",
+        "age_data_often_missing"
+      ]
+    },
+    {
+      "location": "Trans-Nzoia",
+      "case_count": 21,
+      "pct_of_all_located_cases": 2.2,
+      "rank_by_case_count": 15,
+      "date_range": {
+        "first_case": "2011-07-07",
+        "latest_case": "2024-09-10"
+      },
+      "major_perpetrators": [
+        {
+          "category": "husband",
+          "case_count": 8,
+          "pct_of_location_cases": 38.1
+        },
+        {
+          "category": "stranger/unknown relationship",
+          "case_count": 4,
+          "pct_of_location_cases": 19.0
+        },
+        {
+          "category": "boyfriend",
+          "case_count": 2,
+          "pct_of_location_cases": 9.5
+        },
+        {
+          "category": "ex-boyfriend",
+          "case_count": 2,
+          "pct_of_location_cases": 9.5
+        },
+        {
+          "category": "friend/known to victim",
+          "case_count": 2,
+          "pct_of_location_cases": 9.5
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "young_adult_18_24",
+        "case_count": 3,
+        "pct_of_known_age_cases": 37.5
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 13,
+          "pct_of_location_cases": 61.9
+        },
+        {
+          "age_group": "young_adult_18_24",
+          "case_count": 3,
+          "pct_of_location_cases": 14.3
+        },
+        {
+          "age_group": "older_adult_45_59",
+          "case_count": 2,
+          "pct_of_location_cases": 9.5
+        },
+        {
+          "age_group": "adult_25_34",
+          "case_count": 1,
+          "pct_of_location_cases": 4.8
+        },
+        {
+          "age_group": "middle_age_35_44",
+          "case_count": 1,
+          "pct_of_location_cases": 4.8
+        },
+        {
+          "age_group": "senior_60_plus",
+          "case_count": 1,
+          "pct_of_location_cases": 4.8
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 8,
+        "unknown_age_count": 13,
+        "pct_age_unknown": 61.9,
+        "minor_cases_known_age": 0,
+        "pct_known_age_under_18": 0.0,
+        "average_known_age": 40.4
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 12,
+        "pct_intimate_partner": 57.1,
+        "stranger_unknown_cases": 6,
+        "pct_stranger_unknown": 28.6
+      },
+      "recent_activity": {
+        "cases_2024_2025": 4,
+        "pct_cases_2024_2025": 19.0
+      },
+      "notable_same_day_clusters": [
+        {
+          "date": "2012-05-10",
+          "case_count": 2,
+          "victims": ["Alice Wangu Kamau", "Alice Wangui Kamau"],
+          "relationship_types": ["ex-boyfriend", "friend/known to victim"]
+        }
+      ],
+      "insight_flags": [
+        "has_same_day_location_cluster",
+        "age_data_often_missing"
+      ]
+    },
+    {
+      "location": "Baringo",
+      "case_count": 20,
+      "pct_of_all_located_cases": 2.1,
+      "rank_by_case_count": 18,
+      "date_range": {
+        "first_case": "2015-03-30",
+        "latest_case": "2025-10-20"
+      },
+      "major_perpetrators": [
+        {
+          "category": "husband",
+          "case_count": 13,
+          "pct_of_location_cases": 65.0
+        },
+        {
+          "category": "boyfriend",
+          "case_count": 3,
+          "pct_of_location_cases": 15.0
+        },
+        {
+          "category": "friend/known to victim",
+          "case_count": 2,
+          "pct_of_location_cases": 10.0
+        },
+        {
+          "category": "stranger/unknown relationship",
+          "case_count": 1,
+          "pct_of_location_cases": 5.0
+        },
+        {
+          "category": "stranger/unknown to victim",
+          "case_count": 1,
+          "pct_of_location_cases": 5.0
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "adult_25_34",
+        "case_count": 3,
+        "pct_of_known_age_cases": 75.0
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 16,
+          "pct_of_location_cases": 80.0
+        },
+        {
+          "age_group": "adult_25_34",
+          "case_count": 3,
+          "pct_of_location_cases": 15.0
+        },
+        {
+          "age_group": "middle_age_35_44",
+          "case_count": 1,
+          "pct_of_location_cases": 5.0
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 4,
+        "unknown_age_count": 16,
+        "pct_age_unknown": 80.0,
+        "minor_cases_known_age": 0,
+        "pct_known_age_under_18": 0.0,
+        "average_known_age": 31.8
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 16,
+        "pct_intimate_partner": 80.0,
+        "stranger_unknown_cases": 2,
+        "pct_stranger_unknown": 10.0
+      },
+      "recent_activity": {
+        "cases_2024_2025": 6,
+        "pct_cases_2024_2025": 30.0
+      },
+      "notable_same_day_clusters": [
+        {
+          "date": "2021-11-12",
+          "case_count": 2,
+          "victims": ["Veronica Kanini Njuguna", "Veronicah Kanini"],
+          "relationship_types": [
+            "friend/known to victim",
+            "stranger/unknown relationship"
+          ]
+        }
+      ],
+      "insight_flags": [
+        "intimate_partner_cases_dominate",
+        "has_same_day_location_cluster",
+        "age_data_often_missing"
+      ]
+    },
+    {
+      "location": "Kajiado",
+      "case_count": 20,
+      "pct_of_all_located_cases": 2.1,
+      "rank_by_case_count": 18,
+      "date_range": {
+        "first_case": "2011-03-12",
+        "latest_case": "2025-11-18"
+      },
+      "major_perpetrators": [
+        {
+          "category": "husband",
+          "case_count": 10,
+          "pct_of_location_cases": 50.0
+        },
+        {
+          "category": "stranger/unknown relationship",
+          "case_count": 3,
+          "pct_of_location_cases": 15.0
+        },
+        {
+          "category": "boyfriend",
+          "case_count": 3,
+          "pct_of_location_cases": 15.0
+        },
+        {
+          "category": "stranger/unknown to victim",
+          "case_count": 3,
+          "pct_of_location_cases": 15.0
+        },
+        {
+          "category": "ex-husband",
+          "case_count": 1,
+          "pct_of_location_cases": 5.0
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "adult_25_34",
+        "case_count": 6,
+        "pct_of_known_age_cases": 75.0
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 12,
+          "pct_of_location_cases": 60.0
+        },
+        {
+          "age_group": "adult_25_34",
+          "case_count": 6,
+          "pct_of_location_cases": 30.0
+        },
+        {
+          "age_group": "older_adult_45_59",
+          "case_count": 1,
+          "pct_of_location_cases": 5.0
+        },
+        {
+          "age_group": "young_adult_18_24",
+          "case_count": 1,
+          "pct_of_location_cases": 5.0
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 8,
+        "unknown_age_count": 12,
+        "pct_age_unknown": 60.0,
+        "minor_cases_known_age": 0,
+        "pct_known_age_under_18": 0.0,
+        "average_known_age": 31.1
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 14,
+        "pct_intimate_partner": 70.0,
+        "stranger_unknown_cases": 6,
+        "pct_stranger_unknown": 30.0
+      },
+      "recent_activity": {
+        "cases_2024_2025": 3,
+        "pct_cases_2024_2025": 15.0
+      },
+      "notable_same_day_clusters": [],
+      "insight_flags": [
+        "intimate_partner_cases_dominate",
+        "age_data_often_missing"
+      ]
+    },
+    {
+      "location": "Kitui",
+      "case_count": 18,
+      "pct_of_all_located_cases": 1.9,
+      "rank_by_case_count": 20,
+      "date_range": {
+        "first_case": "2010-08-10",
+        "latest_case": "2025-08-29"
+      },
+      "major_perpetrators": [
+        {
+          "category": "husband",
+          "case_count": 6,
+          "pct_of_location_cases": 33.3
+        },
+        {
+          "category": "boyfriend",
+          "case_count": 6,
+          "pct_of_location_cases": 33.3
+        },
+        {
+          "category": "stranger/unknown to victim",
+          "case_count": 3,
+          "pct_of_location_cases": 16.7
+        },
+        {
+          "category": "family member",
+          "case_count": 1,
+          "pct_of_location_cases": 5.6
+        },
+        {
+          "category": "stranger/unknown relationship",
+          "case_count": 1,
+          "pct_of_location_cases": 5.6
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "adult_25_34",
+        "case_count": 3,
+        "pct_of_known_age_cases": 33.3
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 9,
+          "pct_of_location_cases": 50.0
+        },
+        {
+          "age_group": "adult_25_34",
+          "case_count": 3,
+          "pct_of_location_cases": 16.7
+        },
+        {
+          "age_group": "young_adult_18_24",
+          "case_count": 3,
+          "pct_of_location_cases": 16.7
+        },
+        {
+          "age_group": "older_adult_45_59",
+          "case_count": 1,
+          "pct_of_location_cases": 5.6
+        },
+        {
+          "age_group": "senior_60_plus",
+          "case_count": 1,
+          "pct_of_location_cases": 5.6
+        },
+        {
+          "age_group": "middle_age_35_44",
+          "case_count": 1,
+          "pct_of_location_cases": 5.6
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 9,
+        "unknown_age_count": 9,
+        "pct_age_unknown": 50.0,
+        "minor_cases_known_age": 0,
+        "pct_known_age_under_18": 0.0,
+        "average_known_age": 32.6
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 13,
+        "pct_intimate_partner": 72.2,
+        "stranger_unknown_cases": 4,
+        "pct_stranger_unknown": 22.2
+      },
+      "recent_activity": {
+        "cases_2024_2025": 5,
+        "pct_cases_2024_2025": 27.8
+      },
+      "notable_same_day_clusters": [],
+      "insight_flags": [
+        "intimate_partner_cases_dominate",
+        "age_data_often_missing"
+      ]
+    },
+    {
+      "location": "Bomet",
+      "case_count": 17,
+      "pct_of_all_located_cases": 1.8,
+      "rank_by_case_count": 21,
+      "date_range": {
+        "first_case": "2016-01-07",
+        "latest_case": "2025-04-21"
+      },
+      "major_perpetrators": [
+        {
+          "category": "husband",
+          "case_count": 10,
+          "pct_of_location_cases": 58.8
+        },
+        {
+          "category": "stranger/unknown to victim",
+          "case_count": 3,
+          "pct_of_location_cases": 17.6
+        },
+        {
+          "category": "stranger/unknown relationship",
+          "case_count": 2,
+          "pct_of_location_cases": 11.8
+        },
+        {
+          "category": "boyfriend",
+          "case_count": 1,
+          "pct_of_location_cases": 5.9
+        },
+        {
+          "category": "ex-husband",
+          "case_count": 1,
+          "pct_of_location_cases": 5.9
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "adult_25_34",
+        "case_count": 3,
+        "pct_of_known_age_cases": 37.5
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 9,
+          "pct_of_location_cases": 52.9
+        },
+        {
+          "age_group": "young_adult_18_24",
+          "case_count": 3,
+          "pct_of_location_cases": 17.6
+        },
+        {
+          "age_group": "adult_25_34",
+          "case_count": 3,
+          "pct_of_location_cases": 17.6
+        },
+        {
+          "age_group": "older_adult_45_59",
+          "case_count": 1,
+          "pct_of_location_cases": 5.9
+        },
+        {
+          "age_group": "teen_13_17",
+          "case_count": 1,
+          "pct_of_location_cases": 5.9
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 8,
+        "unknown_age_count": 9,
+        "pct_age_unknown": 52.9,
+        "minor_cases_known_age": 1,
+        "pct_known_age_under_18": 12.5,
+        "average_known_age": 27.5
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 12,
+        "pct_intimate_partner": 70.6,
+        "stranger_unknown_cases": 5,
+        "pct_stranger_unknown": 29.4
+      },
+      "recent_activity": {
+        "cases_2024_2025": 4,
+        "pct_cases_2024_2025": 23.5
+      },
+      "notable_same_day_clusters": [
+        {
+          "date": "2020-10-07",
+          "case_count": 2,
+          "victims": ["Emmy Chepkoech Mitei"],
+          "relationship_types": ["husband"]
+        }
+      ],
+      "insight_flags": [
+        "intimate_partner_cases_dominate",
+        "has_same_day_location_cluster",
+        "age_data_often_missing"
+      ]
+    },
+    {
+      "location": "Makueni",
+      "case_count": 16,
+      "pct_of_all_located_cases": 1.7,
+      "rank_by_case_count": 22,
+      "date_range": {
+        "first_case": "2009-12-07",
+        "latest_case": "2022-09-23"
+      },
+      "major_perpetrators": [
+        {
+          "category": "husband",
+          "case_count": 10,
+          "pct_of_location_cases": 62.5
+        },
+        {
+          "category": "stranger/unknown to victim",
+          "case_count": 2,
+          "pct_of_location_cases": 12.5
+        },
+        {
+          "category": "family member",
+          "case_count": 2,
+          "pct_of_location_cases": 12.5
+        },
+        {
+          "category": "friend/known to victim",
+          "case_count": 1,
+          "pct_of_location_cases": 6.2
+        },
+        {
+          "category": "boyfriend",
+          "case_count": 1,
+          "pct_of_location_cases": 6.2
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "senior_60_plus",
+        "case_count": 2,
+        "pct_of_known_age_cases": 40.0
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 11,
+          "pct_of_location_cases": 68.8
+        },
+        {
+          "age_group": "senior_60_plus",
+          "case_count": 2,
+          "pct_of_location_cases": 12.5
+        },
+        {
+          "age_group": "adult_25_34",
+          "case_count": 1,
+          "pct_of_location_cases": 6.2
+        },
+        {
+          "age_group": "middle_age_35_44",
+          "case_count": 1,
+          "pct_of_location_cases": 6.2
+        },
+        {
+          "age_group": "young_adult_18_24",
+          "case_count": 1,
+          "pct_of_location_cases": 6.2
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 5,
+        "unknown_age_count": 11,
+        "pct_age_unknown": 68.8,
+        "minor_cases_known_age": 0,
+        "pct_known_age_under_18": 0.0,
+        "average_known_age": 50.0
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 11,
+        "pct_intimate_partner": 68.8,
+        "stranger_unknown_cases": 2,
+        "pct_stranger_unknown": 12.5
+      },
+      "recent_activity": {
+        "cases_2024_2025": 0,
+        "pct_cases_2024_2025": 0.0
+      },
+      "notable_same_day_clusters": [
+        {
+          "date": "2021-01-03",
+          "case_count": 2,
+          "victims": ["Esther Nzilani", "Mary Nzilani"],
+          "relationship_types": ["family member"]
+        }
+      ],
+      "insight_flags": [
+        "has_same_day_location_cluster",
+        "age_data_often_missing"
+      ]
+    },
+    {
+      "location": "Embu",
+      "case_count": 15,
+      "pct_of_all_located_cases": 1.6,
+      "rank_by_case_count": 23,
+      "date_range": {
+        "first_case": "2016-12-16",
+        "latest_case": "2024-12-12"
+      },
+      "major_perpetrators": [
+        {
+          "category": "husband",
+          "case_count": 6,
+          "pct_of_location_cases": 40.0
+        },
+        {
+          "category": "stranger/unknown relationship",
+          "case_count": 3,
+          "pct_of_location_cases": 20.0
+        },
+        {
+          "category": "friend/known to victim",
+          "case_count": 2,
+          "pct_of_location_cases": 13.3
+        },
+        {
+          "category": "boyfriend",
+          "case_count": 2,
+          "pct_of_location_cases": 13.3
+        },
+        {
+          "category": "ex-boyfriend",
+          "case_count": 1,
+          "pct_of_location_cases": 6.7
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "middle_age_35_44",
+        "case_count": 3,
+        "pct_of_known_age_cases": 33.3
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 6,
+          "pct_of_location_cases": 40.0
+        },
+        {
+          "age_group": "middle_age_35_44",
+          "case_count": 3,
+          "pct_of_location_cases": 20.0
+        },
+        {
+          "age_group": "senior_60_plus",
+          "case_count": 2,
+          "pct_of_location_cases": 13.3
+        },
+        {
+          "age_group": "older_adult_45_59",
+          "case_count": 2,
+          "pct_of_location_cases": 13.3
+        },
+        {
+          "age_group": "young_adult_18_24",
+          "case_count": 1,
+          "pct_of_location_cases": 6.7
+        },
+        {
+          "age_group": "adult_25_34",
+          "case_count": 1,
+          "pct_of_location_cases": 6.7
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 9,
+        "unknown_age_count": 6,
+        "pct_age_unknown": 40.0,
+        "minor_cases_known_age": 0,
+        "pct_known_age_under_18": 0.0,
+        "average_known_age": 49.4
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 9,
+        "pct_intimate_partner": 60.0,
+        "stranger_unknown_cases": 4,
+        "pct_stranger_unknown": 26.7
+      },
+      "recent_activity": {
+        "cases_2024_2025": 5,
+        "pct_cases_2024_2025": 33.3
+      },
+      "notable_same_day_clusters": [],
+      "insight_flags": []
+    },
+    {
+      "location": "Migori",
+      "case_count": 15,
+      "pct_of_all_located_cases": 1.6,
+      "rank_by_case_count": 23,
+      "date_range": {
+        "first_case": "2011-10-18",
+        "latest_case": "2025-12-24"
+      },
+      "major_perpetrators": [
+        {
+          "category": "husband",
+          "case_count": 13,
+          "pct_of_location_cases": 86.7
+        },
+        {
+          "category": "stranger/unknown relationship",
+          "case_count": 1,
+          "pct_of_location_cases": 6.7
+        },
+        {
+          "category": "boyfriend",
+          "case_count": 1,
+          "pct_of_location_cases": 6.7
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "adult_25_34",
+        "case_count": 4,
+        "pct_of_known_age_cases": 50.0
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 7,
+          "pct_of_location_cases": 46.7
+        },
+        {
+          "age_group": "adult_25_34",
+          "case_count": 4,
+          "pct_of_location_cases": 26.7
+        },
+        {
+          "age_group": "young_adult_18_24",
+          "case_count": 2,
+          "pct_of_location_cases": 13.3
+        },
+        {
+          "age_group": "middle_age_35_44",
+          "case_count": 1,
+          "pct_of_location_cases": 6.7
+        },
+        {
+          "age_group": "older_adult_45_59",
+          "case_count": 1,
+          "pct_of_location_cases": 6.7
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 8,
+        "unknown_age_count": 7,
+        "pct_age_unknown": 46.7,
+        "minor_cases_known_age": 0,
+        "pct_known_age_under_18": 0.0,
+        "average_known_age": 29.2
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 14,
+        "pct_intimate_partner": 93.3,
+        "stranger_unknown_cases": 1,
+        "pct_stranger_unknown": 6.7
+      },
+      "recent_activity": {
+        "cases_2024_2025": 4,
+        "pct_cases_2024_2025": 26.7
+      },
+      "notable_same_day_clusters": [],
+      "insight_flags": ["intimate_partner_cases_dominate"]
+    },
+    {
+      "location": "Mombasa",
+      "case_count": 15,
+      "pct_of_all_located_cases": 1.6,
+      "rank_by_case_count": 23,
+      "date_range": {
+        "first_case": "2016-05-13",
+        "latest_case": "2025-01-05"
+      },
+      "major_perpetrators": [
+        {
+          "category": "husband",
+          "case_count": 10,
+          "pct_of_location_cases": 66.7
+        },
+        {
+          "category": "boyfriend",
+          "case_count": 4,
+          "pct_of_location_cases": 26.7
+        },
+        {
+          "category": "stranger/unknown relationship",
+          "case_count": 1,
+          "pct_of_location_cases": 6.7
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "adult_25_34",
+        "case_count": 5,
+        "pct_of_known_age_cases": 100.0
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 10,
+          "pct_of_location_cases": 66.7
+        },
+        {
+          "age_group": "adult_25_34",
+          "case_count": 5,
+          "pct_of_location_cases": 33.3
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 5,
+        "unknown_age_count": 10,
+        "pct_age_unknown": 66.7,
+        "minor_cases_known_age": 0,
+        "pct_known_age_under_18": 0.0,
+        "average_known_age": 26.8
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 14,
+        "pct_intimate_partner": 93.3,
+        "stranger_unknown_cases": 1,
+        "pct_stranger_unknown": 6.7
+      },
+      "recent_activity": {
+        "cases_2024_2025": 1,
+        "pct_cases_2024_2025": 6.7
+      },
+      "notable_same_day_clusters": [],
+      "insight_flags": [
+        "intimate_partner_cases_dominate",
+        "age_data_often_missing"
+      ]
+    },
+    {
+      "location": "Nyandarua",
+      "case_count": 15,
+      "pct_of_all_located_cases": 1.6,
+      "rank_by_case_count": 23,
+      "date_range": {
+        "first_case": "2010-06-05",
+        "latest_case": "2025-07-16"
+      },
+      "major_perpetrators": [
+        {
+          "category": "husband",
+          "case_count": 5,
+          "pct_of_location_cases": 33.3
+        },
+        {
+          "category": "stranger/unknown relationship",
+          "case_count": 4,
+          "pct_of_location_cases": 26.7
+        },
+        {
+          "category": "boyfriend",
+          "case_count": 3,
+          "pct_of_location_cases": 20.0
+        },
+        {
+          "category": "friend/known to victim",
+          "case_count": 2,
+          "pct_of_location_cases": 13.3
+        },
+        {
+          "category": "ex-boyfriend",
+          "case_count": 1,
+          "pct_of_location_cases": 6.7
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "adult_25_34",
+        "case_count": 3,
+        "pct_of_known_age_cases": 33.3
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 6,
+          "pct_of_location_cases": 40.0
+        },
+        {
+          "age_group": "young_adult_18_24",
+          "case_count": 3,
+          "pct_of_location_cases": 20.0
+        },
+        {
+          "age_group": "adult_25_34",
+          "case_count": 3,
+          "pct_of_location_cases": 20.0
+        },
+        {
+          "age_group": "older_adult_45_59",
+          "case_count": 1,
+          "pct_of_location_cases": 6.7
+        },
+        {
+          "age_group": "middle_age_35_44",
+          "case_count": 1,
+          "pct_of_location_cases": 6.7
+        },
+        {
+          "age_group": "teen_13_17",
+          "case_count": 1,
+          "pct_of_location_cases": 6.7
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 9,
+        "unknown_age_count": 6,
+        "pct_age_unknown": 40.0,
+        "minor_cases_known_age": 1,
+        "pct_known_age_under_18": 11.1,
+        "average_known_age": 28.2
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 9,
+        "pct_intimate_partner": 60.0,
+        "stranger_unknown_cases": 4,
+        "pct_stranger_unknown": 26.7
+      },
+      "recent_activity": {
+        "cases_2024_2025": 2,
+        "pct_cases_2024_2025": 13.3
+      },
+      "notable_same_day_clusters": [],
+      "insight_flags": []
+    },
+    {
+      "location": "Laikipia",
+      "case_count": 14,
+      "pct_of_all_located_cases": 1.5,
+      "rank_by_case_count": 27,
+      "date_range": {
+        "first_case": "2012-03-31",
+        "latest_case": "2025-07-07"
+      },
+      "major_perpetrators": [
+        {
+          "category": "stranger/unknown relationship",
+          "case_count": 4,
+          "pct_of_location_cases": 28.6
+        },
+        {
+          "category": "husband",
+          "case_count": 3,
+          "pct_of_location_cases": 21.4
+        },
+        {
+          "category": "boyfriend",
+          "case_count": 2,
+          "pct_of_location_cases": 14.3
+        },
+        {
+          "category": "ex-husband",
+          "case_count": 2,
+          "pct_of_location_cases": 14.3
+        },
+        {
+          "category": "stranger/unknown to victim",
+          "case_count": 2,
+          "pct_of_location_cases": 14.3
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "young_adult_18_24",
+        "case_count": 4,
+        "pct_of_known_age_cases": 44.4
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 5,
+          "pct_of_location_cases": 35.7
+        },
+        {
+          "age_group": "young_adult_18_24",
+          "case_count": 4,
+          "pct_of_location_cases": 28.6
+        },
+        {
+          "age_group": "adult_25_34",
+          "case_count": 2,
+          "pct_of_location_cases": 14.3
+        },
+        {
+          "age_group": "older_adult_45_59",
+          "case_count": 1,
+          "pct_of_location_cases": 7.1
+        },
+        {
+          "age_group": "senior_60_plus",
+          "case_count": 1,
+          "pct_of_location_cases": 7.1
+        },
+        {
+          "age_group": "teen_13_17",
+          "case_count": 1,
+          "pct_of_location_cases": 7.1
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 9,
+        "unknown_age_count": 5,
+        "pct_age_unknown": 35.7,
+        "minor_cases_known_age": 1,
+        "pct_known_age_under_18": 11.1,
+        "average_known_age": 34.6
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 7,
+        "pct_intimate_partner": 50.0,
+        "stranger_unknown_cases": 6,
+        "pct_stranger_unknown": 42.9
+      },
+      "recent_activity": {
+        "cases_2024_2025": 2,
+        "pct_cases_2024_2025": 14.3
+      },
+      "notable_same_day_clusters": [],
+      "insight_flags": ["high_stranger_unknown_share"]
+    },
+    {
+      "location": "Narok",
+      "case_count": 12,
+      "pct_of_all_located_cases": 1.2,
+      "rank_by_case_count": 28,
+      "date_range": {
+        "first_case": "2015-11-08",
+        "latest_case": "2025-09-29"
+      },
+      "major_perpetrators": [
+        {
+          "category": "stranger/unknown relationship",
+          "case_count": 4,
+          "pct_of_location_cases": 33.3
+        },
+        {
+          "category": "stranger/unknown to victim",
+          "case_count": 4,
+          "pct_of_location_cases": 33.3
+        },
+        {
+          "category": "husband",
+          "case_count": 3,
+          "pct_of_location_cases": 25.0
+        },
+        {
+          "category": "boyfriend",
+          "case_count": 1,
+          "pct_of_location_cases": 8.3
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "adult_25_34",
+        "case_count": 3,
+        "pct_of_known_age_cases": 42.9
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 5,
+          "pct_of_location_cases": 41.7
+        },
+        {
+          "age_group": "adult_25_34",
+          "case_count": 3,
+          "pct_of_location_cases": 25.0
+        },
+        {
+          "age_group": "young_adult_18_24",
+          "case_count": 3,
+          "pct_of_location_cases": 25.0
+        },
+        {
+          "age_group": "older_adult_45_59",
+          "case_count": 1,
+          "pct_of_location_cases": 8.3
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 7,
+        "unknown_age_count": 5,
+        "pct_age_unknown": 41.7,
+        "minor_cases_known_age": 0,
+        "pct_known_age_under_18": 0.0,
+        "average_known_age": 28.4
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 4,
+        "pct_intimate_partner": 33.3,
+        "stranger_unknown_cases": 8,
+        "pct_stranger_unknown": 66.7
+      },
+      "recent_activity": {
+        "cases_2024_2025": 7,
+        "pct_cases_2024_2025": 58.3
+      },
+      "notable_same_day_clusters": [
+        {
+          "date": "2024-09-25",
+          "case_count": 2,
+          "victims": ["Chepkirui", "Naropil Moijoi"],
+          "relationship_types": ["stranger/unknown relationship"]
+        }
+      ],
+      "insight_flags": [
+        "high_stranger_unknown_share",
+        "has_same_day_location_cluster",
+        "large_recent_2024_2025_share"
+      ]
+    },
+    {
+      "location": "Nandi",
+      "case_count": 11,
+      "pct_of_all_located_cases": 1.1,
+      "rank_by_case_count": 29,
+      "date_range": {
+        "first_case": "2018-07-31",
+        "latest_case": "2024-08-15"
+      },
+      "major_perpetrators": [
+        {
+          "category": "husband",
+          "case_count": 8,
+          "pct_of_location_cases": 72.7
+        },
+        {
+          "category": "boyfriend",
+          "case_count": 2,
+          "pct_of_location_cases": 18.2
+        },
+        {
+          "category": "stranger/unknown relationship",
+          "case_count": 1,
+          "pct_of_location_cases": 9.1
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "middle_age_35_44",
+        "case_count": 4,
+        "pct_of_known_age_cases": 50.0
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "middle_age_35_44",
+          "case_count": 4,
+          "pct_of_location_cases": 36.4
+        },
+        {
+          "age_group": "unknown_age",
+          "case_count": 3,
+          "pct_of_location_cases": 27.3
+        },
+        {
+          "age_group": "adult_25_34",
+          "case_count": 2,
+          "pct_of_location_cases": 18.2
+        },
+        {
+          "age_group": "older_adult_45_59",
+          "case_count": 1,
+          "pct_of_location_cases": 9.1
+        },
+        {
+          "age_group": "young_adult_18_24",
+          "case_count": 1,
+          "pct_of_location_cases": 9.1
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 8,
+        "unknown_age_count": 3,
+        "pct_age_unknown": 27.3,
+        "minor_cases_known_age": 0,
+        "pct_known_age_under_18": 0.0,
+        "average_known_age": 35.6
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 10,
+        "pct_intimate_partner": 90.9,
+        "stranger_unknown_cases": 1,
+        "pct_stranger_unknown": 9.1
+      },
+      "recent_activity": {
+        "cases_2024_2025": 2,
+        "pct_cases_2024_2025": 18.2
+      },
+      "notable_same_day_clusters": [
+        {
+          "date": "2019-02-17",
+          "case_count": 2,
+          "victims": ["Faith Chepkurui", "Unnamed"],
+          "relationship_types": ["boyfriend", "stranger/unknown relationship"]
+        }
+      ],
+      "insight_flags": [
+        "intimate_partner_cases_dominate",
+        "has_same_day_location_cluster"
+      ]
+    },
+    {
+      "location": "Busia",
+      "case_count": 10,
+      "pct_of_all_located_cases": 1.0,
+      "rank_by_case_count": 30,
+      "date_range": {
+        "first_case": "2016-01-16",
+        "latest_case": "2025-09-02"
+      },
+      "major_perpetrators": [
+        {
+          "category": "husband",
+          "case_count": 7,
+          "pct_of_location_cases": 70.0
+        },
+        {
+          "category": "stranger/unknown relationship",
+          "case_count": 2,
+          "pct_of_location_cases": 20.0
+        },
+        {
+          "category": "boyfriend",
+          "case_count": 1,
+          "pct_of_location_cases": 10.0
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "adult_25_34",
+        "case_count": 1,
+        "pct_of_known_age_cases": 50.0
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 8,
+          "pct_of_location_cases": 80.0
+        },
+        {
+          "age_group": "older_adult_45_59",
+          "case_count": 1,
+          "pct_of_location_cases": 10.0
+        },
+        {
+          "age_group": "adult_25_34",
+          "case_count": 1,
+          "pct_of_location_cases": 10.0
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 2,
+        "unknown_age_count": 8,
+        "pct_age_unknown": 80.0,
+        "minor_cases_known_age": 0,
+        "pct_known_age_under_18": 0.0,
+        "average_known_age": 38.5
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 8,
+        "pct_intimate_partner": 80.0,
+        "stranger_unknown_cases": 2,
+        "pct_stranger_unknown": 20.0
+      },
+      "recent_activity": {
+        "cases_2024_2025": 4,
+        "pct_cases_2024_2025": 40.0
+      },
+      "notable_same_day_clusters": [],
+      "insight_flags": [
+        "intimate_partner_cases_dominate",
+        "large_recent_2024_2025_share",
+        "age_data_often_missing"
+      ]
+    },
+    {
+      "location": "West Pokot",
+      "case_count": 10,
+      "pct_of_all_located_cases": 1.0,
+      "rank_by_case_count": 30,
+      "date_range": {
+        "first_case": "2011-03-26",
+        "latest_case": "2024-05-25"
+      },
+      "major_perpetrators": [
+        {
+          "category": "husband",
+          "case_count": 6,
+          "pct_of_location_cases": 60.0
+        },
+        {
+          "category": "boyfriend",
+          "case_count": 3,
+          "pct_of_location_cases": 30.0
+        },
+        {
+          "category": "friend/known to victim",
+          "case_count": 1,
+          "pct_of_location_cases": 10.0
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "adult_25_34",
+        "case_count": 3,
+        "pct_of_known_age_cases": 75.0
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 6,
+          "pct_of_location_cases": 60.0
+        },
+        {
+          "age_group": "adult_25_34",
+          "case_count": 3,
+          "pct_of_location_cases": 30.0
+        },
+        {
+          "age_group": "young_adult_18_24",
+          "case_count": 1,
+          "pct_of_location_cases": 10.0
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 4,
+        "unknown_age_count": 6,
+        "pct_age_unknown": 60.0,
+        "minor_cases_known_age": 0,
+        "pct_known_age_under_18": 0.0,
+        "average_known_age": 26.0
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 9,
+        "pct_intimate_partner": 90.0,
+        "stranger_unknown_cases": 0,
+        "pct_stranger_unknown": 0.0
+      },
+      "recent_activity": {
+        "cases_2024_2025": 2,
+        "pct_cases_2024_2025": 20.0
+      },
+      "notable_same_day_clusters": [],
+      "insight_flags": [
+        "intimate_partner_cases_dominate",
+        "age_data_often_missing"
+      ]
+    },
+    {
+      "location": "Elgeyo-Marakwet",
+      "case_count": 9,
+      "pct_of_all_located_cases": 0.9,
+      "rank_by_case_count": 32,
+      "date_range": {
+        "first_case": "2011-11-21",
+        "latest_case": "2024-03-09"
+      },
+      "major_perpetrators": [
+        {
+          "category": "husband",
+          "case_count": 7,
+          "pct_of_location_cases": 77.8
+        },
+        {
+          "category": "boyfriend",
+          "case_count": 1,
+          "pct_of_location_cases": 11.1
+        },
+        {
+          "category": "stranger/unknown to victim",
+          "case_count": 1,
+          "pct_of_location_cases": 11.1
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "adult_25_34",
+        "case_count": 2,
+        "pct_of_known_age_cases": 50.0
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 5,
+          "pct_of_location_cases": 55.6
+        },
+        {
+          "age_group": "adult_25_34",
+          "case_count": 2,
+          "pct_of_location_cases": 22.2
+        },
+        {
+          "age_group": "middle_age_35_44",
+          "case_count": 1,
+          "pct_of_location_cases": 11.1
+        },
+        {
+          "age_group": "young_adult_18_24",
+          "case_count": 1,
+          "pct_of_location_cases": 11.1
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 4,
+        "unknown_age_count": 5,
+        "pct_age_unknown": 55.6,
+        "minor_cases_known_age": 0,
+        "pct_known_age_under_18": 0.0,
+        "average_known_age": 27.8
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 8,
+        "pct_intimate_partner": 88.9,
+        "stranger_unknown_cases": 1,
+        "pct_stranger_unknown": 11.1
+      },
+      "recent_activity": {
+        "cases_2024_2025": 1,
+        "pct_cases_2024_2025": 11.1
+      },
+      "notable_same_day_clusters": [],
+      "insight_flags": ["age_data_often_missing"]
+    },
+    {
+      "location": "Nyamira",
+      "case_count": 9,
+      "pct_of_all_located_cases": 0.9,
+      "rank_by_case_count": 32,
+      "date_range": {
+        "first_case": "2010-05-15",
+        "latest_case": "2025-09-04"
+      },
+      "major_perpetrators": [
+        {
+          "category": "husband",
+          "case_count": 5,
+          "pct_of_location_cases": 55.6
+        },
+        {
+          "category": "stranger/unknown relationship",
+          "case_count": 3,
+          "pct_of_location_cases": 33.3
+        },
+        {
+          "category": "stranger/unknown to victim",
+          "case_count": 1,
+          "pct_of_location_cases": 11.1
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "middle_age_35_44",
+        "case_count": 2,
+        "pct_of_known_age_cases": 40.0
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 4,
+          "pct_of_location_cases": 44.4
+        },
+        {
+          "age_group": "middle_age_35_44",
+          "case_count": 2,
+          "pct_of_location_cases": 22.2
+        },
+        {
+          "age_group": "young_adult_18_24",
+          "case_count": 1,
+          "pct_of_location_cases": 11.1
+        },
+        {
+          "age_group": "senior_60_plus",
+          "case_count": 1,
+          "pct_of_location_cases": 11.1
+        },
+        {
+          "age_group": "adult_25_34",
+          "case_count": 1,
+          "pct_of_location_cases": 11.1
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 5,
+        "unknown_age_count": 4,
+        "pct_age_unknown": 44.4,
+        "minor_cases_known_age": 0,
+        "pct_known_age_under_18": 0.0,
+        "average_known_age": 35.6
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 5,
+        "pct_intimate_partner": 55.6,
+        "stranger_unknown_cases": 4,
+        "pct_stranger_unknown": 44.4
+      },
+      "recent_activity": {
+        "cases_2024_2025": 3,
+        "pct_cases_2024_2025": 33.3
+      },
+      "notable_same_day_clusters": [],
+      "insight_flags": []
+    },
+    {
+      "location": "Taita Taveta",
+      "case_count": 9,
+      "pct_of_all_located_cases": 0.9,
+      "rank_by_case_count": 32,
+      "date_range": {
+        "first_case": "2014-08-27",
+        "latest_case": "2023-10-02"
+      },
+      "major_perpetrators": [
+        {
+          "category": "husband",
+          "case_count": 4,
+          "pct_of_location_cases": 44.4
+        },
+        {
+          "category": "stranger/unknown relationship",
+          "case_count": 3,
+          "pct_of_location_cases": 33.3
+        },
+        {
+          "category": "boyfriend",
+          "case_count": 1,
+          "pct_of_location_cases": 11.1
+        },
+        {
+          "category": "family member",
+          "case_count": 1,
+          "pct_of_location_cases": 11.1
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "senior_60_plus",
+        "case_count": 2,
+        "pct_of_known_age_cases": 66.7
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 6,
+          "pct_of_location_cases": 66.7
+        },
+        {
+          "age_group": "senior_60_plus",
+          "case_count": 2,
+          "pct_of_location_cases": 22.2
+        },
+        {
+          "age_group": "middle_age_35_44",
+          "case_count": 1,
+          "pct_of_location_cases": 11.1
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 3,
+        "unknown_age_count": 6,
+        "pct_age_unknown": 66.7,
+        "minor_cases_known_age": 0,
+        "pct_known_age_under_18": 0.0,
+        "average_known_age": 59.3
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 5,
+        "pct_intimate_partner": 55.6,
+        "stranger_unknown_cases": 3,
+        "pct_stranger_unknown": 33.3
+      },
+      "recent_activity": {
+        "cases_2024_2025": 0,
+        "pct_cases_2024_2025": 0.0
+      },
+      "notable_same_day_clusters": [],
+      "insight_flags": ["age_data_often_missing"]
+    },
+    {
+      "location": "Vihiga",
+      "case_count": 9,
+      "pct_of_all_located_cases": 0.9,
+      "rank_by_case_count": 32,
+      "date_range": {
+        "first_case": "2018-06-30",
+        "latest_case": "2024-10-15"
+      },
+      "major_perpetrators": [
+        {
+          "category": "stranger/unknown to victim",
+          "case_count": 3,
+          "pct_of_location_cases": 33.3
+        },
+        {
+          "category": "husband",
+          "case_count": 2,
+          "pct_of_location_cases": 22.2
+        },
+        {
+          "category": "boyfriend",
+          "case_count": 2,
+          "pct_of_location_cases": 22.2
+        },
+        {
+          "category": "stranger/unknown relationship",
+          "case_count": 1,
+          "pct_of_location_cases": 11.1
+        },
+        {
+          "category": "friend/known to victim",
+          "case_count": 1,
+          "pct_of_location_cases": 11.1
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "adult_25_34",
+        "case_count": 1,
+        "pct_of_known_age_cases": 100.0
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 8,
+          "pct_of_location_cases": 88.9
+        },
+        {
+          "age_group": "adult_25_34",
+          "case_count": 1,
+          "pct_of_location_cases": 11.1
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 1,
+        "unknown_age_count": 8,
+        "pct_age_unknown": 88.9,
+        "minor_cases_known_age": 0,
+        "pct_known_age_under_18": 0.0,
+        "average_known_age": 29.0
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 4,
+        "pct_intimate_partner": 44.4,
+        "stranger_unknown_cases": 4,
+        "pct_stranger_unknown": 44.4
+      },
+      "recent_activity": {
+        "cases_2024_2025": 3,
+        "pct_cases_2024_2025": 33.3
+      },
+      "notable_same_day_clusters": [],
+      "insight_flags": ["age_data_often_missing"]
+    },
+    {
+      "location": "Kilifi",
+      "case_count": 8,
+      "pct_of_all_located_cases": 0.8,
+      "rank_by_case_count": 36,
+      "date_range": {
+        "first_case": "2013-11-14",
+        "latest_case": "2025-06-06"
+      },
+      "major_perpetrators": [
+        {
+          "category": "boyfriend",
+          "case_count": 2,
+          "pct_of_location_cases": 25.0
+        },
+        {
+          "category": "stranger/unknown to victim",
+          "case_count": 2,
+          "pct_of_location_cases": 25.0
+        },
+        {
+          "category": "husband",
+          "case_count": 2,
+          "pct_of_location_cases": 25.0
+        },
+        {
+          "category": "friend/known to victim",
+          "case_count": 1,
+          "pct_of_location_cases": 12.5
+        },
+        {
+          "category": "ex-husband",
+          "case_count": 1,
+          "pct_of_location_cases": 12.5
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "adult_25_34",
+        "case_count": 2,
+        "pct_of_known_age_cases": 50.0
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 4,
+          "pct_of_location_cases": 50.0
+        },
+        {
+          "age_group": "adult_25_34",
+          "case_count": 2,
+          "pct_of_location_cases": 25.0
+        },
+        {
+          "age_group": "teen_13_17",
+          "case_count": 1,
+          "pct_of_location_cases": 12.5
+        },
+        {
+          "age_group": "young_adult_18_24",
+          "case_count": 1,
+          "pct_of_location_cases": 12.5
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 4,
+        "unknown_age_count": 4,
+        "pct_age_unknown": 50.0,
+        "minor_cases_known_age": 1,
+        "pct_known_age_under_18": 25.0,
+        "average_known_age": 22.0
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 5,
+        "pct_intimate_partner": 62.5,
+        "stranger_unknown_cases": 2,
+        "pct_stranger_unknown": 25.0
+      },
+      "recent_activity": {
+        "cases_2024_2025": 2,
+        "pct_cases_2024_2025": 25.0
+      },
+      "notable_same_day_clusters": [],
+      "insight_flags": ["age_data_often_missing"]
+    },
+    {
+      "location": "Kwale",
+      "case_count": 7,
+      "pct_of_all_located_cases": 0.7,
+      "rank_by_case_count": 37,
+      "date_range": {
+        "first_case": "2011-10-04",
+        "latest_case": "2024-07-14"
+      },
+      "major_perpetrators": [
+        {
+          "category": "husband",
+          "case_count": 3,
+          "pct_of_location_cases": 42.9
+        },
+        {
+          "category": "ex-husband",
+          "case_count": 1,
+          "pct_of_location_cases": 14.3
+        },
+        {
+          "category": "boyfriend",
+          "case_count": 1,
+          "pct_of_location_cases": 14.3
+        },
+        {
+          "category": "friend/known to victim",
+          "case_count": 1,
+          "pct_of_location_cases": 14.3
+        },
+        {
+          "category": "stranger/unknown to victim",
+          "case_count": 1,
+          "pct_of_location_cases": 14.3
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "adult_25_34",
+        "case_count": 1,
+        "pct_of_known_age_cases": 50.0
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 5,
+          "pct_of_location_cases": 71.4
+        },
+        {
+          "age_group": "adult_25_34",
+          "case_count": 1,
+          "pct_of_location_cases": 14.3
+        },
+        {
+          "age_group": "young_adult_18_24",
+          "case_count": 1,
+          "pct_of_location_cases": 14.3
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 2,
+        "unknown_age_count": 5,
+        "pct_age_unknown": 71.4,
+        "minor_cases_known_age": 0,
+        "pct_known_age_under_18": 0.0,
+        "average_known_age": 26.0
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 5,
+        "pct_intimate_partner": 71.4,
+        "stranger_unknown_cases": 1,
+        "pct_stranger_unknown": 14.3
+      },
+      "recent_activity": {
+        "cases_2024_2025": 1,
+        "pct_cases_2024_2025": 14.3
+      },
+      "notable_same_day_clusters": [],
+      "insight_flags": ["age_data_often_missing"]
+    },
+    {
+      "location": "Tharaka-Nithi",
+      "case_count": 6,
+      "pct_of_all_located_cases": 0.6,
+      "rank_by_case_count": 38,
+      "date_range": {
+        "first_case": "2016-10-07",
+        "latest_case": "2025-09-12"
+      },
+      "major_perpetrators": [
+        {
+          "category": "stranger/unknown relationship",
+          "case_count": 4,
+          "pct_of_location_cases": 66.7
+        },
+        {
+          "category": "husband",
+          "case_count": 1,
+          "pct_of_location_cases": 16.7
+        },
+        {
+          "category": "stranger/unknown to victim",
+          "case_count": 1,
+          "pct_of_location_cases": 16.7
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "older_adult_45_59",
+        "case_count": 2,
+        "pct_of_known_age_cases": 40.0
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "young_adult_18_24",
+          "case_count": 2,
+          "pct_of_location_cases": 33.3
+        },
+        {
+          "age_group": "older_adult_45_59",
+          "case_count": 2,
+          "pct_of_location_cases": 33.3
+        },
+        {
+          "age_group": "middle_age_35_44",
+          "case_count": 1,
+          "pct_of_location_cases": 16.7
+        },
+        {
+          "age_group": "unknown_age",
+          "case_count": 1,
+          "pct_of_location_cases": 16.7
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 5,
+        "unknown_age_count": 1,
+        "pct_age_unknown": 16.7,
+        "minor_cases_known_age": 0,
+        "pct_known_age_under_18": 0.0,
+        "average_known_age": 34.0
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 1,
+        "pct_intimate_partner": 16.7,
+        "stranger_unknown_cases": 5,
+        "pct_stranger_unknown": 83.3
+      },
+      "recent_activity": {
+        "cases_2024_2025": 2,
+        "pct_cases_2024_2025": 33.3
+      },
+      "notable_same_day_clusters": [
+        {
+          "date": "2017-03-12",
+          "case_count": 2,
+          "victims": ["Jane Wanjiru", "Jane Wanjiru Murenga"],
+          "relationship_types": ["stranger/unknown relationship"]
+        }
+      ],
+      "insight_flags": ["has_same_day_location_cluster"]
+    },
+    {
+      "location": "Tana River",
+      "case_count": 5,
+      "pct_of_all_located_cases": 0.5,
+      "rank_by_case_count": 39,
+      "date_range": {
+        "first_case": "2012-07-16",
+        "latest_case": "2020-08-10"
+      },
+      "major_perpetrators": [
+        {
+          "category": "husband",
+          "case_count": 3,
+          "pct_of_location_cases": 60.0
+        },
+        {
+          "category": "stranger/unknown relationship",
+          "case_count": 1,
+          "pct_of_location_cases": 20.0
+        },
+        {
+          "category": "friend/known to victim",
+          "case_count": 1,
+          "pct_of_location_cases": 20.0
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "older_adult_45_59",
+        "case_count": 1,
+        "pct_of_known_age_cases": 100.0
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 4,
+          "pct_of_location_cases": 80.0
+        },
+        {
+          "age_group": "older_adult_45_59",
+          "case_count": 1,
+          "pct_of_location_cases": 20.0
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 1,
+        "unknown_age_count": 4,
+        "pct_age_unknown": 80.0,
+        "minor_cases_known_age": 0,
+        "pct_known_age_under_18": 0.0,
+        "average_known_age": 58.0
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 3,
+        "pct_intimate_partner": 60.0,
+        "stranger_unknown_cases": 1,
+        "pct_stranger_unknown": 20.0
+      },
+      "recent_activity": {
+        "cases_2024_2025": 0,
+        "pct_cases_2024_2025": 0.0
+      },
+      "notable_same_day_clusters": [],
+      "insight_flags": ["age_data_often_missing"]
+    },
+    {
+      "location": "Lamu",
+      "case_count": 4,
+      "pct_of_all_located_cases": 0.4,
+      "rank_by_case_count": 40,
+      "date_range": {
+        "first_case": "2018-10-10",
+        "latest_case": "2025-06-16"
+      },
+      "major_perpetrators": [
+        {
+          "category": "boyfriend",
+          "case_count": 2,
+          "pct_of_location_cases": 50.0
+        },
+        {
+          "category": "ex-husband",
+          "case_count": 1,
+          "pct_of_location_cases": 25.0
+        },
+        {
+          "category": "husband",
+          "case_count": 1,
+          "pct_of_location_cases": 25.0
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "adult_25_34",
+        "case_count": 3,
+        "pct_of_known_age_cases": 100.0
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "adult_25_34",
+          "case_count": 3,
+          "pct_of_location_cases": 75.0
+        },
+        {
+          "age_group": "unknown_age",
+          "case_count": 1,
+          "pct_of_location_cases": 25.0
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 3,
+        "unknown_age_count": 1,
+        "pct_age_unknown": 25.0,
+        "minor_cases_known_age": 0,
+        "pct_known_age_under_18": 0.0,
+        "average_known_age": 33.3
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 4,
+        "pct_intimate_partner": 100.0,
+        "stranger_unknown_cases": 0,
+        "pct_stranger_unknown": 0.0
+      },
+      "recent_activity": {
+        "cases_2024_2025": 2,
+        "pct_cases_2024_2025": 50.0
+      },
+      "notable_same_day_clusters": [],
+      "insight_flags": []
+    },
+    {
+      "location": "Marsabit",
+      "case_count": 4,
+      "pct_of_all_located_cases": 0.4,
+      "rank_by_case_count": 40,
+      "date_range": {
+        "first_case": "2015-11-06",
+        "latest_case": "2023-10-16"
+      },
+      "major_perpetrators": [
+        {
+          "category": "friend/known to victim",
+          "case_count": 2,
+          "pct_of_location_cases": 50.0
+        },
+        {
+          "category": "family member",
+          "case_count": 1,
+          "pct_of_location_cases": 25.0
+        },
+        {
+          "category": "stranger/unknown to victim",
+          "case_count": 1,
+          "pct_of_location_cases": 25.0
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "senior_60_plus",
+        "case_count": 1,
+        "pct_of_known_age_cases": 100.0
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 3,
+          "pct_of_location_cases": 75.0
+        },
+        {
+          "age_group": "senior_60_plus",
+          "case_count": 1,
+          "pct_of_location_cases": 25.0
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 1,
+        "unknown_age_count": 3,
+        "pct_age_unknown": 75.0,
+        "minor_cases_known_age": 0,
+        "pct_known_age_under_18": 0.0,
+        "average_known_age": 70.0
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 0,
+        "pct_intimate_partner": 0.0,
+        "stranger_unknown_cases": 1,
+        "pct_stranger_unknown": 25.0
+      },
+      "recent_activity": {
+        "cases_2024_2025": 0,
+        "pct_cases_2024_2025": 0.0
+      },
+      "notable_same_day_clusters": [],
+      "insight_flags": ["age_data_often_missing"]
+    },
+    {
+      "location": "Turkana",
+      "case_count": 4,
+      "pct_of_all_located_cases": 0.4,
+      "rank_by_case_count": 40,
+      "date_range": {
+        "first_case": "2019-03-26",
+        "latest_case": "2023-05-13"
+      },
+      "major_perpetrators": [
+        {
+          "category": "husband",
+          "case_count": 3,
+          "pct_of_location_cases": 75.0
+        },
+        {
+          "category": "boyfriend",
+          "case_count": 1,
+          "pct_of_location_cases": 25.0
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "young_adult_18_24",
+        "case_count": 1,
+        "pct_of_known_age_cases": 100.0
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 3,
+          "pct_of_location_cases": 75.0
+        },
+        {
+          "age_group": "young_adult_18_24",
+          "case_count": 1,
+          "pct_of_location_cases": 25.0
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 1,
+        "unknown_age_count": 3,
+        "pct_age_unknown": 75.0,
+        "minor_cases_known_age": 0,
+        "pct_known_age_under_18": 0.0,
+        "average_known_age": 18.0
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 4,
+        "pct_intimate_partner": 100.0,
+        "stranger_unknown_cases": 0,
+        "pct_stranger_unknown": 0.0
+      },
+      "recent_activity": {
+        "cases_2024_2025": 0,
+        "pct_cases_2024_2025": 0.0
+      },
+      "notable_same_day_clusters": [],
+      "insight_flags": ["age_data_often_missing"]
+    },
+    {
+      "location": "Garissa",
+      "case_count": 3,
+      "pct_of_all_located_cases": 0.3,
+      "rank_by_case_count": 43,
+      "date_range": {
+        "first_case": "2021-10-10",
+        "latest_case": "2025-11-16"
+      },
+      "major_perpetrators": [
+        {
+          "category": "stranger/unknown relationship",
+          "case_count": 1,
+          "pct_of_location_cases": 33.3
+        },
+        {
+          "category": "husband",
+          "case_count": 1,
+          "pct_of_location_cases": 33.3
+        },
+        {
+          "category": "stranger/unknown to victim",
+          "case_count": 1,
+          "pct_of_location_cases": 33.3
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "teen_13_17",
+        "case_count": 1,
+        "pct_of_known_age_cases": 50.0
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "teen_13_17",
+          "case_count": 1,
+          "pct_of_location_cases": 33.3
+        },
+        {
+          "age_group": "young_adult_18_24",
+          "case_count": 1,
+          "pct_of_location_cases": 33.3
+        },
+        {
+          "age_group": "unknown_age",
+          "case_count": 1,
+          "pct_of_location_cases": 33.3
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 2,
+        "unknown_age_count": 1,
+        "pct_age_unknown": 33.3,
+        "minor_cases_known_age": 1,
+        "pct_known_age_under_18": 50.0,
+        "average_known_age": 19.5
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 1,
+        "pct_intimate_partner": 33.3,
+        "stranger_unknown_cases": 2,
+        "pct_stranger_unknown": 66.7
+      },
+      "recent_activity": {
+        "cases_2024_2025": 1,
+        "pct_cases_2024_2025": 33.3
+      },
+      "notable_same_day_clusters": [],
+      "insight_flags": []
+    },
+    {
+      "location": "Isiolo",
+      "case_count": 3,
+      "pct_of_all_located_cases": 0.3,
+      "rank_by_case_count": 43,
+      "date_range": {
+        "first_case": "2017-07-02",
+        "latest_case": "2021-03-21"
+      },
+      "major_perpetrators": [
+        {
+          "category": "ex-husband",
+          "case_count": 1,
+          "pct_of_location_cases": 33.3
+        },
+        {
+          "category": "husband",
+          "case_count": 1,
+          "pct_of_location_cases": 33.3
+        },
+        {
+          "category": "stranger/unknown relationship",
+          "case_count": 1,
+          "pct_of_location_cases": 33.3
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "adult_25_34",
+        "case_count": 1,
+        "pct_of_known_age_cases": 50.0
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "adult_25_34",
+          "case_count": 1,
+          "pct_of_location_cases": 33.3
+        },
+        {
+          "age_group": "unknown_age",
+          "case_count": 1,
+          "pct_of_location_cases": 33.3
+        },
+        {
+          "age_group": "young_adult_18_24",
+          "case_count": 1,
+          "pct_of_location_cases": 33.3
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 2,
+        "unknown_age_count": 1,
+        "pct_age_unknown": 33.3,
+        "minor_cases_known_age": 0,
+        "pct_known_age_under_18": 0.0,
+        "average_known_age": 23.5
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 2,
+        "pct_intimate_partner": 66.7,
+        "stranger_unknown_cases": 1,
+        "pct_stranger_unknown": 33.3
+      },
+      "recent_activity": {
+        "cases_2024_2025": 0,
+        "pct_cases_2024_2025": 0.0
+      },
+      "notable_same_day_clusters": [],
+      "insight_flags": []
+    },
+    {
+      "location": "Wajir",
+      "case_count": 3,
+      "pct_of_all_located_cases": 0.3,
+      "rank_by_case_count": 43,
+      "date_range": {
+        "first_case": "2023-09-11",
+        "latest_case": "2025-02-25"
+      },
+      "major_perpetrators": [
+        {
+          "category": "stranger/unknown relationship",
+          "case_count": 2,
+          "pct_of_location_cases": 66.7
+        },
+        {
+          "category": "husband",
+          "case_count": 1,
+          "pct_of_location_cases": 33.3
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "senior_60_plus",
+        "case_count": 1,
+        "pct_of_known_age_cases": 50.0
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "teen_13_17",
+          "case_count": 1,
+          "pct_of_location_cases": 33.3
+        },
+        {
+          "age_group": "senior_60_plus",
+          "case_count": 1,
+          "pct_of_location_cases": 33.3
+        },
+        {
+          "age_group": "unknown_age",
+          "case_count": 1,
+          "pct_of_location_cases": 33.3
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 2,
+        "unknown_age_count": 1,
+        "pct_age_unknown": 33.3,
+        "minor_cases_known_age": 1,
+        "pct_known_age_under_18": 50.0,
+        "average_known_age": 39.0
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 1,
+        "pct_intimate_partner": 33.3,
+        "stranger_unknown_cases": 2,
+        "pct_stranger_unknown": 66.7
+      },
+      "recent_activity": {
+        "cases_2024_2025": 2,
+        "pct_cases_2024_2025": 66.7
+      },
+      "notable_same_day_clusters": [],
+      "insight_flags": []
+    },
+    {
+      "location": "Mandera",
+      "case_count": 2,
+      "pct_of_all_located_cases": 0.2,
+      "rank_by_case_count": 46,
+      "date_range": {
+        "first_case": "2018-07-07",
+        "latest_case": "2019-07-01"
+      },
+      "major_perpetrators": [
+        {
+          "category": "husband",
+          "case_count": 2,
+          "pct_of_location_cases": 100.0
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "adult_25_34",
+        "case_count": 1,
+        "pct_of_known_age_cases": 100.0
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "adult_25_34",
+          "case_count": 1,
+          "pct_of_location_cases": 50.0
+        },
+        {
+          "age_group": "unknown_age",
+          "case_count": 1,
+          "pct_of_location_cases": 50.0
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 1,
+        "unknown_age_count": 1,
+        "pct_age_unknown": 50.0,
+        "minor_cases_known_age": 0,
+        "pct_known_age_under_18": 0.0,
+        "average_known_age": 28.0
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 2,
+        "pct_intimate_partner": 100.0,
+        "stranger_unknown_cases": 0,
+        "pct_stranger_unknown": 0.0
+      },
+      "recent_activity": {
+        "cases_2024_2025": 0,
+        "pct_cases_2024_2025": 0.0
+      },
+      "notable_same_day_clusters": [],
+      "insight_flags": ["age_data_often_missing"]
+    },
+    {
+      "location": "kakamega",
+      "case_count": 2,
+      "pct_of_all_located_cases": 0.2,
+      "rank_by_case_count": 46,
+      "date_range": {
+        "first_case": "2018-03-13",
+        "latest_case": "2022-04-25"
+      },
+      "major_perpetrators": [
+        {
+          "category": "husband",
+          "case_count": 1,
+          "pct_of_location_cases": 50.0
+        },
+        {
+          "category": "stranger/unknown relationship",
+          "case_count": 1,
+          "pct_of_location_cases": 50.0
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "child_0_12",
+        "case_count": 1,
+        "pct_of_known_age_cases": 50.0
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "young_adult_18_24",
+          "case_count": 1,
+          "pct_of_location_cases": 50.0
+        },
+        {
+          "age_group": "child_0_12",
+          "case_count": 1,
+          "pct_of_location_cases": 50.0
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 2,
+        "unknown_age_count": 0,
+        "pct_age_unknown": 0.0,
+        "minor_cases_known_age": 1,
+        "pct_known_age_under_18": 50.0,
+        "average_known_age": 16.0
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 1,
+        "pct_intimate_partner": 50.0,
+        "stranger_unknown_cases": 1,
+        "pct_stranger_unknown": 50.0
+      },
+      "recent_activity": {
+        "cases_2024_2025": 0,
+        "pct_cases_2024_2025": 0.0
+      },
+      "notable_same_day_clusters": [],
+      "insight_flags": []
+    },
+    {
+      "location": "Lodwar",
+      "case_count": 1,
+      "pct_of_all_located_cases": 0.1,
+      "rank_by_case_count": 48,
+      "date_range": {
+        "first_case": "2023-02-17",
+        "latest_case": "2023-02-17"
+      },
+      "major_perpetrators": [
+        {
+          "category": "stranger/unknown to victim",
+          "case_count": 1,
+          "pct_of_location_cases": 100.0
+        }
+      ],
+      "most_affected_age_group": null,
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 1,
+          "pct_of_location_cases": 100.0
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 0,
+        "unknown_age_count": 1,
+        "pct_age_unknown": 100.0,
+        "minor_cases_known_age": 0,
+        "pct_known_age_under_18": null,
+        "average_known_age": null
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 0,
+        "pct_intimate_partner": 0.0,
+        "stranger_unknown_cases": 1,
+        "pct_stranger_unknown": 100.0
+      },
+      "recent_activity": {
+        "cases_2024_2025": 0,
+        "pct_cases_2024_2025": 0.0
+      },
+      "notable_same_day_clusters": [],
+      "insight_flags": ["age_data_often_missing"]
+    },
+    {
+      "location": "Samburu",
+      "case_count": 1,
+      "pct_of_all_located_cases": 0.1,
+      "rank_by_case_count": 48,
+      "date_range": {
+        "first_case": "2022-12-31",
+        "latest_case": "2022-12-31"
+      },
+      "major_perpetrators": [
+        {
+          "category": "husband",
+          "case_count": 1,
+          "pct_of_location_cases": 100.0
+        }
+      ],
+      "most_affected_age_group": null,
+      "age_group_breakdown": [
+        {
+          "age_group": "unknown_age",
+          "case_count": 1,
+          "pct_of_location_cases": 100.0
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 0,
+        "unknown_age_count": 1,
+        "pct_age_unknown": 100.0,
+        "minor_cases_known_age": 0,
+        "pct_known_age_under_18": null,
+        "average_known_age": null
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 1,
+        "pct_intimate_partner": 100.0,
+        "stranger_unknown_cases": 0,
+        "pct_stranger_unknown": 0.0
+      },
+      "recent_activity": {
+        "cases_2024_2025": 0,
+        "pct_cases_2024_2025": 0.0
+      },
+      "notable_same_day_clusters": [],
+      "insight_flags": ["age_data_often_missing"]
+    },
+    {
+      "location": "kajiado",
+      "case_count": 1,
+      "pct_of_all_located_cases": 0.1,
+      "rank_by_case_count": 48,
+      "date_range": {
+        "first_case": "2021-02-15",
+        "latest_case": "2021-02-15"
+      },
+      "major_perpetrators": [
+        {
+          "category": "stranger/unknown relationship",
+          "case_count": 1,
+          "pct_of_location_cases": 100.0
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "middle_age_35_44",
+        "case_count": 1,
+        "pct_of_known_age_cases": 100.0
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "middle_age_35_44",
+          "case_count": 1,
+          "pct_of_location_cases": 100.0
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 1,
+        "unknown_age_count": 0,
+        "pct_age_unknown": 0.0,
+        "minor_cases_known_age": 0,
+        "pct_known_age_under_18": 0.0,
+        "average_known_age": 38.0
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 0,
+        "pct_intimate_partner": 0.0,
+        "stranger_unknown_cases": 1,
+        "pct_stranger_unknown": 100.0
+      },
+      "recent_activity": {
+        "cases_2024_2025": 0,
+        "pct_cases_2024_2025": 0.0
+      },
+      "notable_same_day_clusters": [],
+      "insight_flags": []
+    },
+    {
+      "location": "kericho",
+      "case_count": 1,
+      "pct_of_all_located_cases": 0.1,
+      "rank_by_case_count": 48,
+      "date_range": {
+        "first_case": "2019-02-20",
+        "latest_case": "2019-02-20"
+      },
+      "major_perpetrators": [
+        {
+          "category": "stranger/unknown relationship",
+          "case_count": 1,
+          "pct_of_location_cases": 100.0
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "senior_60_plus",
+        "case_count": 1,
+        "pct_of_known_age_cases": 100.0
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "senior_60_plus",
+          "case_count": 1,
+          "pct_of_location_cases": 100.0
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 1,
+        "unknown_age_count": 0,
+        "pct_age_unknown": 0.0,
+        "minor_cases_known_age": 0,
+        "pct_known_age_under_18": 0.0,
+        "average_known_age": 73.0
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 0,
+        "pct_intimate_partner": 0.0,
+        "stranger_unknown_cases": 1,
+        "pct_stranger_unknown": 100.0
+      },
+      "recent_activity": {
+        "cases_2024_2025": 0,
+        "pct_cases_2024_2025": 0.0
+      },
+      "notable_same_day_clusters": [],
+      "insight_flags": []
+    },
+    {
+      "location": "kiambu",
+      "case_count": 1,
+      "pct_of_all_located_cases": 0.1,
+      "rank_by_case_count": 48,
+      "date_range": {
+        "first_case": "2018-02-03",
+        "latest_case": "2018-02-03"
+      },
+      "major_perpetrators": [
+        {
+          "category": "stranger/unknown relationship",
+          "case_count": 1,
+          "pct_of_location_cases": 100.0
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "senior_60_plus",
+        "case_count": 1,
+        "pct_of_known_age_cases": 100.0
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "senior_60_plus",
+          "case_count": 1,
+          "pct_of_location_cases": 100.0
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 1,
+        "unknown_age_count": 0,
+        "pct_age_unknown": 0.0,
+        "minor_cases_known_age": 0,
+        "pct_known_age_under_18": 0.0,
+        "average_known_age": 65.0
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 0,
+        "pct_intimate_partner": 0.0,
+        "stranger_unknown_cases": 1,
+        "pct_stranger_unknown": 100.0
+      },
+      "recent_activity": {
+        "cases_2024_2025": 0,
+        "pct_cases_2024_2025": 0.0
+      },
+      "notable_same_day_clusters": [],
+      "insight_flags": []
+    },
+    {
+      "location": "kisii",
+      "case_count": 1,
+      "pct_of_all_located_cases": 0.1,
+      "rank_by_case_count": 48,
+      "date_range": {
+        "first_case": "2017-05-25",
+        "latest_case": "2017-05-25"
+      },
+      "major_perpetrators": [
+        {
+          "category": "boyfriend",
+          "case_count": 1,
+          "pct_of_location_cases": 100.0
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "young_adult_18_24",
+        "case_count": 1,
+        "pct_of_known_age_cases": 100.0
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "young_adult_18_24",
+          "case_count": 1,
+          "pct_of_location_cases": 100.0
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 1,
+        "unknown_age_count": 0,
+        "pct_age_unknown": 0.0,
+        "minor_cases_known_age": 0,
+        "pct_known_age_under_18": 0.0,
+        "average_known_age": 22.0
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 1,
+        "pct_intimate_partner": 100.0,
+        "stranger_unknown_cases": 0,
+        "pct_stranger_unknown": 0.0
+      },
+      "recent_activity": {
+        "cases_2024_2025": 0,
+        "pct_cases_2024_2025": 0.0
+      },
+      "notable_same_day_clusters": [],
+      "insight_flags": []
+    },
+    {
+      "location": "kisumu",
+      "case_count": 1,
+      "pct_of_all_located_cases": 0.1,
+      "rank_by_case_count": 48,
+      "date_range": {
+        "first_case": "2024-01-22",
+        "latest_case": "2024-01-22"
+      },
+      "major_perpetrators": [
+        {
+          "category": "boyfriend",
+          "case_count": 1,
+          "pct_of_location_cases": 100.0
+        }
+      ],
+      "most_affected_age_group": {
+        "age_group": "middle_age_35_44",
+        "case_count": 1,
+        "pct_of_known_age_cases": 100.0
+      },
+      "age_group_breakdown": [
+        {
+          "age_group": "middle_age_35_44",
+          "case_count": 1,
+          "pct_of_location_cases": 100.0
+        }
+      ],
+      "age_data_quality": {
+        "known_age_count": 1,
+        "unknown_age_count": 0,
+        "pct_age_unknown": 0.0,
+        "minor_cases_known_age": 0,
+        "pct_known_age_under_18": 0.0,
+        "average_known_age": 35.0
+      },
+      "relationship_summary": {
+        "intimate_partner_cases": 1,
+        "pct_intimate_partner": 100.0,
+        "stranger_unknown_cases": 0,
+        "pct_stranger_unknown": 0.0
+      },
+      "recent_activity": {
+        "cases_2024_2025": 1,
+        "pct_cases_2024_2025": 100.0
+      },
+      "notable_same_day_clusters": [],
+      "insight_flags": []
+    }
+  ]
+}

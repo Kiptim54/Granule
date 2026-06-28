@@ -3,11 +3,15 @@
   function closeMenu() {
     menuOpen = false;
   }
+
+  let { isFixed = true } = $props();
 </script>
 
 <div>
   <!-- ───────────── NAV ───────────── -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-paper border-b-2 border-ink">
+  <nav
+    class={`${isFixed ? "fixed" : ""} top-0 left-0 right-0 z-50 bg-paper border-b-2 border-ink`}
+  >
     <div class="flex items-center justify-between px-6 md:px-12 py-4">
       <a
         href="#home"
