@@ -14,7 +14,7 @@
   >
     <div class="flex items-center justify-between px-6 md:px-12 py-4">
       <a
-        href="#home"
+        href="/"
         class="font-display font-bold text-base tracking-widest uppercase text-ink no-underline"
       >
         The <span class="italic text-rust">Granule</span>
@@ -22,7 +22,7 @@
 
       <!-- desktop links -->
       <ul class="hidden md:flex gap-10 list-none m-0 p-0">
-        {#each [["#about", "About"], ["#team", "Team"], ["#stories", "Stories"], ["#contact", "Contact"]] as [href, label]}
+        {#each [["/#about", "About"], ["/#team", "Team"], ["/#stories", "Stories"], ["/#contact", "Contact"]] as [href, label]}
           <li>
             <a
               {href}

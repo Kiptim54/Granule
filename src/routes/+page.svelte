@@ -8,27 +8,32 @@
 
   const stories = [
     {
+      id: 2,
+      category: "Economy",
+      title:
+        "Tanzania’s VAT Refund Revolution: A Quiet Reform with Big Implications",
+      excerpt: `When governments unveil annual budgets, headlines focus on the big numbers: spending, growth and tax collection. But sometimes the real story sits quietly in the technical annexes.
+
+`,
+      date: "June 2026",
+      tag: ["Journalism", "Scrollytelling"],
+      bg: "#1A3A2A",
+      link: "/tanzania-vat-reform",
+      image: "/tanzania-header.webp",
+    },
+    {
       id: 1,
       category: "Femicide",
       title: "The Names We Don't Say: Mapping Kenya's Femicide Crisis",
       excerpt:
         "A data investigation into the epidemic of gender-based violence across Kenya's counties — told through the women lost.",
       date: "March 2026",
-      tag: "Data Analysis",
+      tag: ["Data Analysis"],
       bg: "#C1440E",
       link: "/femicide",
       image: "/Femicide.png",
     },
-    // {
-    //   id: 2,
-    //   category: "Health",
-    //   title: "Born Into Risk: Maternal Mortality and the Counties Left Behind",
-    //   excerpt:
-    //     "Behind the national statistics lies a geography of neglect. We mapped where Kenyan mothers are most likely to die giving life.",
-    //   date: "January 2025",
-    //   tag: "Scrollytelling",
-    //   bg: "#1A3A2A",
-    // },
+
     // {
     //   id: 3,
     //   category: "Politics",
@@ -263,95 +268,99 @@
     </div>
 
     <div class="fade-up" class:visible={sectionsVisible["stories"]}>
-      <div class="border border-ink overflow-hidden">
+      <div
+        class=" overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8"
+      >
         {#each stories as story, i}
-          {#if i === currentSlide}
-            <!-- stacks on mobile, side-by-side on md+ -->
-            <div class="grid grid-cols-1 md:grid-cols-[1fr_1.4fr]">
+          <div
+            class="flex flex-col overflow-hidden border border-ink bg-paper shadow-[6px_6px_0_0_rgba(28,28,28,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_0_0_rgba(28,28,28,0.14)]"
+          >
+            <div
+              class="relative flex items-end justify-start overflow-hidden border-b border-ink"
+              style="background:{story.bg}; min-height:280px;"
+            >
+              {#if story.image}
+                <img
+                  src={story.image}
+                  alt={story.title}
+                  class="absolute inset-0 w-full h-full object-cover object-center opacity-35"
+                />
+              {/if}
               <div
-                class="p-6 md:p-10 md:border-r border-b md:border-b-0 border-ink flex flex-col justify-between gap-6"
-                style="min-height:280px;"
-              >
-                <span class="font-mono text-sm tracking-widest text-ink/40">
-                  Story {String(i + 1).padStart(2, "0")} / {String(
-                    stories.length,
-                  ).padStart(2, "0")}
-                </span>
-                <div>
-                  <div
-                    class="flex items-center gap-2 font-mono text-sm tracking-[0.18em] uppercase text-rust mb-2"
-                  >
-                    <span class="w-2 h-2 rounded-full bg-rust inline-block"
-                    ></span>{story.category}
-                  </div>
-                  <h3
-                    class="font-display font-bold leading-snug mb-3"
-                    style="font-size:clamp(1.2rem,3vw,1.9rem);"
-                  >
-                    {story.title}
-                  </h3>
-                  <p
-                    class="font-serif italic text-base leading-[1.75] text-[#3A3A3A]"
-                  >
-                    {story.excerpt}
-                  </p>
-                  <span
-                    class="inline-block font-mono text-sm tracking-widest uppercase px-3 py-1 border border-ink text-ink mt-4"
-                    >{story.tag}</span
-                  >
+                class="absolute inset-0"
+                style="background:linear-gradient(135deg,transparent,rgba(0,0,0,.45));"
+              ></div>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent"
+              ></div>
+              {#if !story.image}
+                <div
+                  class="absolute inset-0 opacity-[0.06]"
+                  style="display:grid; grid-template-columns:repeat(8,1fr); grid-template-rows:repeat(6,1fr);"
+                >
+                  {#each Array(48) as _}
+                    <span class="border-r border-b border-current"></span>
+                  {/each}
                 </div>
+              {/if}
+              <div class="relative z-10 p-5 md:p-6 flex flex-col gap-2">
+                <!-- <span
+                  class="inline-flex w-fit items-center gap-2 rounded-full border border-paper/40 bg-paper/10 px-3 py-1 font-mono text-[0.68rem] tracking-[0.24em] uppercase text-paper"
+                >
+                  {story.category}
+                </span> -->
+              </div>
+              <span
+                class="absolute font-display font-bold italic text-paper/15 leading-none"
+                style="font-size:clamp(4rem,12vw,8rem); bottom:-0.5rem; right:1rem;"
+                >{story.category[0]}</span
+              >
+            </div>
+            <div
+              class="p-6 md:p-8 flex flex-col justify-between gap-5 h-full"
+              style="min-height:280px;"
+            >
+              <div class="flex-1">
+                <div
+                  class="flex items-center gap-2 font-mono text-[0.72rem] tracking-[0.22em] uppercase text-rust mb-2"
+                >
+                  <span class="h-2 w-2 rounded-full bg-rust inline-block"
+                  ></span>
+                  {story.category}
+                </div>
+                <h3
+                  class="font-display font-bold leading-snug mb-3"
+                  style="font-size:clamp(1.2rem,3vw,1.75rem);"
+                >
+                  {story.title}
+                </h3>
+                <p
+                  class="font-serif italic text-base leading-[1.75] text-[#3A3A3A]"
+                >
+                  {story.excerpt}
+                </p>
+              </div>
+              <div
+                class="mt-auto flex flex-wrap items-center justify-between gap-3 pt-2"
+              >
                 <span class="font-mono text-sm tracking-wide text-ink/50"
                   >{story.date}</span
-                >
-              </div>
-              <!-- colour panel — shorter on mobile -->
-              <div
-                class="relative flex items-center justify-center overflow-hidden"
-                style="background:{story.bg}; min-height:180px;"
-              >
-                {#if story.image}
-                  <img
-                    src={story.image}
-                    alt={story.title}
-                    class="absolute inset-0 w-full h-full object-cover opacity-20"
-                  />
-                {/if}
-                <div
-                  class="absolute inset-0"
-                  style="background:linear-gradient(135deg,transparent,rgba(0,0,0,.45));"
-                ></div>
-                {#if !story.image}
-                  <div
-                    class="absolute inset-0 opacity-[0.06]"
-                    style="display:grid; grid-template-columns:repeat(8,1fr); grid-template-rows:repeat(6,1fr);"
-                  >
-                    {#each Array(48) as _}
-                      <span class="border-r border-b border-current"></span>
-                    {/each}
-                  </div>
-                {/if}
-                <span
-                  class="absolute font-display font-bold italic text-paper/15 leading-none"
-                  style="font-size:clamp(4rem,12vw,8rem); bottom:-0.5rem; right:1rem;"
-                  >{story.category[0]}</span
                 >
                 {#if story.link}
                   <a
                     href={story.link}
-                    // target="_blank"
-                    // rel="noopener noreferrer"
-                    class="relative z-10 font-mono text-sm tracking-[0.14em] uppercase px-5 py-3 border border-paper text-paper no-underline hover:bg-paper hover:text-ink transition-colors duration-200"
+                    class="font-mono text-[0.72rem] tracking-[0.2em] uppercase text-ink no-underline border-b border-ink transition-colors duration-200 hover:text-rust"
                   >
                     Read Story →
                   </a>
                 {/if}
               </div>
             </div>
-          {/if}
+          </div>
         {/each}
       </div>
 
-      <div class="flex items-center gap-4 mt-5">
+      <!-- <div class="flex items-center gap-4 mt-5">
         <button
           onclick={prevSlide}
           class="w-10 h-10 border border-ink flex items-center justify-center bg-transparent hover:bg-ink hover:text-paper transition-colors duration-200 cursor-pointer text-base shrink-0"
@@ -379,7 +388,7 @@
             </button>
           {/each}
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </section>
@@ -672,7 +681,7 @@
       >© 2026 The Granule Africa. All rights reserved.</span
     >
     <span class="font-serif italic text-base text-paper/30"
-      >Rooted in Africa. Rigorous in data. Human in story.</span
+      >Rooted in Africa.</span
     >
   </div>
 </footer>

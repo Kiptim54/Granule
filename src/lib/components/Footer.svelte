@@ -63,7 +63,7 @@
       >© 2026 The Granule Africa. All rights reserved.</span
     >
     <span class="font-serif italic text-base text-paper/30"
-      >Rooted in Africa. Rigorous in data. Human in story.</span
+      >Rooted in Africa.</span
     >
   </div>
 </footer>

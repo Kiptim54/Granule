@@ -457,7 +457,7 @@ steps:
     bearing: 0.0
     mobile:
       center: [19.67, -0.52]
-      zoom: 2.0
+      zoom: 6.0
     highlight:
       - KEN
     labels: []
