@@ -123,6 +123,7 @@ That is the kind of reform that does not always make headlines but often changes
         <strong>VAT refunds</strong>. This mundane issue has been one of the
         biggest friction points in Tanzania's investment story for years.
       </p>
+      <Scrolly config={{ steps }} />
 
       <p>
         For exporters, manufacturers and institutional investors, delayed VAT
@@ -189,7 +190,6 @@ That is the kind of reform that does not always make headlines but often changes
         confidently, and investors can model returns with greater accuracy. In
         short, capital becomes easier and cheaper to deploy.
       </p>
-      <Scrolly config={{ steps }} />
 
       <h2>Beyond VAT Administration</h2>
 

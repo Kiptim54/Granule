@@ -105,7 +105,7 @@
   }
 
   .spacer-end {
-    min-height: 40vh;
+    min-height: 150vh;
   }
 
   .step {
