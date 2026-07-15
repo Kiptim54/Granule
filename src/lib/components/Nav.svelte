@@ -1,5 +1,5 @@
 <script lang="ts">
-  let menuOpen = false;
+  let menuOpen = $state(false);
   function closeMenu() {
     menuOpen = false;
   }
@@ -10,7 +10,7 @@
 <div>
   <!-- ───────────── NAV ───────────── -->
   <nav
-    class={`${isFixed ? "fixed" : ""} top-0 left-0 right-0 z-50 bg-paper border-b-2 border-ink`}
+    class={`${isFixed ? "fixed" : ""} relative top-0 left-0 right-0 z-50 bg-paper border-b-2 border-ink`}
   >
     <div class="flex items-center justify-between px-6 md:px-12 py-4">
       <a
@@ -63,7 +63,7 @@
       class:open={menuOpen}
     >
       <ul class="list-none m-0 p-0 flex flex-col">
-        {#each [["#about", "About"], ["#team", "Team"], ["#stories", "Stories"], ["#contact", "Contact"]] as [href, label]}
+        {#each [["/#about", "About"], ["/#team", "Team"], ["/#stories", "Stories"], ["/#contact", "Contact"]] as [href, label]}
           <li class="border-b border-ink/10">
             <a
               {href}
@@ -78,3 +78,19 @@
     </div>
   </nav>
 </div>
+
+<style>
+  .mobile-menu {
+    transform: translateY(-8px);
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      transform 0.2s ease,
+      opacity 0.2s ease;
+  }
+  .mobile-menu.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+</style>
