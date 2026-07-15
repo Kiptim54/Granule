@@ -9,6 +9,38 @@
 
   import Quote from "../../lib/components/Quote.svelte";
   import Scrolly from "./component/Scrolly.svelte";
+  import Seo from "$lib/components/Seo.svelte";
+  import { SITE_URL } from "$lib/seo";
+
+  const ARTICLE_TITLE = "Tanzania's VAT Refund Revolution: A Quiet Reform with Big Implications";
+  const ARTICLE_DESCRIPTION =
+    "Tanzania's 2026/27 budget introduces a mandatory 30-day VAT refund timeline — a quiet reform that could unlock billions in private investment. A data story by Frenny Jowi, The Granule Africa.";
+  const PUBLISHED_TIME = "2026-06-01T00:00:00Z";
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    headline: ARTICLE_TITLE,
+    description: ARTICLE_DESCRIPTION,
+    image: [`${SITE_URL}/tanzania-header.webp`],
+    datePublished: PUBLISHED_TIME,
+    author: {
+      "@type": "Person",
+      name: "Frenny Jowi",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "The Granule Africa",
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/favicon.svg`,
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${SITE_URL}/tanzania-vat-reform`,
+    },
+  };
 
   const steps = [
     {
@@ -64,12 +96,19 @@ That is the kind of reform that does not always make headlines but often changes
   ];
 </script>
 
+<Seo
+  title="{ARTICLE_TITLE} | The Granule Africa"
+  description={ARTICLE_DESCRIPTION}
+  path="/tanzania-vat-reform"
+  image="/tanzania-header.webp"
+  type="article"
+  author="Frenny Jowi"
+  publishedTime={PUBLISHED_TIME}
+  keywords="Tanzania VAT reform, Tanzania budget 2026, VAT refund Tanzania, East Africa tax policy, Tanzania investment, data journalism"
+  {jsonLd}
+/>
+
 <svelte:head>
-  <title>Tanzania's VAT Refund Revolution - Frenny Jowi | The Granule</title>
-  <meta
-    name="description"
-    content="Tanzania's 2026/27 budget introduces a 30-day VAT refund mandate — a quiet reform that could unlock billions in private investment. Author: Frenny Jowi, The Granule."
-  />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link
     rel="preconnect"

@@ -1,6 +1,27 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  import Seo from "$lib/components/Seo.svelte";
+  import { SITE_NAME, SITE_URL } from "$lib/seo";
   // ["Email", "hello@The Granuleafrica.com", "mailto:hello@The Granuleafrica.com"], ["Twitter", "@The Granuleafrica", "#"],
+
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: SITE_URL,
+      logo: `${SITE_URL}/favicon.svg`,
+      description:
+        "A data storytelling studio combining journalism, technology, and design to reveal the stories hidden in Africa's data.",
+      sameAs: ["https://twitter.com/thegranuleafrica"],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+  ];
   let currentSlide = 0;
   let heroVisible = false;
   let sectionsVisible: Record<string, boolean> = {};
@@ -105,6 +126,15 @@
     return () => observer.disconnect();
   });
 </script>
+
+<Seo
+  title="The Granule Africa — Data Storytelling, Journalism & African Data Stories"
+  description="The Granule Africa is a data storytelling studio uncovering the stories hidden in Africa's data — combining investigative journalism, data analysis, and interactive design to tell African stories accurately and with humanity."
+  path="/"
+  image="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1600&auto=format&fit=crop"
+  keywords="data storytelling, data journalism, African data stories, data visualization Africa, investigative journalism Africa, Kenya data journalism, interactive journalism"
+  {jsonLd}
+/>
 
 <!-- ───────────── NAV ───────────── -->
 <nav class="fixed top-0 left-0 right-0 z-50 bg-paper border-b-2 border-ink">

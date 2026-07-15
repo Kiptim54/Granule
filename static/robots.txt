@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /femicide-counties
+
+Sitemap: https://thegranule.org/sitemap.xml

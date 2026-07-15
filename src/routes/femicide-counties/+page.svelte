@@ -53,6 +53,7 @@
   import wbBoundariesUrl from "./wb-boundaries.json?url";
   import kenyanCountiesUrl from "./kenyan-counties.geojson?url";
   import countyDeathsData from "./count-deaths.json";
+  import Seo from "$lib/components/Seo.svelte";
 
   let { lang, translation } = $props();
 
@@ -557,6 +558,14 @@
     if (map) map.remove();
   });
 </script>
+
+<Seo
+  title="Femicide deaths by county | The Granule Africa"
+  description="Explore the distribution of femicide deaths across Kenya's counties."
+  path="/femicide-counties"
+  image="/Femicide.png"
+  noindex
+/>
 
 <div class="scrolly-globe-wrapper">
   <Nav />
