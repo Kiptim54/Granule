@@ -12,7 +12,8 @@
   import Seo from "$lib/components/Seo.svelte";
   import { SITE_URL } from "$lib/seo";
 
-  const ARTICLE_TITLE = "Tanzania's VAT Refund Revolution: A Quiet Reform with Big Implications";
+  const ARTICLE_TITLE =
+    "Tanzania's VAT Refund Revolution: A Quiet Reform with Big Implications";
   const ARTICLE_DESCRIPTION =
     "Tanzania's 2026/27 budget introduces a mandatory 30-day VAT refund timeline — a quiet reform that could unlock billions in private investment. A data story by Frenny Jowi, The Granule Africa.";
   const PUBLISHED_TIME = "2026-06-01T00:00:00Z";
@@ -33,7 +34,7 @@
       name: "The Granule Africa",
       logo: {
         "@type": "ImageObject",
-        url: `${SITE_URL}/favicon.svg`,
+        url: `${SITE_URL}/favicon.png`,
       },
     },
     mainEntityOfPage: {

@@ -17,7 +17,12 @@
         href="/"
         class="font-display font-bold text-base tracking-widest uppercase text-ink no-underline"
       >
-        The <span class="italic text-rust">Granule</span>
+        The <span class=" text-rust">Granule</span>
+        <!-- <image
+          src="/website-log-nobg.png"
+          alt="The Granule Africa Logo"
+          class="inline-block w-auto h-[40px] ml-2"
+        /> -->
       </a>
 
       <!-- desktop links -->

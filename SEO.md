@@ -29,7 +29,7 @@ Every route under `src/routes/**/+page.svelte` should render `<Seo ... />` once,
     publisher: {
       "@type": "Organization",
       name: "The Granule Africa",
-      logo: { "@type": "ImageObject", url: `${SITE_URL}/favicon.svg` },
+      logo: { "@type": "ImageObject", url: `${SITE_URL}/favicon.png` },
     },
     mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE_URL}/your-route` },
   };
@@ -52,18 +52,18 @@ For non-article pages (landing pages, section indexes), omit `author`/`published
 
 ### Prop reference
 
-| Prop | Required | Notes |
-|---|---|---|
-| `title` | yes | Include `\| The Granule Africa` at the end. Keep under ~60 characters where possible so it doesn't truncate in search results. |
-| `description` | yes | 120–160 characters. This is what shows under the title in Google — write it to earn the click, don't just restate the title. |
-| `path` | yes (default `/`) | The route path, e.g. `/tanzania-vat-reform`. Used to build the canonical URL and `og:url`. |
-| `image` | yes | Either an absolute URL or a path served from `static/` (e.g. `/my-image.png`). Prefer ~1200×630 for a clean Open Graph/Twitter card crop. |
-| `type` | no | `"website"` (default) or `"article"`. |
-| `author` | no | Only for `type="article"`. |
-| `publishedTime` | no | ISO 8601 date, only for `type="article"`. |
-| `keywords` | no | Low SEO value today but cheap to add; keep it topical, not stuffed. |
-| `noindex` | no | Set `true` for drafts, duplicate/experimental pages, or anything not ready for search engines (see `/femicide-counties` for an example). |
-| `jsonLd` | no | A plain object or array of objects — see the article example above. Helps Google show rich results (byline, publish date) for stories. |
+| Prop            | Required          | Notes                                                                                                                                     |
+| --------------- | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `title`         | yes               | Include `\| The Granule Africa` at the end. Keep under ~60 characters where possible so it doesn't truncate in search results.            |
+| `description`   | yes               | 120–160 characters. This is what shows under the title in Google — write it to earn the click, don't just restate the title.              |
+| `path`          | yes (default `/`) | The route path, e.g. `/tanzania-vat-reform`. Used to build the canonical URL and `og:url`.                                                |
+| `image`         | yes               | Either an absolute URL or a path served from `static/` (e.g. `/my-image.png`). Prefer ~1200×630 for a clean Open Graph/Twitter card crop. |
+| `type`          | no                | `"website"` (default) or `"article"`.                                                                                                     |
+| `author`        | no                | Only for `type="article"`.                                                                                                                |
+| `publishedTime` | no                | ISO 8601 date, only for `type="article"`.                                                                                                 |
+| `keywords`      | no                | Low SEO value today but cheap to add; keep it topical, not stuffed.                                                                       |
+| `noindex`       | no                | Set `true` for drafts, duplicate/experimental pages, or anything not ready for search engines (see `/femicide-counties` for an example).  |
+| `jsonLd`        | no                | A plain object or array of objects — see the article example above. Helps Google show rich results (byline, publish date) for stories.    |
 
 ## 2. Add the page to the sitemap
 
@@ -101,12 +101,14 @@ curl -s http://localhost:5173/sitemap.xml
 ```
 
 Confirm:
+
 - `<title>` and `og:title` match what you intended
 - `og:image` resolves to a real, absolute URL (open it in a browser)
 - `<link rel="canonical">` points to the right path
 - the new route shows up in `/sitemap.xml` (unless intentionally excluded)
 
 You can also paste the live URL (once deployed) into a social debugger to check the preview card:
+
 - Facebook/OG: https://developers.facebook.com/tools/debug/
 - Twitter/X: https://cards-dev.twitter.com/validator (may require login)
 

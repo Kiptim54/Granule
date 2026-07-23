@@ -27,7 +27,7 @@
       name: "The Granule Africa",
       logo: {
         "@type": "ImageObject",
-        url: `${SITE_URL}/favicon.svg`,
+        url: `${SITE_URL}/favicon.png`,
       },
     },
     mainEntityOfPage: {

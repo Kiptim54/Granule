@@ -1,7 +1,9 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import Seo from "$lib/components/Seo.svelte";
+  import Nav from "$lib/components/Nav.svelte";
   import { SITE_NAME, SITE_URL } from "$lib/seo";
+
   // ["Email", "hello@The Granuleafrica.com", "mailto:hello@The Granuleafrica.com"], ["Twitter", "@The Granuleafrica", "#"],
 
   const jsonLd = [
@@ -10,7 +12,7 @@
       "@type": "Organization",
       name: SITE_NAME,
       url: SITE_URL,
-      logo: `${SITE_URL}/favicon.svg`,
+      logo: `${SITE_URL}/favicon.png`,
       description:
         "A data storytelling studio combining journalism, technology, and design to reveal the stories hidden in Africa's data.",
       sameAs: ["https://twitter.com/thegranuleafrica"],
@@ -22,10 +24,12 @@
       url: SITE_URL,
     },
   ];
-  let currentSlide = 0;
-  let heroVisible = false;
-  let sectionsVisible: Record<string, boolean> = {};
-  let menuOpen = false;
+  let currentSlide = $state(0);
+  let heroVisible = $state(false);
+  let sectionsVisible: Record<string, boolean> = $state({});
+  let menuOpen = $state(false);
+
+  let { data } = $props();
 
   const stories = [
     {
@@ -137,72 +141,7 @@
 />
 
 <!-- ───────────── NAV ───────────── -->
-<nav class="fixed top-0 left-0 right-0 z-50 bg-paper border-b-2 border-ink">
-  <div class="flex items-center justify-between px-6 md:px-12 py-4">
-    <a
-      href="#home"
-      class="font-display font-bold text-base tracking-widest uppercase text-ink no-underline"
-    >
-      The <span class="italic text-rust">Granule</span>
-    </a>
-
-    <!-- desktop links -->
-    <ul class="hidden md:flex gap-10 list-none m-0 p-0">
-      {#each [["#about", "About"], ["#team", "Team"], ["#stories", "Stories"], ["#contact", "Contact"]] as [href, label]}
-        <li>
-          <a
-            {href}
-            class="font-mono text-base tracking-[0.14em] uppercase text-ink no-underline border-b border-transparent hover:border-rust hover:text-rust transition-colors duration-200"
-          >
-            {label}
-          </a>
-        </li>
-      {/each}
-    </ul>
-
-    <!-- hamburger -->
-    <button
-      class="md:hidden flex flex-col gap-[5px] bg-transparent border-none cursor-pointer p-1"
-      onclick={() => (menuOpen = !menuOpen)}
-      aria-label="Toggle menu"
-    >
-      <span
-        class="block w-6 h-px bg-ink transition-all duration-200"
-        class:rotate-45={menuOpen}
-        class:translate-y-[6px]={menuOpen}
-      ></span>
-      <span
-        class="block w-6 h-px bg-ink transition-all duration-200"
-        class:opacity-0={menuOpen}
-      ></span>
-      <span
-        class="block w-6 h-px bg-ink transition-all duration-200"
-        class:-rotate-45={menuOpen}
-        class:-translate-y-[6px]={menuOpen}
-      ></span>
-    </button>
-  </div>
-
-  <!-- mobile dropdown -->
-  <div
-    class="mobile-menu md:hidden absolute top-full left-0 right-0 bg-paper border-b-2 border-ink"
-    class:open={menuOpen}
-  >
-    <ul class="list-none m-0 p-0 flex flex-col">
-      {#each [["#about", "About"], ["#team", "Team"], ["#stories", "Stories"], ["#contact", "Contact"]] as [href, label]}
-        <li class="border-b border-ink/10">
-          <a
-            {href}
-            onclick={closeMenu}
-            class="block font-mono text-[0.72rem] tracking-[0.16em] uppercase text-ink no-underline px-6 py-4 hover:text-rust hover:bg-paper-dark transition-colors duration-150"
-          >
-            {label}
-          </a>
-        </li>
-      {/each}
-    </ul>
-  </div>
-</nav>
+<Nav />
 
 <!-- ───────────── HERO ───────────── -->
 <section
