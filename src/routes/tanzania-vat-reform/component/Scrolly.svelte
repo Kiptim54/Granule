@@ -40,7 +40,7 @@
     <section class="spacer" data-i="-1"></section>
 
     {#each steps as step, i (i)}
-      <section class="step" data-i={i}>
+      <section class="step opacity-0" data-i={i}>
         {#if step.caption}
           <div class="step-content">
             <p class="step-caption">{@html step.caption}</p>

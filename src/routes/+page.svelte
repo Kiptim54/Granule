@@ -44,7 +44,8 @@
       tag: ["Journalism", "Scrollytelling"],
       bg: "#1A3A2A",
       link: "/tanzania-vat-reform",
-      image: "/tanzania-header.webp",
+      // image: "/tanzania-header.webp",
+      image: "/output.gif",
     },
     {
       id: 1,
@@ -56,7 +57,7 @@
       tag: ["Data Analysis"],
       bg: "#C1440E",
       link: "/femicide",
-      image: "/Femicide.png",
+      image: "/femicide.gif",
     },
 
     // {
@@ -246,13 +247,13 @@
           >
             <div
               class="relative flex items-end justify-start overflow-hidden border-b border-ink"
-              style="background:{story.bg}; min-height:280px;"
+              style="background:{story.bg}; min-height:300px;"
             >
               {#if story.image}
                 <img
                   src={story.image}
                   alt={story.title}
-                  class="absolute inset-0 w-full h-full object-cover object-center opacity-35"
+                  class="absolute inset-0 w-full h-full object-cover object-top opacity-50"
                 />
               {/if}
               <div
@@ -279,15 +280,15 @@
                   {story.category}
                 </span> -->
               </div>
-              <span
+              <!-- <span
                 class="absolute font-display font-bold italic text-paper/15 leading-none"
                 style="font-size:clamp(4rem,12vw,8rem); bottom:-0.5rem; right:1rem;"
                 >{story.category[0]}</span
-              >
+              > -->
             </div>
             <div
               class="p-6 md:p-8 flex flex-col justify-between gap-5 h-full"
-              style="min-height:280px;"
+              style="min-height:250px;"
             >
               <div class="flex-1">
                 <div
