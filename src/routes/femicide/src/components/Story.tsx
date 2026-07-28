@@ -1,51 +1,106 @@
 const Lady = "/icons/afro-curly.svg";
+import { useState } from "react";
+import Autoplay from "embla-carousel-autoplay";
 import Quote from "./Quote";
 import LineScrolly from "./Scrolly/LineChartScrolly";
 import TemporalScrolly from "./Scrolly/TemporalScrolly";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "./Carousel";
 
 export const LadyProfile = () => {
+  const ladies = [
+    {
+      name: "Rebecca Cheptegei",
+      age: 33,
+      county: "Eldoret",
+      relationship: "Ex-boyfriend",
+      dateOfDeath: "September 2024",
+      status: "Case reported, no prior action taken",
+    },
+    {
+      name: "Agnes Tirop",
+      age: 25,
+      county: "Uasin Gishu",
+      relationship: "Partner",
+      dateOfDeath: "October 2021",
+      status: "",
+    },
+    {
+      name: "Damaris Mutua",
+      age: 28,
+      county: "Nairobi",
+      relationship: "Partner",
+      dateOfDeath: "April 2022",
+      status: "",
+    },
+  ];
+  const [plugin] = useState(() =>
+    Autoplay({ delay: 4000, stopOnInteraction: true }),
+  );
+
   return (
     <div className='flex-1 w-full'>
-      <div className='md:min-h-120 w-full h-[60vh] md:w-[70%] mx-auto relative'>
-        <div className='papers absolute inset-0 bg-white w-full min-h-96 h-full shadow-md z-30 p-6'>
-          <div className='flex flex-col gap-8 justify-between items-center h-full w-full'>
-            <sub className='text-xs text-center tracking-widest uppercase text-gray-400 font-semibold'>
-              VICTIM - Rebecca Cheptegei
-            </sub>
-            <div className='text-center grid gap-2'>
-              <img
-                src={Lady}
-                alt='afro lady icon'
-                className='block mx-auto mb-4'
-              />
-              <p>
-                <strong>Name:</strong> REBECCA CHEPTEGAI
-              </p>
-              <p>
-                <strong>Age:</strong> 33yrs
-              </p>
-              <p>
-                <strong>County:</strong> Eldoret
-              </p>
-              <p>
-                <strong>Relationship to perpetrator:</strong> Ex-boyfriend
-              </p>
-              <p>
-                <strong>Date of Death:</strong> September 2024
-              </p>
-              <p>
-                <strong>Status:</strong> Case reported, no prior action taken
-              </p>
-            </div>
+      <Carousel
+        className='md:min-h-120 w-full h-[60vh] md:w-[70%] mx-auto'
+        plugins={[plugin]}
+        onMouseEnter={plugin.stop}
+        onMouseLeave={plugin.reset}
+      >
+        <CarouselContent>
+          {ladies.map((lady, i) => (
+            <CarouselItem key={lady.name}>
+              <div className='relative md:min-h-120 w-full h-[60vh]'>
+                <div className='papers absolute inset-0 bg-white w-full min-h-96 h-full shadow-md z-30 p-6'>
+                  <div className='flex flex-col gap-8 justify-between items-center h-full w-full'>
+                    <sub className='text-xs text-center tracking-widest uppercase text-gray-400 font-semibold'>
+                      VICTIM - {lady.name}
+                    </sub>
+                    <div className='text-center grid gap-2'>
+                      <img
+                        src={Lady}
+                        alt='afro lady icon'
+                        className='block mx-auto mb-4'
+                      />
+                      <p>
+                        <strong>Name:</strong> {lady.name.toUpperCase()}
+                      </p>
+                      <p>
+                        <strong>Age:</strong> {lady.age}yrs
+                      </p>
+                      <p>
+                        <strong>County:</strong> {lady.county}
+                      </p>
+                      <p>
+                        <strong>Relationship to perpetrator:</strong>{" "}
+                        {lady.relationship}
+                      </p>
+                      <p>
+                        <strong>Date of Death:</strong> {lady.dateOfDeath}
+                      </p>
+                      <p>
+                        <strong>Status:</strong> {lady.status}
+                      </p>
+                    </div>
 
-            <sub className='self-end text-gray-400 tracking-widest'>
-              001/979
-            </sub>
-          </div>
-        </div>
-        <div className='papers absolute inset-0 bg-white w-full min-h-96 h-full shadow-md rotate-2 z-20'></div>
-        <div className='papers absolute inset-0 bg-white w-full min-h-96 h-full shadow-md -rotate-1 z-10'></div>
-      </div>
+                    <sub className='self-end text-gray-400 tracking-widest'>
+                      {String(i + 1).padStart(3, "0")}/979
+                    </sub>
+                  </div>
+                </div>
+                <div className='papers absolute inset-0 bg-white w-full min-h-96 h-full shadow-md rotate-2 z-20'></div>
+                <div className='papers absolute inset-0 bg-white w-full min-h-96 h-full shadow-md -rotate-1 z-10'></div>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
     </div>
   );
 };
