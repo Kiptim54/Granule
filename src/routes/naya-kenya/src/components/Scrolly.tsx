@@ -49,13 +49,13 @@ export default function Scrolly() {
   };
 
   return (
-    <div className='px-10 w-full text-white  mx-auto py-10 bg-magenta/15  my-10 relative'>
+    <div className='px-10 w-full text-white  mx-auto py-10 bg-blue/15  my-10 relative'>
       <h3 className='text-2xl text-magenta font-bold mb-4 uppercase py-4 text-center  font-serif z-20'>
         Period Poverty Persists in Kenya
       </h3>
       <section className='max-w-5xl  gap-4 mx-auto relative z-10 '>
         <motion.div
-          className='flex flex-wrap content-start min-h-[90vh] gap-2 col-span-2 justify-start p-4 md:w-[65%] w-full md:ml-auto  items-center top-24 z-10 sticky  md:self-start'
+          className='flex flex-wrap content-start  gap-2 col-span-2 justify-start p-4 md:w-[65%] w-full md:ml-auto  items-center top-24 z-10 sticky  md:self-start'
           variants={containerVariants}
           initial='hidden'
           animate={currentStepIndex !== null ? "visible" : "hidden"}
@@ -70,12 +70,20 @@ export default function Scrolly() {
               </motion.div>
             ))}
           {currentStepIndex == 1 && (
-            <div className='grid grid-cols-7 gap-4 w-full h-full content-start justify-start items-start'>
-              {Array.from({ length: 31 }).map((_, i) => (
+            <div className='border-2 border-black p-4 grid grid-cols-4 md:grid-cols-7 gap-4 w-full h-full content-start justify-start items-start'>
+              {Array.from({ length: 35 }).map((_, i) => (
                 <motion.div key={i} variants={girlVariants}>
                   <RectangeSvg
-                    className='md:w-20 w-10 h-10 md:h-20'
-                    fill={i < 8 || i > 11 ? "rgba(0, 0, 0, .25)" : "#D6247A"}
+                    className='md:w-20 w-14 h-14 md:h-20'
+                    fill={
+                      i < 4
+                        ? "none"
+                        : i < 8 || i > 11
+                          ? "rgba(0, 0, 0, .25)"
+                          : "#D6247A"
+                    }
+                    showLines={i > 7 && i < 12 ? true : false}
+                    borderColor={i < 4 ? "none" : "#000000"}
                     // day={i + 1}
                   />
                 </motion.div>
@@ -87,7 +95,7 @@ export default function Scrolly() {
           {steps.map((step, stepIndex) => (
             <Step data={stepIndex} key={step.id}>
               <div
-                className='my-[50vh] flex flex-col justify-end md:w-1/4 bg-white md:bg-transparent md:p-4 z-20 font-serif transition-opacity duration-300 col-span-1 text-black'
+                className='relative my-[50vh] flex flex-col  md:p-0 justify-end md:w-1/4 p-4 rounded-md bg-white md:bg-transparent  z-20 font-serif transition-opacity duration-300 col-span-1 text-black'
                 style={{
                   opacity: currentStepIndex === stepIndex ? 1 : 0.2,
                 }}
@@ -102,7 +110,7 @@ export default function Scrolly() {
       </section>
 
       <div
-        className='absolute inset-0 bg-cover bg-center opacity-70'
+        className='absolute inset-0 bg-fit bg-center opacity-90'
         style={{ backgroundImage: `url(${dottedBg})` }}
       />
     </div>

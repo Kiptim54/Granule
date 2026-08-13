@@ -4,34 +4,99 @@ export default function RectangeSvg({
   className,
   fill,
   day,
+  borderColor,
+  showLines = false,
 }: {
   className?: string;
   fill?: string;
   day?: number;
+  borderColor?: string;
+  showLines?: boolean;
 }) {
   return (
     <svg
-      width='43'
+      width='44'
       height='43'
-      viewBox='0 0 43 43'
+      viewBox='0 0 44 43'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
       className={className}
     >
       <rect
+        x='0.47998'
         width='42.7486'
         height='42.7486'
-        fill={fill || "black"}
-        // fill-opacity='0.25'
+        fill={fill || "#D6247A"}
       />
       <rect
-        x='0.5'
+        x='0.97998'
         y='0.5'
         width='41.7486'
         height='41.7486'
-        stroke='black'
+        stroke={borderColor || "black"}
         stroke-opacity='0.25'
       />
+      {showLines && (
+        <>
+          <line
+            x1='0.353478'
+            y1='14.5852'
+            x2='14.3535'
+            y2='0.585167'
+            stroke='lightgray'
+            stroke-opacity='0.61'
+          />
+          <line
+            x1='42.0606'
+            y1='27.2923'
+            x2='28.0606'
+            y2='41.2923'
+            stroke='lightgray'
+            stroke-opacity='0.61'
+          />
+          <line
+            x1='1.35348'
+            y1='22.5852'
+            x2='23.3535'
+            y2='0.585168'
+            stroke='white'
+            stroke-opacity='0.61'
+          />
+          <line
+            x1='41.0606'
+            y1='19.2923'
+            x2='19.0606'
+            y2='41.2923'
+            stroke='lightgray'
+            stroke-opacity='0.61'
+          />
+          <line
+            x1='1.35348'
+            y1='31.5852'
+            x2='32.3535'
+            y2='0.585167'
+            stroke='white'
+            stroke-opacity='0.61'
+          />
+          <line
+            x1='41.0606'
+            y1='10.2923'
+            x2='10.0606'
+            y2='41.2923'
+            stroke='lightgray'
+            stroke-opacity='0.61'
+          />
+          <line
+            x1='1.35348'
+            y1='40.5852'
+            x2='41.3535'
+            y2='0.585168'
+            stroke='lightgray'
+            stroke-opacity='0.61'
+          />
+        </>
+      )}
+
       {day !== undefined && (
         <text
           x='50%'

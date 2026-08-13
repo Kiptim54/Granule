@@ -28,9 +28,9 @@ export default function Footer() {
         </div>
 
         <p className='font-sans text-xs text-cream/50 max-w-2xl'>
-          © 2026 Network for Adolescent and Youth of Africa (NAYA Kenya) and
-          UNFPA. All figures drawn from primary interviews and the published
-          fiscal data cited throughout this report.
+          © 2026 The Granule. All rights reserved. The Granule is a data
+          storytelling studio that creates interactive visual narratives to
+          communicate complex data and research findings.
         </p>
       </div>
     </footer>
