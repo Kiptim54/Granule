@@ -43,17 +43,18 @@ const comparisonRows: { before: React.ReactNode; after: React.ReactNode }[] = [
 export default function VatTrap() {
   return (
     <div className='max-w-5xl mx-auto flex flex-col gap-4 mt-10 px-10'>
-      <h3 className='font-serif uppercase text-2xl  text-ink font-bold'>
-        The VAT <span className='text-magenta  font-bolder'>Trap</span>
+      <h3 className='font-serif uppercase text-3xl text-center text-ink font-bold'>
+        The VAT <span className='text-magenta  font-bolder'> Tax Trap</span>
       </h3>
       <div className='flex flex-col gap-4 p-0 md:p-10'>
         <p className='font-serif text-lg'>
           When researchers, manufacturers and policymakers sat down to work out
           why, they found the exemption wasn't the whole story. It was part of a
           tax trap. Manufacturers and retailers have long been blamed for greed.
+          <br /> <br />
           The research points somewhere else: they are caught in the same trap.
         </p>
-        <h3 className='font-serif text-xl text-ink mt-4'>
+        <h3 className='font-serif text-2xl text-ink mt-4'>
           1. The first trap is the{" "}
           <span className='text-magenta italic font-bold'>
             exemption itself

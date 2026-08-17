@@ -8,19 +8,19 @@ const steps = [
     id: 0,
     title: "2.5% IDF",
     description:
-      "The Import Declaration Fee is 2.5 per cent.  The Maritime Shipping Levy is 1.5 per cent. Together: a 6 per cent cumulative burden, applied to menstrual products and to the raw materials used to make them. These costs are non-refundable. ",
+      "The Import Declaration Fee is 2.5 per cent. IDF is a mandatory processing fee charged by the Kenya Revenue Authority on commercial imports. You must pay and obtain an IDF number before goods can be cleared at any port or airport in Kenya",
   },
   {
     id: 1,
     title: "2% RDL",
     description:
-      "The Refundable Duty Levy is 2 per cent. This fee is applied to menstrual products and contributes to the overall cost burden on girls and women in Kenya.",
+      "The Refundable Duty Levy is 2 per cent. RDL is a levy charged on all imports into Kenya. It is meant to fund the construction of the Standard Gauge Railway, but it is not refundable for menstrual products, so it adds to the overall cost burden on girls and women in Kenya.",
   },
   {
     id: 2,
     title: "1.5% MSL",
     description:
-      "The Maritime Shipping Levy is 1.5 per cent. This fee is applied to menstrual products and contributes to the overall cost burden on girls and women in Kenya.",
+      "The Maritime Shipping Levy is 1.5 per cent. . It is charged under the Miscellaneous Fees and Levies Act and collected by the Kenya Revenue Authority (KRA) on imports. ",
   },
 ];
 
@@ -200,7 +200,7 @@ export default function HiddenCostScrolly() {
 
             {(() => {
               const cumulativeValue =
-                currentStepIndex === null
+                currentStepIndex === null || currentStepIndex === undefined
                   ? 0
                   : charges
                       .filter((charge) => charge.id <= currentStepIndex)

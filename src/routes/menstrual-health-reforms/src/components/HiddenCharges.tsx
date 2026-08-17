@@ -7,7 +7,7 @@ export default function HiddenCharges() {
         Hidden <span className='text-magenta italic font-bold'>Charges</span>
       </h3>
       <div className='flex flex-col gap-4 p-0 md:px-10'>
-        <h3 className='font-serif text-xl text-ink mt-4'>
+        <h3 className='font-serif text-2xl text-ink mt-4'>
           2. The{" "}
           <span className='text-magenta italic font-bold'>
             second trap sits at the port

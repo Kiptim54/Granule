@@ -40,9 +40,9 @@
         "A Naya Kenya report on the menstrual health crisis in Kenya, and the hidden costs of period poverty.",
       date: "August 2026",
       tag: ["Data Story", "Interactive"],
-      bg: "#2A2060",
-      link: "/naya-kenya",
-      image: "/kenya-health-crisis.gif",
+      bg: "#d6247a",
+      link: "/menstrual-health-reforms",
+      image: "/menstrual.gif",
     },
     {
       id: 2,

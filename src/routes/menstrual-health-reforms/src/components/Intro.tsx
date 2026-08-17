@@ -14,12 +14,12 @@ export default function Intro() {
           <br />
           On paper, Kenya has made great strides to eradicate period poverty.
           Kenya was the first country in the world, in 2004,  to remove
-          value-added tax (VAT) on menstrual products. Several years later, it
-          also removed the import duty and VAT on some raw materials used to
-          make pads. However Faith Masika, Co-founder of Ecovital Dynamics
-          Limited states that  “As much as menstrual products are VAT exempt,
-          manufacturers and importers are still paying VAT on some of the raw
-          materials because not all inputs were exempt.”
+          value-added tax (VAT) on menstrual products. <br />
+          <br />
+          However Faith Masika, co-founder of Ecovital Dynamics Limited states
+          that  “As much as menstrual products are VAT exempt, manufacturers and
+          importers are still paying VAT on some of the raw materials because
+          not all inputs were exempt.”
         </p>
 
         <EstherPriceChart />
@@ -43,7 +43,7 @@ export default function Intro() {
       </blockquote>
 
       <p className='font-serif text-lg'>
-        Despite these tax reforms, the end users, women and girls, are not
+        Despite these tax reforms, the end users, women and girls, are still not
         benefiting. Period poverty still persists. 45.6% of girls still face
         difficulties accessing Menstrual Health Products, with thousands of
         girls missing 3-4 school days monthly due to lack of sanitary pads. 
