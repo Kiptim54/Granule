@@ -33,6 +33,18 @@
 
   const stories = [
     {
+      id: 0,
+      category: "Menstrual Health",
+      title: "The Price of Dignity",
+      excerpt:
+        "A Naya Kenya report on the menstrual health crisis in Kenya, and the hidden costs of period poverty.",
+      date: "August 2026",
+      tag: ["Data Story", "Interactive"],
+      bg: "#d6247a",
+      link: "/menstrual-health-reforms",
+      image: "/menstrual.gif",
+    },
+    {
       id: 2,
       category: "Economy",
       title:
