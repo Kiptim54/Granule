@@ -26,7 +26,7 @@ export default function Header() {
           The Price of <span className='text-magenta txt italic'>Dignity</span>
         </h1>
         <h4 className='relative text-center text-base text-white md:text-lg font-serif '>
-          Network for Adolescent and Youth of Africa (NAYA) Report
+          Why Kenya's "VAT-free" menstrual products still carry hidden costs.
         </h4>
       </div>
     </>

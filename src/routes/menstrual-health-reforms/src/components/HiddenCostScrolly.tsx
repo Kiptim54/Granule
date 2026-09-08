@@ -14,7 +14,7 @@ const steps = [
     id: 1,
     title: "2% RDL",
     description:
-      "The Refundable Duty Levy is 2 per cent. RDL is a levy charged on all imports into Kenya. It is meant to fund the construction of the Standard Gauge Railway, but it is not refundable for menstrual products, so it adds to the overall cost burden on girls and women in Kenya.",
+      " Railway Development Levy  is 2 per cent. RDL is a levy charged on all imports into Kenya. It is meant to fund the construction of the Standard Gauge Railway, but it is not refundable for menstrual products, so it adds to the overall cost burden on girls and women in Kenya.",
   },
   {
     id: 2,
