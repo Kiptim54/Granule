@@ -30,12 +30,20 @@ const steps = [
     title: "45.6%",
     description:
       "of girls and women in Kenya cannot afford sanitary pads, forcing many to use improvised alternatives: rags, tissue, pieces of mattress etc. that are often unhygienic and unsafe.",
+    source: {
+      name: "UNFPA Kenya Menstrual Health Policy Brief 2025",
+      link: "https://kenya.unfpa.org/sites/default/files/pub-pdf/2025-06/UNFPA%20Menstrual%20Health%20Policy%20Brief%20%283%29.pdf",
+    },
   },
   {
     id: 1,
     title: "3-4 days",
     description:
       "Nearly one million school-age girls miss an average of four school days per month due to menstruation and lack of access to menstrual products, which undermines their educational attainment and future opportunities",
+    source: {
+      name: "Kenya Works - Gender Based Violence",
+      link: "https://www.kenyaworks.org/copy-of-gender-based-violence",
+    },
   },
 ];
 
@@ -102,6 +110,16 @@ export default function Scrolly() {
               >
                 <p className='text-4xl font-bold text-magenta'>{step.title}</p>
                 <p className='mt-4 text-base pl-2'>{step.description}</p>
+                {step?.source && (
+                  <a
+                    href={step.source.link}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='mt-4 pl-2  hover:underline text-xs italic'
+                  >
+                    Source: {step.source.name}
+                  </a>
+                )}
               </div>
             </Step>
           ))}
