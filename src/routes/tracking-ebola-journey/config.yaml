@@ -1,0 +1,510 @@
+# Country codes used in `highlight` are WB_A3 (ISO 3166-1 alpha-3 with World
+# Bank conventions). Full list: see COUNTRY_CODES.md at the repo root.
+
+name: "MapLibre Rig Sub Saharan Africa IBP"
+shortcode: "maplibre_rig_ebola"
+description: "Map Scrolly for IBP "
+version: "1.0.0"
+defaultLanguage: en
+
+theme:
+  defaultHighlightColor: "#FFFFFF"
+
+# Per-label anchor/offset defaults so a label can be referenced by name in
+# multiple steps without repeating its placement. Override per-step if needed.
+labelDefaults:
+  Kenya:
+    anchor: center
+    offset: [0, 0]
+
+steps:
+  # Step 0 — intro. No title/text means no overlay box is rendered;
+  # the globe just sits in view while the user starts scrolling.
+  - center: [21.27, 2.71]
+    zoom: 2.05
+    showCounties: false
+    mobile:
+      center: [20.10, -1.17]
+      zoom: 2.05
+    pitch: 0.0
+    bearing: 0.0
+    hideLabels: true
+    highlight: []
+    labels: []
+
+  # Step 1 — Sub-Saharan Africa country highlight.
+  - title: East Africa Intro
+    text: >
+      More than **4,000** people have died from Ebola in DR Congo this year, in what is the second most deadly known outbreak to date.
+
+    center: [28.05, 1.93]
+    zoom: 6.08
+    pitch: 0.0
+    bearing: 0.0
+    showCounties: false
+    mobile:
+      center: [28.05, 1.93]
+      zoom: 5.50
+    hideLabels: true
+    highlight: [DRC, UGA, KEN]
+    labels:
+      # - name: Butembo
+      #   lng: 29.29
+      #   lat: 0.12
+      # - name: Mangina
+      #   lng: 29.78
+      #   lat: 0.95
+      # - name: Goma
+      #   lng: 29.22
+      #   lat: -1.68
+      - name: Buta
+        number: 1
+        transportToNext: road
+        lng: 24.7287
+        lat: 2.7933
+      - name: Ateki
+        number: 2
+        transportToNext: road
+        lng: 23.7791
+        lat: 2.7359
+      - name: Likati
+        number: 3
+        transportToNext: road
+        lng: 23.5333
+        lat: 3.3667
+      # - name: Malalise
+      #   number: 4
+      #   transportToNext: road
+      #   lng: 24.01
+      #   lat: 3.40 # Approximate position based on the supplied map image.
+      - name: Bondo
+        number: 5
+        transportToNext: flight
+        lng: 23.6887
+        lat: 3.8130
+      - name: Kisangani
+        number: 6
+        transportToNext: flight
+        lng: 25.2057
+        lat: 0.5184
+      - name: Beni
+        number: 7
+        transportToNext: road
+        lng: 29.47
+        lat: 0.49
+      - name: Kasindi (DRC) or Mpondwe (UGA)
+        number: 8
+        transportToNext: car
+        lng: 29.6868
+        lat: 0.0479
+      # - name: Kampala
+      #   number: 9
+      #   lng: 32.5825
+      #   lat: 0.3476
+
+#   # # Step 2 — multi-color highlight (object form) + complex legend.
+#   - title: Kenyan Counties
+#     text: >
+#       In Kenya, **979 women and girls have been killed** since 2005. Almost half of them died in the last five years alone. 2024 was the deadliest year on record.
+
+#     legend:
+#       title: "<i class='text-sm'>--979 is a documented count, not an official one.</i>"
+
+#     center: [27.08, -4.97]
+#     zoom: 3.90
+#     pitch: 0.0
+#     bearing: 0.0
+#     showCounties: true
+#     showCountyBorders: false
+#     mobile:
+#       center: [19.67, -0.52]
+#       zoom: 2.00
+#     highlight:
+#       # "#003E51": [BEN, BWA, CIV, CMR, GMB, LSO, MLI, MRT, NAM, RWA, SEN, ZAF]
+#       "#013E51": [KEN, "UGA", "DRC"]
+#       # "#D9D9D9": [BFA, GHA, GNB, MWI, NER, TCD, BDI]
+
+#     labels:
+#       - name: Kenya
+#         lng: 37.91
+#         lat: -0.02
+
+#   # Step 3 — choropleth: documented deaths by county
+#   - title: Killers
+#     text: >
+#       Death isn't spread evenly across the country. Some counties carry far more of the weight than others.
+#     legend:
+#       type: gradient
+#       title: "Documented deaths by county"
+#       stops:
+#         - value: 0
+#           color: "#fff5f0"
+#           label: "0"
+#         - value: 25
+#           color: "#fc9272"
+#           label: "25"
+#         - value: 65
+#           color: "#de2d26"
+#           label: "65"
+#         - value: 146
+#           color: "#67000d"
+#           label: "146"
+#     countyChoropleth: deaths
+#     showCounties: true
+#     center: [37.62, 0.51]
+#     zoom: 6.15
+#     pitch: 0.0
+#     bearing: 0.0
+#     mobile:
+#       center: [19.67, -0.52]
+#       zoom: 2.0
+#     highlight:
+#       - KEN
+#     labels:
+#       - name: Turkana
+#         lng: 35.78
+#         lat: 2.73
+#       - name: Marsabit
+#         lng: 37.30
+#         lat: 2.52
+#       - name: Mandera
+#         lng: 41.03
+#         lat: 3.27
+#       - name: Wajir
+#         lng: 40.01
+#         lat: 1.62
+#       - name: West Pokot
+#         lng: 35.40
+#         lat: 1.84
+#       - name: Samburu
+#         lng: 37.03
+#         lat: 1.30
+#       - name: Isiolo
+#         lng: 38.25
+#         lat: 0.51
+#       - name: Baringo
+#         lng: 35.75
+#         lat: 0.73
+#       - name: Keiyo-Marakwet
+#         lng: 35.63
+#         lat: 0.72
+#       - name: Trans Nzoia
+#         lng: 34.94
+#         lat: 1.00
+#       - name: Bungoma
+#         lng: 34.70
+#         lat: 0.69
+#       - name: Garissa
+#         lng: 39.57
+#         lat: 0.03
+#       - name: Uasin Gishu
+#         lng: 35.26
+#         lat: 0.62
+#       - name: Kakamega
+#         lng: 34.76
+#         lat: 0.48
+#       - name: Laikipia
+#         lng: 37.02
+#         lat: 0.24
+#       - name: Busia
+#         lng: 34.24
+#         lat: 0.46
+#       - name: Meru
+#         lng: 37.98
+#         lat: 0.02
+#       - name: Nandi
+#         lng: 35.02
+#         lat: 0.11
+#       - name: Siaya
+#         lng: 34.34
+#         lat: 0.18
+#       - name: Nakuru
+#         lng: 36.00
+#         lat: -0.39
+#       - name: Vihiga
+#         lng: 34.76
+#         lat: 0.10
+#       - name: Nyandarua
+#         lng: 36.46
+#         lat: -0.41
+#       - name: Tharaka
+#         lng: 37.95
+#         lat: -0.19
+#       - name: Kericho
+#         lng: 35.24
+#         lat: -0.34
+#       - name: Kisumu
+#         lng: 35.00
+#         lat: -0.21
+#       - name: Nyeri
+#         lng: 37.01
+#         lat: -0.47
+#       - name: Tana River
+#         lng: 39.61
+#         lat: -1.43
+#       - name: Kitui
+#         lng: 38.18
+#         lat: -1.66
+#       - name: Kirinyaga
+#         lng: 37.33
+#         lat: -0.62
+#       - name: Embu
+#         lng: 37.65
+#         lat: -0.65
+#       - name: Homa Bay
+#         lng: 34.67
+#         lat: -0.55
+#       - name: Bomet
+#         lng: 35.28
+#         lat: -0.68
+#       - name: Nyamira
+#         lng: 34.96
+#         lat: -0.59
+#       - name: Narok
+#         lng: 35.67
+#         lat: -1.16
+#       - name: Kisii
+#         lng: 34.84
+#         lat: -0.66
+#       - name: "Murang'a"
+#         lng: 37.07
+#         lat: -0.74
+#       - name: Migori
+#         lng: 34.45
+#         lat: -0.86
+#       - name: Kiambu
+#         lng: 37.03
+#         lat: -1.09
+#       - name: Machakos
+#         lng: 37.51
+#         lat: -1.21
+#       - name: Kajiado
+#         lng: 36.80
+#         lat: -1.90
+#       - name: Nairobi
+#         lng: 36.88
+#         lat: -1.33
+#       - name: Makueni
+#         lng: 37.87
+#         lat: -2.11
+#       - name: Lamu
+#         lng: 40.71
+#         lat: -2.30
+#       - name: Kilifi
+#         lng: 39.97
+#         lat: -3.39
+#       - name: Taita Taveta
+#         lng: 38.53
+#         lat: -3.08
+#       - name: Kwale
+#         lng: 39.41
+#         lat: -4.70
+#       - name: Mombasa
+#         lng: 39.58
+#         lat: -4.12
+
+# # Step 4 — multi-color with a muted "other" group to show contrast.
+# - title: Killers
+#   text: >
+#     Nairobi alone holds 146 cases. Nakuru follows with 85, Kiambu with 65. <b>Together, three counties account for nearly a third of every documented killing in the country </b>.
+#   legend:
+#     type: gradient
+#     title: "Documented deaths by county"
+#     stops:
+#       - value: 0
+#         color: "#fff5f0"
+#         label: "0"
+#       - value: 25
+#         color: "#fc9272"
+#         label: "25"
+#       - value: 65
+#         color: "#de2d26"
+#         label: "65"
+#       - value: 146
+#         color: "#67000d"
+#         label: "146"
+#   countyChoropleth: deaths
+#   showCounties: true
+#   center: [38.33, -1.06]
+#   zoom: 7.53
+#   pitch: 0.0
+#   bearing: 0.0
+#   mobile:
+#     center: [19.67, -0.52]
+#     zoom: 2.0
+#   highlight:
+#     - KEN
+#   labels:
+#     - name: Turkana
+#       lng: 35.78
+#       lat: 2.73
+#     - name: Marsabit
+#       lng: 37.30
+#       lat: 2.52
+#     - name: Mandera
+#       lng: 41.03
+#       lat: 3.27
+#     - name: Wajir
+#       lng: 40.01
+#       lat: 1.62
+#     - name: West Pokot
+#       lng: 35.40
+#       lat: 1.84
+#     - name: Samburu
+#       lng: 37.03
+#       lat: 1.30
+#     - name: Isiolo
+#       lng: 38.25
+#       lat: 0.51
+#     - name: Baringo
+#       lng: 35.75
+#       lat: 0.73
+#     - name: Keiyo-Marakwet
+#       lng: 35.63
+#       lat: 0.72
+#     - name: Trans Nzoia
+#       lng: 34.94
+#       lat: 1.00
+#     - name: Bungoma
+#       lng: 34.70
+#       lat: 0.69
+#     - name: Garissa
+#       lng: 39.57
+#       lat: 0.03
+#     - name: Uasin Gishu
+#       lng: 35.26
+#       lat: 0.62
+#     - name: Kakamega
+#       lng: 34.76
+#       lat: 0.48
+#     - name: Laikipia
+#       lng: 37.02
+#       lat: 0.24
+#     - name: Busia
+#       lng: 34.24
+#       lat: 0.46
+#     - name: Meru
+#       lng: 37.98
+#       lat: 0.02
+#     - name: Nandi
+#       lng: 35.02
+#       lat: 0.11
+#     - name: Siaya
+#       lng: 34.34
+#       lat: 0.18
+#     - name: Nakuru
+#       lng: 36.00
+#       lat: -0.39
+#     - name: Vihiga
+#       lng: 34.76
+#       lat: 0.10
+#     - name: Nyandarua
+#       lng: 36.46
+#       lat: -0.41
+#     - name: Tharaka
+#       lng: 37.95
+#       lat: -0.19
+#     - name: Kericho
+#       lng: 35.24
+#       lat: -0.34
+#     - name: Kisumu
+#       lng: 35.00
+#       lat: -0.21
+#     - name: Nyeri
+#       lng: 37.01
+#       lat: -0.47
+#     - name: Tana River
+#       lng: 39.61
+#       lat: -1.43
+#     - name: Kitui
+#       lng: 38.18
+#       lat: -1.66
+#     - name: Kirinyaga
+#       lng: 37.33
+#       lat: -0.62
+#     - name: Embu
+#       lng: 37.65
+#       lat: -0.65
+#     - name: Homa Bay
+#       lng: 34.67
+#       lat: -0.55
+#     - name: Bomet
+#       lng: 35.28
+#       lat: -0.68
+#     - name: Nyamira
+#       lng: 34.96
+#       lat: -0.59
+#     - name: Narok
+#       lng: 35.67
+#       lat: -1.16
+#     - name: Kisii
+#       lng: 34.84
+#       lat: -0.66
+#     - name: "Murang'a"
+#       lng: 37.07
+#       lat: -0.74
+#     - name: Migori
+#       lng: 34.45
+#       lat: -0.86
+#     - name: Kiambu
+#       lng: 37.03
+#       lat: -1.09
+#     - name: Machakos
+#       lng: 37.51
+#       lat: -1.21
+#     - name: Kajiado
+#       lng: 36.80
+#       lat: -1.90
+#     - name: Nairobi
+#       lng: 36.88
+#       lat: -1.33
+#     - name: Makueni
+#       lng: 37.87
+#       lat: -2.11
+#     - name: Lamu
+#       lng: 40.71
+#       lat: -2.30
+#     - name: Kilifi
+#       lng: 39.97
+#       lat: -3.39
+#     - name: Taita Taveta
+#       lng: 38.53
+#       lat: -3.08
+#     - name: Kwale
+#       lng: 39.41
+#       lat: -4.70
+#     - name: Mombasa
+#       lng: 39.58
+#       lat: -4.12
+# # Step 5 — data gap / closing reflection
+# - title: The Undercount
+#   text: >
+#     These 964 cases are what was documented, reported, recorded, and matched to a county. The real number is higher. Femicide is among the most underreported crimes in Kenya. Every blank space on this map is not an absence of violence but an absence of data.
+#   legend:
+#     type: gradient
+#     title: "Documented deaths by county"
+#     stops:
+#       - value: 0
+#         color: "#fff5f0"
+#         label: "0"
+#       - value: 25
+#         color: "#fc9272"
+#         label: "25"
+#       - value: 65
+#         color: "#de2d26"
+#         label: "65"
+#       - value: 146
+#         color: "#67000d"
+#         label: "146"
+#   countyChoropleth: deaths
+#   showCounties: true
+#   center: [37.62, 0.51]
+#   zoom: 6.15
+#   pitch: 0.0
+#   bearing: 0.0
+#   mobile:
+#     center: [19.67, -0.52]
+#     zoom: 6.0
+#   highlight:
+#     - KEN
+#   labels: []
