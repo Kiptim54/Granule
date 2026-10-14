@@ -31,7 +31,7 @@
     {
       "id": "background",
       "type": "background",
-      "paint": { "background-color": "rgba(222, 234, 233, 1)" }
+      "paint": { "background-color": "rgba(240, 240, 240, 1)" }
     },
     {
       "id": "water",
@@ -46,7 +46,7 @@
       "layout": { "visibility": "visible" },
       "paint": {
         "fill-antialias": true,
-        "fill-color": "rgba(240, 240, 240, 1)"
+        "fill-color": "rgba(222, 234, 233, 1)"
       }
     },
     {

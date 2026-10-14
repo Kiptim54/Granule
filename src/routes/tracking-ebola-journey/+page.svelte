@@ -1,40 +1,3 @@
-<!-- <script>
-  import { onMount } from "svelte";
-  import Nav from "../../lib/components/Nav.svelte";
-  import Footer from "../../lib/components/Footer.svelte";
-  import { MapLibre } from "svelte-maplibre";
-</script>
-
-<div class="min-h-screen flex flex-col justify-between">
-  <Nav isFixed={false} />
-  <header class="text-center my-8">
-    <h1 class="text-4xl font-bold text-primary-500">
-      Femicides deaths by County
-    </h1>
-    <p class="mt-2 text-lg text-gray-600">
-      Explore the distribution of femicides across different counties.
-    </p>
-    <div class="my-6">
-      <MapLibre
-        center={[50, 20]}
-        zoom={3}
-        class="map"
-        standardControls
-        projection={{ type: "globe" }}
-        style="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json"
-      />
-    </div>
-
-    <Footer />
-  </header>
-</div>
-
-<style>
-  :global(.map) {
-    height: 700px;
-  }
-</style> -->
-
 <script>
   import { onMount, onDestroy, untrack } from "svelte";
   import Nav from "../../lib/components/Nav.svelte";
@@ -42,17 +5,24 @@
   import { MediaQuery } from "svelte/reactivity";
   import { dev } from "$app/environment";
   import pkg from "maplibre-gl";
-  const { Map, LngLatBounds } = pkg;
+  const { Map, LngLatBounds, Popup } = pkg;
   import "maplibre-gl/dist/maplibre-gl.css";
   import { parse } from "yaml";
   import { marked } from "marked";
+  import { geoInterpolate } from "d3-geo";
   import Scrolly from "$lib/components/Scrolly.svelte";
   import configRaw from "./config.yaml?raw";
+  import routeCarIconSvg from "./route-car.svg?raw";
+  import routeFlightIconSvg from "./route-flight.svg?raw";
   import customStyle from "./style.json";
   // import wbBoundaries from '$lib/assets/wb-boundaries.json';
   import wbBoundariesUrl from "./wb-boundaries.json?url";
   import kenyanCountiesUrl from "./kenyan-counties.geojson?url";
+  import UgandaCountiesUrl from "./uga_admin2.geojson?url";
+  import congoCountiesUrl from "./congo-admin2.geojson?url";
+  import congoProvincesUrl from "./congo-provinces.geojson?url";
   import countyDeathsData from "./count-deaths.json";
+  import ebolaProvinceData from "./ebola-province-data.json";
   import Seo from "$lib/components/Seo.svelte";
 
   let { lang, translation } = $props();
@@ -72,12 +42,15 @@
   const DEFAULT_HIGHLIGHT_COLOR = $derived(
     theme.defaultHighlightColor || "#0b3d4a",
   );
+  const COUNTY_COLORS = { fill: "#ffffff", border: "#000000" };
   const labelDefaults = $derived(config.labelDefaults || {});
 
   /** @type {Record<string, Record<string, number>>} */
   const CHOROPLETH_DATASETS = {};
 
   const COUNTY_DEATHS = countyDeathsData.deaths_by_county;
+  /** @type {Record<string, {name: string, cases: number, deaths: number, cfr: number}>} */
+  const EBOLA_PROVINCES = ebolaProvinceData.provinces;
 
   const mobile = new MediaQuery("max-width: 768px");
 
@@ -85,6 +58,7 @@
   let map;
   let mapContainer;
   let scrollIndex = $state(undefined);
+  const currentStep = $derived(scrollIndex == null ? null : steps[scrollIndex]);
   let mapLoaded = $state(false);
   let devMode = $state(false);
   let liveCenter = $state([0, 0]);
@@ -131,9 +105,34 @@
     setTimeout(() => (copyStatus = ""), 1500);
   }
 
+  /**
+   * @param {string} svg
+   * @returns {Promise<HTMLImageElement>}
+   */
+  async function loadSvgIcon(svg) {
+    const image = new Image();
+    image.src = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+    await image.decode();
+    return image;
+  }
+
+  // function selectProvinceMetric(
+  //   /** @type {"cases" | "deaths" | "cfr"} */ metric,
+  // ) {
+  //   activeProvinceMetric = metric;
+  //   updateProvinceMetric();
+  // }
+
   function applyStep(idx) {
     if (!map || idx == null) return;
     const s = steps[idx];
+    if (map.getLayer("country-borders")) {
+      map.setPaintProperty(
+        "country-borders",
+        "line-opacity",
+        idx === 0 ? 0 : 1,
+      );
+    }
 
     const hasMobileOverride =
       mobile.current && (s.mobile?.center || s.mobile?.zoom != null);
@@ -174,7 +173,7 @@
         map.setFilter("country-highlight", f);
         map.setFilter(
           "country-highlight-border",
-          s.hideBorders ? ["==", "WB_A3", ""] : f,
+          s.hideBorders || idx === 0 ? ["==", "WB_A3", ""] : f,
         );
       };
 
@@ -251,6 +250,16 @@
       }
     }
 
+    if (map.getLayer("country-highlight-labels")) {
+      const countryLabels = s.countryLabels ?? [];
+      map.setFilter(
+        "country-highlight-labels",
+        countryLabels.length
+          ? ["in", ["get", "WB_A3"], ["literal", countryLabels]]
+          : ["==", "WB_A3", ""],
+      );
+    }
+
     if (map.getLayer("kenyan-counties-fill")) {
       map.setPaintProperty(
         "kenyan-counties-fill",
@@ -261,43 +270,170 @@
       map.setPaintProperty(
         "kenyan-counties-border",
         "line-opacity",
-        showBorders ? 0.8 : 0,
+        showBorders ? 0.3 : 0,
       );
 
-      if (s.showCounties && s.countyChoropleth === "deaths") {
-        const matchArgs = [];
-        for (const [county, count] of Object.entries(COUNTY_DEATHS)) {
-          matchArgs.push(county, count);
-        }
-        const valueExpr = ["match", ["get", "COUNTY"], ...matchArgs, 0];
-        const colorExpr = [
-          "interpolate",
-          ["linear"],
-          valueExpr,
-          0,
-          "#fff5f0",
-          25,
-          "#fc9272",
-          65,
-          "#de2d26",
-          146,
-          "#67000d",
-        ];
-        map.setPaintProperty("kenyan-counties-fill", "fill-color", colorExpr);
-      } else {
-        map.setPaintProperty("kenyan-counties-fill", "fill-color", "#013E51");
-      }
+      // if (s.showCounties && s.countyChoropleth === "deaths") {
+      //   const matchArgs = [];
+      //   for (const [county, count] of Object.entries(COUNTY_DEATHS)) {
+      //     matchArgs.push(county, count);
+      //   }
+      //   const valueExpr = ["match", ["get", "COUNTY"], ...matchArgs, 0];
+      //   const colorExpr = [
+      //     "interpolate",
+      //     ["linear"],
+      //     valueExpr,
+      //     0,
+      //     "#fff5f0",
+      //     25,
+      //     "#fc9272",
+      //     65,
+      //     "#de2d26",
+      //     146,
+      //     "#67000d",
+      //   ];
+      //   map.setPaintProperty("kenyan-counties-fill", "fill-color", colorExpr);
+      // } else {
+      //   map.setPaintProperty(
+      //     "kenyan-counties-fill",
+      //     "fill-color",
+      //     COUNTY_COLORS.fill,
+      //   );
+      //   map.setPaintProperty(
+      //     "congo-provinces-fill",
+      //     "fill-color",
+      //     COUNTY_COLORS.fill,
+      //   );
+      // }
     }
 
     if (map.getLayer("kenyan-counties-border")) {
       map.setPaintProperty(
         "kenyan-counties-border",
         "line-color",
-        s.showCounties ? "#ffffff" : "#013E51",
+        COUNTY_COLORS.border,
       );
     }
 
-    /** @type {Array<{name: string, lng: number, lat: number, number?: number, transportToNext?: "road" | "flight" | "car", displayName?: string, anchor?: string, offset?: [number, number]}>} */
+    if (map.getLayer("uganda-counties-fill")) {
+      map.setPaintProperty(
+        "uganda-counties-fill",
+        "fill-opacity",
+        s.showCounties ? 1 : 0,
+      );
+      const showBorders = s.showCounties && s.showCountyBorders !== false;
+      map.setPaintProperty(
+        "uganda-counties-border",
+        "line-opacity",
+        showBorders ? 0.4 : 0,
+      );
+      map.setPaintProperty(
+        "uganda-counties-fill",
+        "fill-color",
+        COUNTY_COLORS.fill,
+      );
+    }
+
+    if (map.getLayer("uganda-counties-border")) {
+      map.setPaintProperty(
+        "uganda-counties-border",
+        "line-color",
+        COUNTY_COLORS.border,
+      );
+    }
+
+    if (map.getLayer("congo-counties-fill")) {
+      map.setPaintProperty(
+        "congo-counties-fill",
+        "fill-opacity",
+        s.showCounties ? 1 : 0,
+      );
+      const showBorders = s.showCounties && s.showCountyBorders !== false;
+      map.setPaintProperty(
+        "congo-counties-border",
+        "line-opacity",
+        showBorders ? 0.4 : 0,
+      );
+      map.setPaintProperty(
+        "congo-counties-fill",
+        "fill-color",
+        COUNTY_COLORS.fill,
+      );
+    }
+
+    if (map.getLayer("congo-provinces-fill")) {
+      const showProvinceDeaths = s.showProvinces === true;
+      const provinceValues = Object.entries(EBOLA_PROVINCES).flatMap(
+        ([province, data]) => [province, data.deaths],
+      );
+      const provinceDeathsExpr = [
+        "match",
+        ["get", "shapeName"],
+        ...provinceValues,
+        -1,
+      ];
+      const colorExpr = [
+        "case",
+        [">", provinceDeathsExpr, 0],
+        [
+          "step",
+          provinceDeathsExpr,
+          "#fff5f0", // 0–99
+          100,
+          "#fc9272", // 100–499
+          500,
+          "#de2d26", // 500–1999
+          2000,
+          "#a50f15", // 2000–2999
+          3000,
+          "#67000d", // 3000+
+        ],
+        "#ffffff",
+      ];
+
+      map.setPaintProperty(
+        "congo-provinces-fill",
+        "fill-color",
+        showProvinceDeaths ? colorExpr : "#deded8",
+      );
+      map.setPaintProperty(
+        "congo-provinces-fill",
+        "fill-opacity",
+        showProvinceDeaths ? 0.82 : 0,
+      );
+      map.setPaintProperty(
+        "congo-provinces-border",
+        "line-opacity",
+        showProvinceDeaths ? 0.8 : 0,
+      );
+      map.setLayoutProperty(
+        "congo-province-labels",
+        "visibility",
+        showProvinceDeaths ? "visible" : "none",
+      );
+      map.setFilter(
+        "congo-province-labels",
+        showProvinceDeaths
+          ? [">", provinceDeathsExpr, 0]
+          : ["==", "shapeName", ""],
+      );
+      map.setLayoutProperty(
+        "congo-province-labels",
+        "text-field",
+        // idx !== 2 &&
+        s.showProvinces ? ["concat", ["get", "shapeName"], "\n"] : "",
+      );
+    }
+
+    if (map.getLayer("congo-counties-border")) {
+      map.setPaintProperty(
+        "congo-counties-border",
+        "line-color",
+        COUNTY_COLORS.border,
+      );
+    }
+
+    /** @type {Array<{name: string, lng: number, lat: number, number?: number, color?: string, transportToNext?: "road" | "flight" | "car", displayName?: string, anchor?: string, offset?: [number, number], marker?: boolean}>} */
     const stepLabels = s.labels ?? [];
     const numberedLabels = stepLabels
       .filter((label) => typeof label.number === "number")
@@ -307,18 +443,60 @@
       .flatMap((label, index) => {
         const nextLabel = numberedLabels[index + 1];
         if (!nextLabel || !label.transportToNext) return [];
+        const interpolate = geoInterpolate(
+          [label.lng, label.lat],
+          [nextLabel.lng, nextLabel.lat],
+        );
+        const coordinates = Array.from({ length: 65 }, (_, pointIndex) =>
+          interpolate(pointIndex / 64),
+        );
+        const midpoint = interpolate(0.5);
+        const beforeMidpoint = interpolate(0.49);
+        const afterMidpoint = interpolate(0.51);
+        const latitudeRadians = (midpoint[1] * Math.PI) / 180;
+        const rotation =
+          (Math.atan2(
+            (afterMidpoint[0] - beforeMidpoint[0]) * Math.cos(latitudeRadians),
+            afterMidpoint[1] - beforeMidpoint[1],
+          ) *
+            180) /
+          Math.PI;
+        const modeIcon =
+          label.transportToNext === "flight" || label.transportToNext === "car"
+            ? [
+                {
+                  type: "Feature",
+                  geometry: {
+                    type: "Point",
+                    coordinates: interpolate(0.35),
+                  },
+                  properties: {
+                    kind: "route-mode-icon",
+                    mode: label.transportToNext,
+                    rotation,
+                  },
+                },
+              ]
+            : [];
         return [
           {
             type: "Feature",
             geometry: {
               type: "LineString",
-              coordinates: [
-                [label.lng, label.lat],
-                [nextLabel.lng, nextLabel.lat],
-              ],
+              coordinates,
             },
             properties: { kind: "route", mode: label.transportToNext },
           },
+          {
+            type: "Feature",
+            geometry: { type: "Point", coordinates: midpoint },
+            properties: {
+              kind: "route-arrow",
+              mode: label.transportToNext,
+              rotation,
+            },
+          },
+          ...modeIcon,
         ];
       });
     const labelFeatures = [
@@ -330,8 +508,9 @@
           geometry: { type: "Point", coordinates: [l.lng, l.lat] },
           properties: {
             name: l.displayName || l.name,
-            kind: "town",
+            kind: l.marker === false ? "label" : "town",
             number: l.number,
+            color: l.color ?? "#52090d",
             anchor:
               l.anchor ?? defaults.anchor ?? (l.number ? "left" : "center"),
             offset:
@@ -402,9 +581,18 @@
       zoom: initZoom,
       pitch: initStep.pitch ?? 0,
       bearing: initStep.bearing ?? 0,
-      interactive: false,
+      interactive: true,
+      attributionControl: false,
       maxParallelImageRequests: 6,
     });
+
+    map.addControl(
+      new pkg.AttributionControl({
+        compact: true,
+      }),
+      "bottom-right",
+    );
+    setMapInteractive(false);
 
     const updateLive = () => {
       const c = map.getCenter();
@@ -416,7 +604,7 @@
     map.on("move", updateLive);
     updateLive();
 
-    map.on("load", () => {
+    map.on("load", async () => {
       const hatchSize = 8;
       const hatchData = new Uint8Array(hatchSize * hatchSize * 4);
       for (let y = 0; y < hatchSize; y++) {
@@ -435,6 +623,13 @@
         data: hatchData,
       });
 
+      const [flightIcon, carIcon] = await Promise.all([
+        loadSvgIcon(routeFlightIconSvg),
+        loadSvgIcon(routeCarIconSvg),
+      ]);
+      map.addImage("route-flight", flightIcon);
+      map.addImage("route-car", carIcon);
+
       map.addSource("countries", { type: "geojson", data: wbBoundariesUrl });
       map.addLayer(
         {
@@ -442,10 +637,10 @@
           type: "line",
           source: "countries",
           paint: {
-            "line-color": "#5D9890",
+            "line-color": "#000000",
             "line-opacity": 0,
             "line-width": {
-              base: 1.1,
+              base: 1.5,
               stops: [
                 [3, 1],
                 [22, 20],
@@ -459,6 +654,7 @@
               ],
             },
           },
+          filter: ["in", ["get", "WB_A3"], ["literal", ["DRC", "UGA", "KEN"]]],
         },
         "place_country_minor",
       );
@@ -497,7 +693,7 @@
           type: "line",
           source: "countries",
           paint: {
-            "line-color": "#5C978F",
+            "line-color": "#000000",
             "line-width": {
               base: 1.1,
               stops: [
@@ -528,7 +724,7 @@
           type: "fill",
           source: "kenyan-counties",
           paint: {
-            "fill-color": "#013E51",
+            "fill-color": COUNTY_COLORS.fill,
             "fill-opacity": 1,
             "fill-opacity-transition": { duration: 600, delay: 0 },
           },
@@ -541,7 +737,7 @@
           type: "line",
           source: "kenyan-counties",
           paint: {
-            "line-color": "#013E51",
+            "line-color": COUNTY_COLORS.border,
             "line-width": 0.3,
             "line-opacity": 0.8,
             "line-opacity-transition": { duration: 600, delay: 0 },
@@ -549,6 +745,125 @@
         },
         "place_country_minor",
       );
+
+      map.addSource("uganda-counties", {
+        type: "geojson",
+        data: UgandaCountiesUrl,
+      });
+      map.addLayer(
+        {
+          id: "uganda-counties-fill",
+          type: "fill",
+          source: "uganda-counties",
+          paint: {
+            "fill-color": COUNTY_COLORS.fill,
+            "fill-opacity": 1,
+            "fill-opacity-transition": { duration: 600, delay: 0 },
+          },
+        },
+        "place_country_minor",
+      );
+      map.addLayer(
+        {
+          id: "uganda-counties-border",
+          type: "line",
+          source: "uganda-counties",
+          paint: {
+            "line-color": COUNTY_COLORS.border,
+            "line-width": 0.3,
+            "line-opacity": 0.8,
+            "line-opacity-transition": { duration: 600, delay: 0 },
+          },
+        },
+        "place_country_minor",
+      );
+
+      map.addSource("congo-counties", {
+        type: "geojson",
+        data: congoCountiesUrl,
+        attribution: "",
+      });
+      map.addLayer(
+        {
+          id: "congo-counties-fill",
+          type: "fill",
+          source: "congo-counties",
+          paint: {
+            "fill-color": COUNTY_COLORS.fill,
+            "fill-opacity": 1,
+            "fill-opacity-transition": { duration: 600, delay: 0 },
+          },
+        },
+        "place_country_minor",
+      );
+      map.addLayer(
+        {
+          id: "congo-counties-border",
+          type: "line",
+          source: "congo-counties",
+          paint: {
+            "line-color": COUNTY_COLORS.border,
+            "line-width": 0.3,
+            "line-opacity": 0.8,
+            "line-opacity-transition": { duration: 600, delay: 0 },
+          },
+        },
+        "place_country_minor",
+      );
+
+      map.addSource("congo-provinces", {
+        type: "geojson",
+        data: congoProvincesUrl,
+        attribution: "",
+      });
+      map.addLayer(
+        {
+          id: "congo-provinces-fill",
+          type: "fill",
+          source: "congo-provinces",
+          paint: {
+            "fill-color": "#deded8",
+            "fill-opacity": 0,
+            "fill-opacity-transition": { duration: 600, delay: 0 },
+          },
+        },
+        "place_country_minor",
+      );
+      map.addLayer(
+        {
+          id: "congo-provinces-border",
+          type: "line",
+          source: "congo-provinces",
+          paint: {
+            "line-color": "#333333",
+            "line-width": 0.8,
+            "line-opacity": 0,
+            "line-opacity-transition": { duration: 600, delay: 0 },
+          },
+        },
+        "place_country_minor",
+      );
+      map.addLayer({
+        id: "congo-province-labels",
+        type: "symbol",
+        source: "congo-provinces",
+        filter: ["==", "shapeName", ""],
+        layout: {
+          visibility: "none",
+          "text-field": "",
+          "text-font": ["Noto Sans Regular"],
+          "text-size": 12,
+          "text-anchor": "center",
+          // "text-transform": "uppercase",
+          "text-allow-overlap": false,
+        },
+        paint: {
+          "text-color": "#1a1a1a",
+          // "text-halo-color": "#fff",
+          "text-halo-width": 1.5,
+        },
+      });
+      // updateProvinceMetric();
 
       map.addSource("step-labels", {
         type: "geojson",
@@ -581,13 +896,76 @@
         },
       });
       map.addLayer({
+        id: "step-label-route-arrows",
+        type: "symbol",
+        source: "step-labels",
+        filter: [
+          "all",
+          ["==", ["get", "kind"], "route-arrow"],
+          ["==", ["get", "mode"], "road"],
+        ],
+        layout: {
+          "text-field": "▶",
+          "text-font": ["Noto Sans Regular"],
+          "text-size": 13,
+          "text-anchor": "center",
+          "text-rotate": ["-", ["get", "rotation"], 90],
+          "text-rotation-alignment": "map",
+          "text-keep-upright": false,
+          "text-allow-overlap": true,
+          "text-ignore-placement": true,
+        },
+        paint: {
+          "text-color": [
+            "match",
+            ["get", "mode"],
+            "road",
+            "#52090d",
+            "flight",
+            "#168A36",
+            "car",
+            "#2878B5",
+            "#777777",
+          ],
+          "text-halo-color": "#fff",
+          "text-halo-width": 0.5,
+        },
+      });
+      map.addLayer({
+        id: "step-label-route-mode-icons",
+        type: "symbol",
+        source: "step-labels",
+        filter: [
+          "all",
+          ["==", ["get", "kind"], "route-mode-icon"],
+          ["in", ["get", "mode"], ["literal", ["flight", "car"]]],
+        ],
+        layout: {
+          "icon-image": [
+            "match",
+            ["get", "mode"],
+            "flight",
+            "route-flight",
+            "car",
+            "route-car",
+            "route-car",
+          ],
+          "icon-size": 0.85,
+          "icon-rotate": ["get", "rotation"],
+          "icon-rotation-alignment": "map",
+          "icon-allow-overlap": true,
+          "icon-ignore-placement": true,
+        },
+      });
+      map.moveLayer("country-borders", "step-label-route");
+      map.addLayer({
         id: "step-label-points",
         type: "circle",
         source: "step-labels",
         filter: ["==", ["get", "kind"], "town"],
         paint: {
           "circle-radius": 9,
-          "circle-color": "#6D0000",
+          "circle-color": ["get", "color"],
           "circle-stroke-color": "#fff",
           "circle-stroke-width": 2,
         },
@@ -599,7 +977,7 @@
         filter: ["has", "number"],
         layout: {
           "text-field": ["to-string", ["get", "number"]],
-          "text-font": ["Open Sans Regular"],
+          "text-font": ["Noto Sans Regular"],
           "text-size": 12,
           "text-anchor": "center",
           "text-allow-overlap": true,
@@ -615,7 +993,7 @@
         source: "step-labels",
         layout: {
           "text-field": ["get", "name"],
-          "text-font": ["Open Sans Regular"],
+          "text-font": ["Noto Sans Regular"],
           "text-size": 12,
           "text-anchor": ["get", "anchor"],
           "text-offset": ["get", "offset"],
@@ -627,6 +1005,31 @@
           "text-halo-width": 1.5,
         },
       });
+      map.addLayer({
+        id: "country-highlight-labels",
+        type: "symbol",
+        source: "countries",
+        filter: ["==", "WB_A3", ""],
+        layout: {
+          "text-field": [
+            "match",
+            ["get", "WB_A3"],
+            "DRC",
+            "DR Congo",
+            ["get", "NAM_0"],
+          ],
+          "text-font": ["Noto Sans Regular"],
+          "text-size": 12,
+          "text-transform": "uppercase",
+          "text-allow-overlap": false,
+        },
+        paint: {
+          "text-color": "#1a1a1a",
+          "text-halo-color": "#fff",
+          "text-halo-width": 1.5,
+        },
+      });
+      map.moveLayer("water", "congo-provinces-border");
       mapLoaded = true;
     });
 
@@ -656,8 +1059,8 @@
 </script>
 
 <Seo
-  title="Femicide deaths by county | The Granule Africa"
-  description="Explore the distribution of femicide deaths across Kenya's counties."
+  title="Tracing how Ebola Kenya | The Granule Africa"
+  description="Tracing the journey of Ebola patient zero in Kenya"
   path="/femicide-counties"
   image="/Femicide.png"
   noindex
@@ -665,13 +1068,29 @@
 
 <div class="scrolly-globe-wrapper">
   <Nav />
-  <div class="map-wrap">
+  <section class="container mx-auto md:w-3/4 pt-20 p-10 grid gap-6">
+    <p class="w-3/4 font-light mx-auto text-sm text-center font-display">
+      NAIROBI — 15 October 2026 <br /> By: Brenda Kiptim
+    </p>
+    <h1 class="text-4xl md:text-6xl text-center font-bold font-display">
+      Tracing Kenya's first
+      <span class="text-[#920c1d] font-bolder italic">Ebola</span> Case
+    </h1>
+    <p class="mx-auto text-lg text-center font-serif md:w-3/4">
+      On 3 October 2026, a Kenyan businessman landed in Nairobi from Uganda. He
+      had passed through one of the most active Ebola outbreak zones in the
+      world. He was screened. He went to hospital and died two days later. <br
+      />
+      We traced his path in the weeks before he landed in Kenya.
+
+      <br /><br />
+      <span class="uppercase font-light font-serif"
+        >Scroll to follow the route</span
+      >
+    </p>
+  </section>
+  <div class="map-wrap bg-gray-50">
     <div class="map" bind:this={mapContainer}></div>
-    <div class="route-mode-legend" aria-label="Transport modes">
-      <div><span class="route-mode-line road"></span>Road</div>
-      <div><span class="route-mode-line flight"></span>Flight</div>
-      <div><span class="route-mode-line car"></span>Car</div>
-    </div>
   </div>
 
   <div class="scrolly-container">
@@ -729,6 +1148,25 @@
                         {/each}
                       </div>
                     {/if}
+                  </div>
+                {:else if step.legend.type === "route"}
+                  <div class="step-legend-complex">
+                    {#if step.legend.title}
+                      <div class="legend-title font-bold">
+                        {@html marked.parseInline(step.legend.title)}
+                      </div>
+                    {/if}
+                    <div class="route-legend-items">
+                      {#each step.legend.stops ?? [] as stop (stop.value)}
+                        <div class="legend-item">
+                          <span
+                            class="route-mode-line"
+                            style:border-color={stop.color}
+                          ></span>
+                          <span>{stop.label}</span>
+                        </div>
+                      {/each}
+                    </div>
                   </div>
                 {:else}
                   <div class="step-legend-complex">
@@ -811,41 +1249,15 @@
     height: 100%;
   }
 
-  .route-mode-legend {
-    position: absolute;
-    right: 16px;
-    top: 20px;
-    z-index: 1;
+  .route-legend-items {
     display: flex;
+    flex-wrap: wrap;
     gap: 12px;
-    padding: 8px 10px;
-    border-radius: 4px;
-    background: rgba(255, 255, 255, 0.94);
-    color: #222;
-    font-size: 12px;
-  }
-
-  .route-mode-legend div {
-    display: flex;
-    align-items: center;
-    gap: 5px;
   }
 
   .route-mode-line {
-    width: 22px;
-    border-top: 3px dotted;
-  }
-
-  .route-mode-line.road {
-    border-color: #8b5a2b;
-  }
-
-  .route-mode-line.flight {
-    border-color: #168a36;
-  }
-
-  .route-mode-line.car {
-    border-color: #2878b5;
+    width: 25px;
+    border-top: 3px dashed;
   }
 
   .scrolly-container {
@@ -862,14 +1274,20 @@
     justify-content: center;
   }
 
+  @media (max-width: 768px) {
+    .step {
+      height: 130vh;
+    }
+  }
+
   .step-box {
     pointer-events: auto;
-    background: rgba(255, 255, 255, 0.95);
+    background: #ffffff;
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 20px 24px;
     max-width: 560px;
-    width: 30%;
+    width: 60%;
     font-family: inherit;
     font-size: 14.5px;
     line-height: 1.65;
@@ -1064,5 +1482,13 @@
 
   .dev-btn:hover {
     background: #1d4ed8;
+  }
+
+  @media (max-width: 768px) {
+    .province-map-controls {
+      top: 70px;
+      right: 12px;
+      width: min(250px, calc(100vw - 24px));
+    }
   }
 </style>

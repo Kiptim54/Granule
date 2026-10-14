@@ -1,0 +1,46 @@
+{
+  "provinces": {
+    "Ituri": {
+      "name": "Ituri",
+      "cases": 6480,
+      "deaths": 2989,
+      "cfr": 46.1
+    },
+    "North Kivu": {
+      "name": "North Kivu",
+      "cases": 1755,
+      "deaths": 1013,
+      "cfr": 57.7
+    },
+    "Upper Uele": {
+      "name": "Haut-Uele",
+      "cases": 364,
+      "deaths": 153,
+      "cfr": 42.0
+    },
+    "Tshopo": {
+      "name": "Tshopo",
+      "cases": 51,
+      "deaths": 17,
+      "cfr": 33.3
+    },
+    "Lower Uele": {
+      "name": "Bas-Uele",
+      "cases": 10,
+      "deaths": 4,
+      "cfr": 40.0
+    },
+    "South Kivu": {
+      "name": "Sud-Kivu",
+      "cases": 3,
+      "deaths": 1,
+      "cfr": 33.3
+    },
+    "Sud-Ubangi": {
+      "name": "Sud-Ubangi",
+      "cases": 2,
+      "deaths": 1,
+      "cfr": 50.0
+    }
+  }
+}
