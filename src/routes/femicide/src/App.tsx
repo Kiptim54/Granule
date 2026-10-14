@@ -1,6 +1,7 @@
 import "./App.css";
 import Header from "./components/Header";
 import Story from "./components/Story";
+import React from "react";
 // import Women from "./components/Women";
 // import Scrolly from "./components/Scrolly/Scrolly";
 // import LineChartScrolly from "./components/Scrolly/LineChartScrolly";
@@ -12,8 +13,27 @@ import Story from "./components/Story";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Methodology from "./components/Methodology";
+import Papa from "papaparse";
 
 function App() {
+  const [data, setData] = React.useState<any[]>([]);
+
+  React.useEffect(() => {
+    Papa.parse(
+      "https://docs.google.com/spreadsheets/d/e/2PACX-1vQQJLPXhEJET1OlE43zGWYDhdls6PTuifpXT4nQSTpxRNv0dw8GYcX7ercDpNTVOM8P0vbyM-sRNuDI/pub?output=csv",
+      {
+        download: true,
+        header: true,
+        complete: (results) => {
+          setData(results.data);
+        },
+      },
+    );
+  }, []); // Empty array = runs once on mount
+  React.useEffect(() => {
+    console.log(data);
+  }, [data]);
+
   return (
     <div>
       <Nav />
