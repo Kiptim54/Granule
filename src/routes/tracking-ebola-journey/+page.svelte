@@ -1116,13 +1116,13 @@
       On 3 October 2026, a Kenyan businessman landed in Nairobi from Uganda. He
       had travelled through one of the most active Ebola outbreak zones in the
       world. He was diagnosed with Ebola at The Nairobi Hospital and died two
-      days later.
+      days later. Kenya now has two confirmed cases and 108 people in
+      quarantine.
     </p>
     <p
-      class="mx-auto text-lg text-center text-balance font-serif md:w-[75%] mt-4"
+      class="mx-auto text-lg text-center text-balance font-serif md:w-[75%] mt-2"
     >
-      Kenya now has two confirmed cases and 108 people in quarantine. We traced
-      his path in the weeks before he landed in Kenya.
+      We traced his path in the weeks before he landed in Kenya.
     </p>
     <section
       class=" mx-auto mt-4 flex gap-4 flex-col items-center justify-center"
@@ -1272,8 +1272,31 @@
     </div>
   {/if}
 </div>
+<p class="text-xs text-right text-neutral-500 p-6 italic">
+  The chart and story are inspired by the BBC news <a
+    href="https://www.bbc.com/news/articles/cqp8gknl1njjo"
+    target="_blank"
+    class="text-red-900">article</a
+  >
+  <br />
+</p>
 <section>
   <Tracing />
+  <section class="container mx-auto pt-20 grid p-6 gap-6 md:w-3/4 w-full mb-6">
+    <p class="text-lg font-serif w-3/4 mx-auto">
+      Contacts are monitored for 21 days from their last possible exposure to
+      the virus, with daily symptom and temperature checks. <br /> <br /> The
+      Ministry of Health says there is no evidence of spread in the wider
+      community. But the clock is not the same for everyone. The second patient
+      fell ill while in quarantine, so everyone who has been in contact with him
+      since his symptoms began has a count of their own. Until those windows
+      close and the 15 people still being traced are found, the picture can
+      still change. <br /> <br /> We will keep updating this page as new figures
+      are released.
+    </p>
+  </section>
+
+  <Footer />
 </section>
 
 <style>

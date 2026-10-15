@@ -152,11 +152,7 @@ steps:
         offset: [-3.5, 0]
         lng: 23.5333
         lat: 3.3667
-      # - name: Malalise
-      #   number: 4
-      #   transportToNext: road
-      #   lng: 24.01
-      #   lat: 3.40 # Approximate position based on the supplied map image.
+
       - name: Bondo
         number: 4
         transportToNext: flight
@@ -177,10 +173,6 @@ steps:
         transportToNext: car
         lng: 29.6868
         lat: 0.0479
-      # - name: Kampala
-      #   number: 9
-      #   lng: 32.5825
-      #   lat: 0.3476
 
   # Step 1 — Sub-Saharan Africa country highlight.
   - title: flying
@@ -248,42 +240,39 @@ steps:
         offset: [-3.5, 0]
         lng: 23.5333
         lat: 3.3667
-      - name: Malalise
-        number: 4
-        transportToNext: road
-        lng: 24.01
-        lat: 3.40 # Approximate position based on the supplied map image.
+
       - name: Bondo
-        number: 5
+        number: 4
         transportToNext: flight
         lng: 23.6887
         lat: 3.8130
       - name: Kisangani
-        number: 6
+        number: 5
         transportToNext: flight
         lng: 25.2057
         lat: 0.5184
       - name: Beni
-        number: 7
+        number: 6
         transportToNext: road
         lng: 29.47
         lat: 0.49
       - name: Kasindi (DRC) or Mpondwe (UGA)
-        number: 8
+        number: 7
         transportToNext: car
         lng: 29.6868
         lat: 0.0479
       - name: Kampala
-        number: 9
+        number: 8
         lng: 32.5825
         lat: 0.3476
         transportToNext: car
       - name: Entebbe
-        number: 10
+        number: 9
         lng: 32.4607
         lat: 0.0512
 
       - name: Nairobi
+        number: 10
         lng: 36.8219
         lat: -1.2921
 
@@ -350,44 +339,39 @@ steps:
         offset: [-3.5, 0]
         lng: 23.5333
         lat: 3.3667
-      - name: Malalise
-        number: 4
-        transportToNext: road
-        lng: 24.01
-        lat: 3.40 # Approximate position based on the supplied map image.
       - name: Bondo
-        number: 5
+        number: 4
         transportToNext: flight
         lng: 23.6887
         lat: 3.8130
       - name: Kisangani
-        number: 6
+        number: 5
         transportToNext: flight
         lng: 25.2057
         lat: 0.5184
       - name: Beni
-        number: 7
+        number: 6
         transportToNext: road
         lng: 29.47
         lat: 0.49
       - name: Kasindi (DRC) or Mpondwe (UGA)
-        number: 8
+        number: 7
         transportToNext: car
         lng: 29.6868
         lat: 0.0479
       - name: Kampala
-        number: 9
+        number: 8
         lng: 32.5825
         lat: 0.3476
         transportToNext: car
       - name: Entebbe
-        number: 10
+        number: 9
         lng: 32.4607
         lat: 0.0512
         transportToNext: flight
 
       - name: Nairobi
-        number: 11
+        number: 10
         lng: 36.8219
         lat: -1.2921
 
@@ -459,425 +443,40 @@ steps:
         offset: [-3.5, 0]
         lng: 23.5333
         lat: 3.3667
-      - name: Malalise
-        number: 4
-        transportToNext: road
-        lng: 24.01
-        lat: 3.40 # Approximate position based on the supplied map image.
+
       - name: Bondo
-        number: 5
+        number: 4
         transportToNext: flight
         lng: 23.6887
         lat: 3.8130
       - name: Kisangani
-        number: 6
+        number: 5
+
         transportToNext: flight
         lng: 25.2057
         lat: 0.5184
       - name: Beni
-        number: 7
+        number: 6
         transportToNext: road
         lng: 29.47
         lat: 0.49
       - name: Kasindi (DRC) or Mpondwe (UGA)
-        number: 8
+        number: 7
         transportToNext: car
         lng: 29.6868
         lat: 0.0479
       - name: Kampala
-        number: 9
+        number: 8
         lng: 32.5825
         lat: 0.3476
         transportToNext: car
       - name: Entebbe
-        number: 10
+        number: 9
         lng: 32.4607
         lat: 0.0512
         transportToNext: flight
 
       - name: Nairobi
-        number: 11
+        number: 10
         lng: 36.8219
         lat: -1.2921
-
-  # # Step 2 — multi-color highlight (object form) + complex legend.
-
-#   # Step 3 — choropleth: documented deaths by county
-#   - title: Killers
-#     text: >
-#       Death isn't spread evenly across the country. Some counties carry far more of the weight than others.
-#     legend:
-#       type: gradient
-#       title: "Documented deaths by county"
-#       stops:
-#         - value: 0
-#           color: "#fff5f0"
-#           label: "0"
-#         - value: 25
-#           color: "#fc9272"
-#           label: "25"
-#         - value: 65
-#           color: "#de2d26"
-#           label: "65"
-#         - value: 146
-#           color: "#67000d"
-#           label: "146"
-#     countyChoropleth: deaths
-#     showCounties: true
-#     center: [37.62, 0.51]
-#     zoom: 6.15
-#     pitch: 0.0
-#     bearing: 0.0
-#     mobile:
-#       center: [19.67, -0.52]
-#       zoom: 2.0
-#     highlight:
-#       - KEN
-#     labels:
-#       - name: Turkana
-#         lng: 35.78
-#         lat: 2.73
-#       - name: Marsabit
-#         lng: 37.30
-#         lat: 2.52
-#       - name: Mandera
-#         lng: 41.03
-#         lat: 3.27
-#       - name: Wajir
-#         lng: 40.01
-#         lat: 1.62
-#       - name: West Pokot
-#         lng: 35.40
-#         lat: 1.84
-#       - name: Samburu
-#         lng: 37.03
-#         lat: 1.30
-#       - name: Isiolo
-#         lng: 38.25
-#         lat: 0.51
-#       - name: Baringo
-#         lng: 35.75
-#         lat: 0.73
-#       - name: Keiyo-Marakwet
-#         lng: 35.63
-#         lat: 0.72
-#       - name: Trans Nzoia
-#         lng: 34.94
-#         lat: 1.00
-#       - name: Bungoma
-#         lng: 34.70
-#         lat: 0.69
-#       - name: Garissa
-#         lng: 39.57
-#         lat: 0.03
-#       - name: Uasin Gishu
-#         lng: 35.26
-#         lat: 0.62
-#       - name: Kakamega
-#         lng: 34.76
-#         lat: 0.48
-#       - name: Laikipia
-#         lng: 37.02
-#         lat: 0.24
-#       - name: Busia
-#         lng: 34.24
-#         lat: 0.46
-#       - name: Meru
-#         lng: 37.98
-#         lat: 0.02
-#       - name: Nandi
-#         lng: 35.02
-#         lat: 0.11
-#       - name: Siaya
-#         lng: 34.34
-#         lat: 0.18
-#       - name: Nakuru
-#         lng: 36.00
-#         lat: -0.39
-#       - name: Vihiga
-#         lng: 34.76
-#         lat: 0.10
-#       - name: Nyandarua
-#         lng: 36.46
-#         lat: -0.41
-#       - name: Tharaka
-#         lng: 37.95
-#         lat: -0.19
-#       - name: Kericho
-#         lng: 35.24
-#         lat: -0.34
-#       - name: Kisumu
-#         lng: 35.00
-#         lat: -0.21
-#       - name: Nyeri
-#         lng: 37.01
-#         lat: -0.47
-#       - name: Tana River
-#         lng: 39.61
-#         lat: -1.43
-#       - name: Kitui
-#         lng: 38.18
-#         lat: -1.66
-#       - name: Kirinyaga
-#         lng: 37.33
-#         lat: -0.62
-#       - name: Embu
-#         lng: 37.65
-#         lat: -0.65
-#       - name: Homa Bay
-#         lng: 34.67
-#         lat: -0.55
-#       - name: Bomet
-#         lng: 35.28
-#         lat: -0.68
-#       - name: Nyamira
-#         lng: 34.96
-#         lat: -0.59
-#       - name: Narok
-#         lng: 35.67
-#         lat: -1.16
-#       - name: Kisii
-#         lng: 34.84
-#         lat: -0.66
-#       - name: "Murang'a"
-#         lng: 37.07
-#         lat: -0.74
-#       - name: Migori
-#         lng: 34.45
-#         lat: -0.86
-#       - name: Kiambu
-#         lng: 37.03
-#         lat: -1.09
-#       - name: Machakos
-#         lng: 37.51
-#         lat: -1.21
-#       - name: Kajiado
-#         lng: 36.80
-#         lat: -1.90
-#       - name: Nairobi
-#         lng: 36.88
-#         lat: -1.33
-#       - name: Makueni
-#         lng: 37.87
-#         lat: -2.11
-#       - name: Lamu
-#         lng: 40.71
-#         lat: -2.30
-#       - name: Kilifi
-#         lng: 39.97
-#         lat: -3.39
-#       - name: Taita Taveta
-#         lng: 38.53
-#         lat: -3.08
-#       - name: Kwale
-#         lng: 39.41
-#         lat: -4.70
-#       - name: Mombasa
-#         lng: 39.58
-#         lat: -4.12
-
-# # Step 4 — multi-color with a muted "other" group to show contrast.
-# - title: Killers
-#   text: >
-#     Nairobi alone holds 146 cases. Nakuru follows with 85, Kiambu with 65. <b>Together, three counties account for nearly a third of every documented killing in the country </b>.
-#   legend:
-#     type: gradient
-#     title: "Documented deaths by county"
-#     stops:
-#       - value: 0
-#         color: "#fff5f0"
-#         label: "0"
-#       - value: 25
-#         color: "#fc9272"
-#         label: "25"
-#       - value: 65
-#         color: "#de2d26"
-#         label: "65"
-#       - value: 146
-#         color: "#67000d"
-#         label: "146"
-#   countyChoropleth: deaths
-#   showCounties: true
-#   center: [38.33, -1.06]
-#   zoom: 7.53
-#   pitch: 0.0
-#   bearing: 0.0
-#   mobile:
-#     center: [19.67, -0.52]
-#     zoom: 2.0
-#   highlight:
-#     - KEN
-#   labels:
-#     - name: Turkana
-#       lng: 35.78
-#       lat: 2.73
-#     - name: Marsabit
-#       lng: 37.30
-#       lat: 2.52
-#     - name: Mandera
-#       lng: 41.03
-#       lat: 3.27
-#     - name: Wajir
-#       lng: 40.01
-#       lat: 1.62
-#     - name: West Pokot
-#       lng: 35.40
-#       lat: 1.84
-#     - name: Samburu
-#       lng: 37.03
-#       lat: 1.30
-#     - name: Isiolo
-#       lng: 38.25
-#       lat: 0.51
-#     - name: Baringo
-#       lng: 35.75
-#       lat: 0.73
-#     - name: Keiyo-Marakwet
-#       lng: 35.63
-#       lat: 0.72
-#     - name: Trans Nzoia
-#       lng: 34.94
-#       lat: 1.00
-#     - name: Bungoma
-#       lng: 34.70
-#       lat: 0.69
-#     - name: Garissa
-#       lng: 39.57
-#       lat: 0.03
-#     - name: Uasin Gishu
-#       lng: 35.26
-#       lat: 0.62
-#     - name: Kakamega
-#       lng: 34.76
-#       lat: 0.48
-#     - name: Laikipia
-#       lng: 37.02
-#       lat: 0.24
-#     - name: Busia
-#       lng: 34.24
-#       lat: 0.46
-#     - name: Meru
-#       lng: 37.98
-#       lat: 0.02
-#     - name: Nandi
-#       lng: 35.02
-#       lat: 0.11
-#     - name: Siaya
-#       lng: 34.34
-#       lat: 0.18
-#     - name: Nakuru
-#       lng: 36.00
-#       lat: -0.39
-#     - name: Vihiga
-#       lng: 34.76
-#       lat: 0.10
-#     - name: Nyandarua
-#       lng: 36.46
-#       lat: -0.41
-#     - name: Tharaka
-#       lng: 37.95
-#       lat: -0.19
-#     - name: Kericho
-#       lng: 35.24
-#       lat: -0.34
-#     - name: Kisumu
-#       lng: 35.00
-#       lat: -0.21
-#     - name: Nyeri
-#       lng: 37.01
-#       lat: -0.47
-#     - name: Tana River
-#       lng: 39.61
-#       lat: -1.43
-#     - name: Kitui
-#       lng: 38.18
-#       lat: -1.66
-#     - name: Kirinyaga
-#       lng: 37.33
-#       lat: -0.62
-#     - name: Embu
-#       lng: 37.65
-#       lat: -0.65
-#     - name: Homa Bay
-#       lng: 34.67
-#       lat: -0.55
-#     - name: Bomet
-#       lng: 35.28
-#       lat: -0.68
-#     - name: Nyamira
-#       lng: 34.96
-#       lat: -0.59
-#     - name: Narok
-#       lng: 35.67
-#       lat: -1.16
-#     - name: Kisii
-#       lng: 34.84
-#       lat: -0.66
-#     - name: "Murang'a"
-#       lng: 37.07
-#       lat: -0.74
-#     - name: Migori
-#       lng: 34.45
-#       lat: -0.86
-#     - name: Kiambu
-#       lng: 37.03
-#       lat: -1.09
-#     - name: Machakos
-#       lng: 37.51
-#       lat: -1.21
-#     - name: Kajiado
-#       lng: 36.80
-#       lat: -1.90
-#     - name: Nairobi
-#       lng: 36.88
-#       lat: -1.33
-#     - name: Makueni
-#       lng: 37.87
-#       lat: -2.11
-#     - name: Lamu
-#       lng: 40.71
-#       lat: -2.30
-#     - name: Kilifi
-#       lng: 39.97
-#       lat: -3.39
-#     - name: Taita Taveta
-#       lng: 38.53
-#       lat: -3.08
-#     - name: Kwale
-#       lng: 39.41
-#       lat: -4.70
-#     - name: Mombasa
-#       lng: 39.58
-#       lat: -4.12
-# # Step 5 — data gap / closing reflection
-# - title: The Undercount
-#   text: >
-#     These 964 cases are what was documented, reported, recorded, and matched to a county. The real number is higher. Femicide is among the most underreported crimes in Kenya. Every blank space on this map is not an absence of violence but an absence of data.
-#   legend:
-#     type: gradient
-#     title: "Documented deaths by county"
-#     stops:
-#       - value: 0
-#         color: "#fff5f0"
-#         label: "0"
-#       - value: 25
-#         color: "#fc9272"
-#         label: "25"
-#       - value: 65
-#         color: "#de2d26"
-#         label: "65"
-#       - value: 146
-#         color: "#67000d"
-#         label: "146"
-#   countyChoropleth: deaths
-#   showCounties: true
-#   center: [37.62, 0.51]
-#   zoom: 6.15
-#   pitch: 0.0
-#   bearing: 0.0
-#   mobile:
-#     center: [19.67, -0.52]
-#     zoom: 6.0
-#   highlight:
-#     - KEN
-#   labels: []

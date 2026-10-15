@@ -12,11 +12,11 @@
 
   // MoH press release, 14 Oct 2026 (figures as at 13 Oct)
   const counts: Record<Status, number> = {
+    dead: 1,
     confirmed: 1,
     quarantine: 107, // 108 in quarantine minus case 2
     out_of_country: 5,
     untraced: 15,
-    dead: 1,
   };
 
   const label: Record<Status, string> = {
@@ -38,7 +38,7 @@
   const makeGroup = (count: number, status: Status): Contact[] =>
     Array.from({ length: count }, () => ({ status }));
 
-  const PIVOT_AT = 37; // case 2 sits inside the quarantine crowd
+  const PIVOT_AT = 0; // case 2 sits inside the quarantine crowd
   const people: Contact[] = [
     ...makeGroup(PIVOT_AT, "quarantine"),
     ...makeGroup(counts.confirmed, "confirmed"),
@@ -72,20 +72,18 @@
 </script>
 
 <section
-  class="container mx-auto text-center pt-20 grid p-6 gap-6 text-balance md:w-3/4"
+  class="container mx-auto text-center pt-20 grid p-6 gap-6 text-balance md:w-3/4 w-full"
 >
-  <h1 class="text-4xl font-bold text-balance font-display">
-    Kenya's first Ebola case has
+  <h1 class="text-3xl md:text-4xl font-bold text-balance font-display">
+    Kenya’s first Ebola <span class="standout">death</span> has
     <span class="standout">128 contacts.</span>
   </h1>
-  <p class="text-lg font-serif text-balance w-3/4 mx-auto">
+  <p class="text-lg font-serif text-balance md:w-3/4 mx-auto">
     Of the 128 contacts, 108 were in quarantine in Kenya. One of them, a close
     relative, fell ill and tested positive while in quarantine. Five are outside
     Kenya, and 15 are still being traced.
   </p>
-  <section class=" flex justify-center mx-auto w-[80%]">
-    <Person color="#920c1d" />
-  </section>
+
   <ul class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm font-serif">
     {#each Object.keys(counts) as Status[] as s}
       <li class="flex items-center gap-2">
@@ -95,6 +93,14 @@
       </li>
     {/each}
   </ul>
+  <section class=" flex justify-center mx-auto w-[80%] flex-col mb-4">
+    <div class="block mx-auto">
+      <Person color="#920c1d" />
+    </div>
+    <p class="text-base font-serif italic">
+      The first case, who died on 5 October
+    </p>
+  </section>
 
   <div
     bind:this={peopleGrid}
@@ -115,9 +121,15 @@
     {/each}
   </div>
 
-  <p class="text-sm text-neutral-500">
+  <p class="text-xs text-neutral-500">
     Source: Ministry of Health press release, 14 October 2026. Figures as at 13
     October.
+    <br />
+    Person Icon by:
+    <a
+      class="text-gray-500 text-sm italic"
+      href="https://thenounproject.com/creator/momibucce/">Manuela Buccé KR</a
+    > from Noun Project (CC BY 3.0)
   </p>
 </section>
 
