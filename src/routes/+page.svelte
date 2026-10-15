@@ -34,6 +34,18 @@
   const stories = [
     {
       id: 0,
+      category: "Health",
+      title: "Tracing Kenya's first Ebola Case",
+      excerpt:
+        "A Naya Kenya report on the menstrual health crisis in Kenya, and the hidden costs of period poverty.",
+      date: "October 2026",
+      tag: ["Data Story", "Interactive"],
+      bg: "#e36d7c",
+      link: "/tracking-ebola-journey",
+      image: "/ebola.gif",
+    },
+    {
+      id: 1,
       category: "Menstrual Health",
       title: "The Price of Dignity",
       excerpt:
@@ -60,7 +72,7 @@
       image: "/output.gif",
     },
     {
-      id: 1,
+      id: 3,
       category: "Femicide",
       title: "The Names We Don't Say: Mapping Kenya's Femicide Crisis",
       excerpt:
@@ -71,27 +83,6 @@
       link: "/femicide",
       image: "/femicide.gif",
     },
-
-    // {
-    //   id: 3,
-    //   category: "Politics",
-    //   title: "Follow the Money: How Public Funds Move in an Election Year",
-    //   excerpt:
-    //     "An audit of public spending patterns in election cycles — and what the data reveals about where power actually flows.",
-    //   date: "November 2024",
-    //   tag: "Interactive",
-    //   bg: "#2A2060",
-    // },
-    // {
-    //   id: 4,
-    //   category: "Economy",
-    //   title: "The Informal Economy is Not Informal: Nairobi's Hidden GDP",
-    //   excerpt:
-    //     "Street traders, boda bodas, and roadside kiosks account for more of Nairobi's economy than anyone officially counts.",
-    //   date: "September 2024",
-    //   tag: "Data Story",
-    //   bg: "#5C3A1E",
-    // },
   ];
 
   const team = [
