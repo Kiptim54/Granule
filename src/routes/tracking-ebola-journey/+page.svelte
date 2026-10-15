@@ -24,6 +24,7 @@
   import countyDeathsData from "./count-deaths.json";
   import ebolaProvinceData from "./ebola-province-data.json";
   import Seo from "$lib/components/Seo.svelte";
+  import CircleChevronDown from "@lucide/svelte/icons/chevron-down";
 
   let { lang, translation } = $props();
 
@@ -507,7 +508,9 @@
           type: "Feature",
           geometry: { type: "Point", coordinates: [l.lng, l.lat] },
           properties: {
-            name: l.displayName || l.name,
+            name: ["Kenya", "Uganda", "DR Congo"].includes(l.name)
+              ? (l.displayName || l.name).toUpperCase()
+              : l.displayName || l.name,
             kind: l.marker === false ? "label" : "town",
             number: l.number,
             color: l.color ?? "#52090d",
@@ -951,7 +954,12 @@
             "route-car",
           ],
           "icon-size": 0.85,
-          "icon-rotate": ["get", "rotation"],
+          "icon-rotate": [
+            "case",
+            ["==", ["get", "mode"], "car"],
+            ["-", ["get", "rotation"], 90],
+            ["get", "rotation"],
+          ],
           "icon-rotation-alignment": "map",
           "icon-allow-overlap": true,
           "icon-ignore-placement": true,
@@ -991,9 +999,36 @@
         id: "step-labels",
         type: "symbol",
         source: "step-labels",
+        filter: [
+          "!",
+          ["in", ["get", "name"], ["literal", ["KENYA", "UGANDA", "DR CONGO"]]],
+        ],
         layout: {
           "text-field": ["get", "name"],
           "text-font": ["Noto Sans Regular"],
+          "text-size": 12,
+          "text-anchor": ["get", "anchor"],
+          "text-offset": ["get", "offset"],
+          "text-allow-overlap": true,
+        },
+        paint: {
+          "text-color": "#1a1a1a",
+          "text-halo-color": "#fff",
+          "text-halo-width": 1.5,
+        },
+      });
+      map.addLayer({
+        id: "step-country-labels",
+        type: "symbol",
+        source: "step-labels",
+        filter: [
+          "in",
+          ["get", "name"],
+          ["literal", ["KENYA", "UGANDA", "DR CONGO"]],
+        ],
+        layout: {
+          "text-field": ["get", "name"],
+          "text-font": ["Noto Sans Bold"],
           "text-size": 12,
           "text-anchor": ["get", "anchor"],
           "text-offset": ["get", "offset"],
@@ -1068,28 +1103,37 @@
 
 <div class="scrolly-globe-wrapper">
   <Nav />
-  <section class="container mx-auto md:w-3/4 pt-20 p-10 grid gap-6">
-    <p class="w-3/4 font-light mx-auto text-sm text-center font-display">
-      NAIROBI — 15 October 2026 <br /> By: Brenda Kiptim
+  <section class="container mx-auto pt-20 p-10 grid gap-6 text-balance">
+    <p class="w-3/4 font-light mx-auto text-sm text-center font-serif">
+      NAIROBI — 15 October 2026 <br /> Brenda Kiptim & Eunice Magwambo
     </p>
     <h1 class="text-4xl md:text-6xl text-center font-bold font-display">
       Tracing Kenya's first
       <span class="text-[#920c1d] font-bolder italic">Ebola</span> Case
     </h1>
-    <p class="mx-auto text-lg text-center font-serif md:w-3/4">
+    <p class="mx-auto text-lg text-center text-balance font-serif md:w-[75%]">
       On 3 October 2026, a Kenyan businessman landed in Nairobi from Uganda. He
-      had passed through one of the most active Ebola outbreak zones in the
-      world. He was screened. He went to hospital and died two days later. <br
-      />
-      We traced his path in the weeks before he landed in Kenya.
-
-      <br /><br />
-      <span class="uppercase font-light font-serif"
-        >Scroll to follow the route</span
-      >
+      had travelled through one of the most active Ebola outbreak zones in the
+      world. He was diagnosed with Ebola at The Nairobi Hospital and died two
+      days later.
     </p>
+    <p
+      class="mx-auto text-lg text-center text-balance font-serif md:w-[75%] mt-4"
+    >
+      Kenya now has two confirmed cases and 108 people in quarantine. We traced
+      his path in the weeks before he landed in Kenya.
+    </p>
+    <section
+      class=" mx-auto mt-4 flex gap-4 flex-col items-center justify-center"
+    >
+      <!-- <CircleChevronDown /> -->
+      <span class="uppercase font-light font-serif text-gray-500"
+        >Scroll to follow the journey</span
+      >
+      <CircleChevronDown size={30} class="animate-bounce" />
+    </section>
   </section>
-  <div class="map-wrap bg-gray-50">
+  <div class="map-wrap bg-gray-50 relative">
     <div class="map" bind:this={mapContainer}></div>
   </div>
 
@@ -1276,7 +1320,7 @@
 
   @media (max-width: 768px) {
     .step {
-      height: 130vh;
+      height: 150vh;
     }
   }
 
