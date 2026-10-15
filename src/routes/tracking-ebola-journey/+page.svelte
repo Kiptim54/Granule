@@ -1095,7 +1095,7 @@
 </script>
 
 <Seo
-  title="Tracing how Ebola Kenya | The Granule Africa"
+  title="Tracing Kenya's first Ebola Case | The Granule Africa"
   description="Tracing the journey of Ebola patient zero in Kenya"
   path="/femicide-counties"
   image="/Femicide.png"
