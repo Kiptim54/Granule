@@ -11,6 +11,9 @@ importers:
       '@humanspeak/svelte-motion':
         specifier: ^0.7.18
         version: 0.7.18(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(svelte@5.55.5)
+      '@lucide/svelte':
+        specifier: ^1.57.0
+        version: 1.57.0(svelte@5.55.5)
       '@sveltejs/svelte-scroller':
         specifier: ^2.0.7
         version: 2.0.7
@@ -349,6 +352,11 @@ packages:
 
   '@kwsites/promise-deferred@1.1.1':
     resolution: {integrity: sha512-GaHYm+c0O9MjZRu0ongGBRbinu8gVAMd2UZjji6jVmqKtZluZnptXGWhz1E8j8D2HJ3f/yMxKAUC0b+57wncIw==}
+
+  '@lucide/svelte@1.57.0':
+    resolution: {integrity: sha512-KWO10Jo80+Rd/JGBQkVcwkF1czJH+CwjHtfjZzLfRsmcI42YuMai3SCiRtdo5+3yo7fhT3oHKHaSBvN8GHEVpQ==}
+    peerDependencies:
+      svelte: ^5
 
   '@mapbox/jsonlint-lines-primitives@2.0.2':
     resolution: {integrity: sha512-rY0o9A5ECsTQRVhv7tL/OyDpGAoUB4tTvLiW1DSzQGq4bvTPhNw1VpSNjDJc5GFZ2XuyOtSWSVN05qOtcD71qQ==}
@@ -2171,6 +2179,10 @@ snapshots:
       - supports-color
 
   '@kwsites/promise-deferred@1.1.1': {}
+
+  '@lucide/svelte@1.57.0(svelte@5.55.5)':
+    dependencies:
+      svelte: 5.55.5
 
   '@mapbox/jsonlint-lines-primitives@2.0.2': {}
 

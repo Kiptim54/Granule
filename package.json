@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "@humanspeak/svelte-motion": "^0.7.18",
+    "@lucide/svelte": "^1.57.0",
     "@sveltejs/svelte-scroller": "^2.0.7",
     "@sveltia/cms": "^0.172.4",
     "@tailwindcss/vite": "^4.2.2",
