@@ -12,12 +12,11 @@
 
   // MoH press release, 14 Oct 2026 (figures as at 13 Oct)
   const counts: Record<Status, number> = {
-    dead: 1,
-
     confirmed: 1,
     quarantine: 107, // 108 in quarantine minus case 2
     out_of_country: 5,
     untraced: 15,
+    dead: 1,
   };
 
   const label: Record<Status, string> = {
@@ -31,7 +30,7 @@
   const colour: Record<Status, string> = {
     confirmed: "#e07b00",
     quarantine: "#3d3d3d",
-    out_of_country: "#0f8b8d",
+    out_of_country: "#a3cbcc",
     untraced: "#d1d5db",
     dead: "#920c1d",
   };
@@ -39,7 +38,7 @@
   const makeGroup = (count: number, status: Status): Contact[] =>
     Array.from({ length: count }, () => ({ status }));
 
-  const PIVOT_AT = 7; // case 2 sits inside the quarantine crowd
+  const PIVOT_AT = 37; // case 2 sits inside the quarantine crowd
   const people: Contact[] = [
     ...makeGroup(PIVOT_AT, "quarantine"),
     ...makeGroup(counts.confirmed, "confirmed"),
@@ -80,9 +79,9 @@
     <span class="standout">128 contacts.</span>
   </h1>
   <p class="text-lg font-serif text-balance w-3/4 mx-auto">
-    Of the 128 contacts, 108 were in quarantine in Kenya on 13 October. One of
-    them, a close relative, fell ill and tested positive. Five are outside Kenya
-    and 15 are still being traced.
+    Of the 128 contacts, 108 were in quarantine in Kenya. One of them, a close
+    relative, fell ill and tested positive while in quarantine. Five are outside
+    Kenya, and 15 are still being traced.
   </p>
   <section class=" flex justify-center mx-auto w-[80%]">
     <Person color="#920c1d" />
