@@ -35,10 +35,10 @@ steps:
   - title: Deaths reported
     text: >
       More than **4,000** people have died from **Ebola in DR Congo** this year, in what is the second most deadly known outbreak to date.
-      Kenya recently reported its first Ebola case when a Kenyan businessman was able to spend time in one of the regions worst-affected by Ebola, then travel to two more countries before his illness was identified.
+      Kenya recently reported its first Ebola case when a Kenyan businessman was able to spend time in one of the region's worst-affected by Ebola, then travel to two more countries before his illness was identified.
 
       <br><br>
-      A BBC news <a style="color:darkred; font-weight:bold" href="https://www.bbc.com/news/articles/cqp8gknl1njjo" target="_blank">article</a> provides the clearest picture yet of how the businessman travelled thousands of kilometres while growing increasingly unwell.
+      Based on reporting from the BBC  <a style="color:darkred; font-weight:bold" href="https://www.bbc.com/news/articles/cqp8gknl1njjo" target="_blank">article</a> and the Ministry of Health, here is what we know about his route.
 
     center: [25.04, -3.57]
     zoom: 4.72
@@ -89,7 +89,7 @@ steps:
     text: >
 
 
-      The man had spent much of late August and early September in the province of Lower Uélé, visiting towns including **Buta,Aketi and Likati**.       <br/> <br/> 
+      The man had spent much of late August and early September in the province of Lower Uélé, visiting towns including **Buta, Aketi and Likati**.       <br/> <br/> 
 
       His **symptoms first emerged around 15 September**. He was given antibiotics and sent home. Two days later, he was admitted to the Tongo Etandi Health Centre in Bondo, where he remained until 19 September after being diagnosed with a skin infection.
 

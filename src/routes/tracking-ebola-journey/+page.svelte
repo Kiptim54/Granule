@@ -1099,7 +1099,6 @@
   description="Tracing the journey of Ebola patient zero in Kenya"
   path="/tracking-ebola-journey"
   image="/ebola.png"
-  noindex
 />
 
 <div class="scrolly-globe-wrapper">
@@ -1273,11 +1272,13 @@
   {/if}
 </div>
 <p class="text-xs text-right text-neutral-500 p-6 italic">
-  The chart and story are inspired by the BBC news <a
+  "Route reconstructed from <a
     href="https://www.bbc.com/news/articles/cqp8gknl1njjo"
     target="_blank"
-    class="text-red-900">article</a
+    class="text-red-900">BBC</a
   >
+  reporting and Ministry of Health statements. Contact tracing data from the
+  Ministry of Health press release, 14 October 2026."
   <br />
 </p>
 <section>

@@ -172,7 +172,10 @@
       const highlightConfig = s.highlight;
       const setHighlightFilter = (f) => {
         map.setFilter("country-highlight", f);
-        map.setFilter("country-highlight-border", s.hideBorders ? ["==", "WB_A3", ""] : f);
+        map.setFilter(
+          "country-highlight-border",
+          s.hideBorders ? ["==", "WB_A3", ""] : f,
+        );
       };
 
       if (s.choropleth && CHOROPLETH_DATASETS[s.choropleth]) {
@@ -268,11 +271,17 @@
         }
         const valueExpr = ["match", ["get", "COUNTY"], ...matchArgs, 0];
         const colorExpr = [
-          "interpolate", ["linear"], valueExpr,
-          0,   "#fff5f0",
-          25,  "#fc9272",
-          65,  "#de2d26",
-          146, "#67000d",
+          "interpolate",
+          ["linear"],
+          valueExpr,
+          0,
+          "#fff5f0",
+          25,
+          "#fc9272",
+          65,
+          "#de2d26",
+          146,
+          "#67000d",
         ];
         map.setPaintProperty("kenyan-counties-fill", "fill-color", colorExpr);
       } else {
@@ -564,7 +573,6 @@
   description="Explore the distribution of femicide deaths across Kenya's counties."
   path="/femicide-counties"
   image="/Femicide.png"
-  noindex
 />
 
 <div class="scrolly-globe-wrapper">
