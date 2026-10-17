@@ -13,7 +13,7 @@
   // MoH press release, 14 Oct 2026 (figures as at 13 Oct)
   const counts: Record<Status, number> = {
     dead: 1,
-    confirmed: 1,
+    confirmed: 6,
     quarantine: 107, // 108 in quarantine minus case 2
     out_of_country: 5,
     untraced: 15,
@@ -81,7 +81,7 @@
   <p class="text-lg font-serif text-balance md:w-3/4 mx-auto">
     Of the 128 contacts, 108 were in quarantine in Kenya. One of them, a close
     relative, fell ill and tested positive while in quarantine. Five are outside
-    Kenya, and 15 are still being traced.
+    Kenya, and 15 are still being traced. As of 17th October the total number of cases has risen to 7. 
   </p>
 
   <ul class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm font-serif">
