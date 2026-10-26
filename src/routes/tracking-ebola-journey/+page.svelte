@@ -1277,8 +1277,8 @@
     target="_blank"
     class="text-red-900">BBC</a
   >
-  reporting and Ministry of Health statements. Contact tracing data from the
-  Ministry of Health press release, 14 October 2026."
+  reporting and Ministry of Health statements. Contact tracing data from the Ministry
+  of Health press release, 14 October 2026."
   <br />
 </p>
 <section>
@@ -1292,8 +1292,16 @@
       fell ill while in quarantine, so everyone who has been in contact with him
       since his symptoms began has a count of their own. Until those windows
       close and the 15 people still being traced are found, the picture can
-      still change. <br /> <br /> We will keep updating this page as new figures
-      are released.
+      still change. <br /> <br />
+    </p>
+
+    <p class="text-lg font-serif w-3/4 mx-auto">
+      <em class="font-bold">UPDATE (23 October 2026):</em> Kenya's Ministry of
+      Health has confirmed a second Ebola death. A 65-year-old female relative
+      of the first patient, who was already in quarantine, passed away on 23
+      October. All 135 contacts have now been traced, and the remaining 7
+      patients are stable. <br /> The visual story above reflects the data as it
+      stood on 14 October.
     </p>
   </section>
 

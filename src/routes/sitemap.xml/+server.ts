@@ -4,6 +4,8 @@ const pages: { path: string; changefreq: string; priority: number }[] = [
   { path: "/", changefreq: "weekly", priority: 1.0 },
   { path: "/tanzania-vat-reform", changefreq: "monthly", priority: 0.8 },
   { path: "/femicide", changefreq: "monthly", priority: 0.8 },
+  { path: "/tracking-ebola-journey", changefreq: "monthly", priority: 0.8 },
+  { path: "/menstrual-health-reforms", changefreq: "monthly", priority: 0.8 },
 ];
 
 export function GET() {
