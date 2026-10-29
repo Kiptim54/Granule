@@ -37,7 +37,7 @@
       category: "Health",
       title: "Tracing Kenya's first Ebola Case",
       excerpt:
-        "A Naya Kenya report on the menstrual health crisis in Kenya, and the hidden costs of period poverty.",
+        "On 3 October 2026, a Kenyan businessman landed in Nairobi from Uganda. He had travelled through one of the most active Ebola outbreak zones in the world. He was diagnosed with Ebola at The Nairobi Hospital and died two days later. Kenya now has two confirmed cases and 108 people in quarantine...",
       date: "October 2026",
       tag: ["Data Story", "Interactive"],
       bg: "#e36d7c",
@@ -148,7 +148,7 @@
 <Nav />
 
 <!-- ───────────── HERO ───────────── -->
-<section
+<!-- <section
   id="home"
   class="relative min-h-screen bg-ink pt-[62px] md:pt-[70px]"
   style="display:grid; grid-template-rows:1fr auto;"
@@ -206,11 +206,11 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- ───────────── STORIES ───────────── -->
 <section
   id="stories"
-  class="py-16 md:py-24 px-6 md:px-12 bg-paper-dark border-t-[3px] border-b-[3px] border-double border-ink"
+  class="py-16 md:pt-16 md:py-24 px-6 md:px-12 bg-paper-dark border-t-[3px] border-b-[3px] border-double border-ink"
 >
   <div class="max-w-5xl mx-auto" data-section="stories">
     <!-- header: stacked on mobile, side-by-side on md+ -->
@@ -241,32 +241,30 @@
     </div>
 
     <div class="fade-up" class:visible={sectionsVisible["stories"]}>
-      <div
-        class=" overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8"
-      >
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12 md:gap-y-14">
         {#each stories as story, i}
-          <div
-            class="flex flex-col overflow-hidden border border-ink bg-paper shadow-[6px_6px_0_0_rgba(28,28,28,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_0_0_rgba(28,28,28,0.14)]"
+          {@const featured = i === 0}
+          <article
+            class="group flex flex-col {featured
+              ? 'md:col-span-3 md:flex-row md:items-stretch md:gap-10 md:pb-14 md:border-b md:border-ink/20'
+              : 'col-span-1'}"
           >
-            <div
-              class="relative flex items-end justify-start overflow-hidden border-b border-ink"
-              style="background:{story.bg}; min-height:300px;"
+            <a
+              href={story.link}
+              class="relative block overflow-hidden aspect-[4/3] {featured
+                ? 'md:aspect-auto md:w-3/5 md:min-h-[400px]'
+                : ''}"
+              style="background:{story.bg};"
+              aria-label={story.title}
+              tabindex="-1"
             >
               {#if story.image}
                 <img
                   src={story.image}
-                  alt={story.title}
-                  class="absolute inset-0 w-full h-full object-cover object-top opacity-50"
+                  alt=""
+                  class="absolute inset-0 w-full h-full object-cover object-top opacity-60 transition-transform duration-500 group-hover:scale-[1.03]"
                 />
-              {/if}
-              <div
-                class="absolute inset-0"
-                style="background:linear-gradient(135deg,transparent,rgba(0,0,0,.45));"
-              ></div>
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent"
-              ></div>
-              {#if !story.image}
+              {:else}
                 <div
                   class="absolute inset-0 opacity-[0.06]"
                   style="display:grid; grid-template-columns:repeat(8,1fr); grid-template-rows:repeat(6,1fr);"
@@ -276,45 +274,43 @@
                   {/each}
                 </div>
               {/if}
-              <div class="relative z-10 p-5 md:p-6 flex flex-col gap-2">
-                <!-- <span
-                  class="inline-flex w-fit items-center gap-2 rounded-full border border-paper/40 bg-paper/10 px-3 py-1 font-mono text-[0.68rem] tracking-[0.24em] uppercase text-paper"
-                >
-                  {story.category}
-                </span> -->
-              </div>
-              <!-- <span
-                class="absolute font-display font-bold italic text-paper/15 leading-none"
-                style="font-size:clamp(4rem,12vw,8rem); bottom:-0.5rem; right:1rem;"
-                >{story.category[0]}</span
-              > -->
-            </div>
-            <div
-              class="p-6 md:p-8 flex flex-col justify-between gap-5 h-full"
-              style="min-height:250px;"
-            >
-              <div class="flex-1">
-                <div
-                  class="flex items-center gap-2 font-mono text-[0.72rem] tracking-[0.22em] uppercase text-rust mb-2"
-                >
-                  <span class="h-2 w-2 rounded-full bg-rust inline-block"
-                  ></span>
-                  {story.category}
-                </div>
-                <h3
-                  class="font-display font-bold leading-snug mb-3"
-                  style="font-size:clamp(1.2rem,3vw,1.75rem);"
-                >
-                  {story.title}
-                </h3>
-                <p
-                  class="font-serif italic text-base leading-[1.75] text-[#3A3A3A]"
-                >
-                  {story.excerpt}
-                </p>
-              </div>
               <div
-                class="mt-auto flex flex-wrap items-center justify-between gap-3 pt-2"
+                class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"
+              ></div>
+            </a>
+
+            <div
+              class="flex flex-col flex-1 pt-5 {featured
+                ? 'md:w-2/5 md:pt-0 md:justify-center'
+                : ''}"
+            >
+              <div
+                class="flex items-center gap-2 font-mono text-[0.72rem] tracking-[0.22em] uppercase text-rust mb-3"
+              >
+                <span class="h-2 w-2 rounded-full bg-rust inline-block"></span>
+                {story.category}
+              </div>
+              <h3
+                class="font-display font-bold leading-snug mb-3"
+                style="font-size:{featured
+                  ? 'clamp(1.5rem,3.5vw,2.25rem)'
+                  : 'clamp(1.15rem,2vw,1.35rem)'};"
+              >
+                <a
+                  href={story.link}
+                  class="text-ink no-underline transition-colors duration-200 hover:text-rust"
+                  >{story.title}</a
+                >
+              </h3>
+              <p
+                class="font-serif italic leading-[1.7] text-[#3A3A3A] mb-5 {featured
+                  ? 'text-lg'
+                  : 'text-base line-clamp-3'}"
+              >
+                {story.excerpt}
+              </p>
+              <div
+                class="mt-auto flex items-center justify-between gap-3 pt-4 border-t border-ink/15"
               >
                 <span class="font-mono text-sm tracking-wide text-ink/50"
                   >{story.date}</span
@@ -322,14 +318,14 @@
                 {#if story.link}
                   <a
                     href={story.link}
-                    class="font-mono text-[0.72rem] tracking-[0.2em] uppercase text-ink no-underline border-b border-ink transition-colors duration-200 hover:text-rust"
+                    class="font-mono text-[0.72rem] tracking-[0.2em] uppercase text-ink no-underline border-ink transition-colors duration-200 text-rust hover:text-rust hover:border-rust"
                   >
                     Read Story →
                   </a>
                 {/if}
               </div>
             </div>
-          </div>
+          </article>
         {/each}
       </div>
 
@@ -576,8 +572,7 @@
           id="message"
           placeholder="Tell us what you have in mind…"
           class="font-serif text-[0.95rem] border-none outline-none px-4 pb-3 bg-transparent text-ink resize-none"
-          style="min-height:100px;"
-        ></textarea>
+          style="min-height:100px;"></textarea>
       </div>
       <button
         class="w-full mt-3 font-mono text-sm tracking-[0.14em] uppercase px-8 py-4 bg-ink text-paper border-none cursor-pointer hover:bg-rust transition-colors duration-200"
