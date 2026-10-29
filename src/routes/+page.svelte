@@ -231,12 +231,13 @@
         </h2>
       </div>
       <p
-        class="fade-up font-serif italic text-[#555] text-base leading-relaxed md:max-w-[240px] md:text-right"
+        class="fade-up font-serif italic text-[#555] text-base leading-relaxed md:max-w-[500px] md:text-right"
         class:visible={sectionsVisible["stories"]}
         style="transition-delay:.1s;"
       >
-        Each story is reported, data-driven, and designed for how people
-        actually read today.
+        A data storytelling studio uncovering the stories in Africa’s data. Each
+        story is reported, data-driven, and designed for how people actually
+        read today.
       </p>
     </div>
 
