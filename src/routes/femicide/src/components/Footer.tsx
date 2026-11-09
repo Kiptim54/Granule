@@ -65,9 +65,7 @@ export default function Footer() {
         <span className='font-mono text-sm tracking-widest uppercase text-paper/30'>
           © 2026 The Granule Africa. All rights reserved.
         </span>
-        <span className='font-serif italic text-base text-paper/30'>
-          Rooted in Africa.
-        </span>
+        <span className='font-serif italic text-base text-paper/30'></span>
       </div>
     </footer>
   );
