@@ -1,7 +1,7 @@
 <!-- ───────────── FOOTER ───────────── -->
 <footer
   class="bg-ink px-6 md:px-12 pt-10 md:pt-12 pb-8"
-  style="border-top:4px solid #B8922A;"
+  style="border-top:4px solid var(--color-bright);"
 >
   <!-- stacks to single col on mobile, 3-col on md+ -->
   <div
@@ -9,7 +9,7 @@
   >
     <div>
       <div class="font-display font-bold text-paper text-3xl mb-2">
-        The Granule <span class="italic text-gold">Africa</span>
+        The Granule <span class="italic text-bright">Africa</span>
       </div>
       <p
         class="font-serif italic text-base leading-[1.65] text-paper/50 max-w-[280px] mt-2"
@@ -20,7 +20,7 @@
     </div>
     <div>
       <div
-        class="font-mono text-sm tracking-[0.16em] uppercase text-gold mb-4 md:mb-5"
+        class="font-mono text-sm tracking-[0.16em] uppercase text-bright mb-4 md:mb-5"
       >
         Navigate
       </div>
@@ -38,7 +38,7 @@
     </div>
     <div>
       <div
-        class="font-mono text-sm tracking-[0.16em] uppercase text-gold mb-4 md:mb-5"
+        class="font-mono text-sm tracking-[0.16em] uppercase text-bright mb-4 md:mb-5"
       >
         Focus Areas
       </div>

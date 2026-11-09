@@ -1,13 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Playfair Display", Georgia, serif;
+  --font-display: "DM Sans", system-ui, sans-serif;
+  --font-script: "Recia", Georgia, serif;
   --font-serif: "Source Serif 4", Georgia, serif;
   --font-mono: "DM Mono", monospace;
 
   --color-ink: #1c1c1c;
-  --color-paper: #f5f0e8;
-  --color-paper-dark: #ede8dc;
-  --color-rust: #c1440e;
-  --color-gold: #b8922a;
+  --color-paper: #ffffff;
+  --color-paper-dark: #ffffff;
+  /* Lemon & Cobalt duo */
+  /* deep: text accents on white, footer background */
+  --color-bright: #f0e6da;
+  --color-deep: #4f6815;
 }

@@ -10,14 +10,13 @@
 <div>
   <!-- ───────────── NAV ───────────── -->
   <nav
-    class={`${isFixed ? "fixed" : ""} relative top-0 left-0 right-0 z-50 bg-paper border-b-2 border-ink`}
+    class={`${isFixed ? "fixed" : ""} relative top-0 left-0 right-0 z-50 bg-paper`}
   >
     <div class="flex items-center justify-between px-6 md:px-12 py-4">
-      <a
-        href="/"
-        class="font-display font-bold text-base tracking-widest uppercase text-ink no-underline"
-      >
-        The <span class=" text-rust">Granule</span>
+      <a href="/" class="font-display font-bold text-2xl text-ink no-underline">
+        The <span class="font-script italic font-semibold text-2xl text-deep"
+          >Granule</span
+        >
         <!-- <image
           src="/website-log-nobg.png"
           alt="The Granule Africa Logo"
@@ -31,7 +30,7 @@
           <li>
             <a
               {href}
-              class="font-mono text-base tracking-[0.14em] uppercase text-ink no-underline border-b border-transparent hover:border-rust hover:text-rust transition-colors duration-200"
+              class="font-mono text-base tracking-[0.14em] uppercase text-ink no-underline border-b border-transparent hover:border-deep hover:text-deep transition-colors duration-200"
             >
               {label}
             </a>
@@ -73,7 +72,7 @@
             <a
               {href}
               onclick={closeMenu}
-              class="block font-mono text-[0.72rem] tracking-[0.16em] uppercase text-ink no-underline px-6 py-4 hover:text-rust hover:bg-paper-dark transition-colors duration-150"
+              class="block font-mono text-[0.72rem] tracking-[0.16em] uppercase text-ink no-underline px-6 py-4 hover:bg-ink/5 transition-colors duration-150"
             >
               {label}
             </a>

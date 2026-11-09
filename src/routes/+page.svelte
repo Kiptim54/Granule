@@ -31,6 +31,22 @@
 
   let { data } = $props();
 
+  // Contact form opens the visitor's email app until a real form backend exists
+  const CONTACT_EMAIL = "hello@example.com";
+
+  function sendEnquiry(e: SubmitEvent) {
+    e.preventDefault();
+    const f = new FormData(e.currentTarget as HTMLFormElement);
+    const name = String(f.get("name") ?? "").trim();
+    const email = String(f.get("email") ?? "").trim();
+    const org = String(f.get("org") ?? "").trim();
+    const message = String(f.get("message") ?? "").trim();
+
+    const subject = `Story enquiry from ${name}${org ? ` (${org})` : ""}`;
+    const body = `${message}\n\n—\n${name}\n${email}${org ? `\n${org}` : ""}`;
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
+
   const stories = [
     {
       id: 0,
@@ -40,7 +56,7 @@
         "On 3 October 2026, a Kenyan businessman landed in Nairobi from Uganda. He had travelled through one of the most active Ebola outbreak zones in the world. He was diagnosed with Ebola at The Nairobi Hospital and died two days later. Kenya now has two confirmed cases and 108 people in quarantine...",
       date: "October 2026",
       tag: ["Data Story", "Interactive"],
-      bg: "#e36d7c",
+      bg: "var(--color-deep)",
       link: "/tracking-ebola-journey",
       image: "/ebola.gif",
     },
@@ -52,7 +68,7 @@
         "A Naya Kenya report on the menstrual health crisis in Kenya, and the hidden costs of period poverty.",
       date: "August 2026",
       tag: ["Data Story", "Interactive"],
-      bg: "#d6247a",
+      bg: "var(--color-bright)",
       link: "/menstrual-health-reforms",
       image: "/menstrual.gif",
     },
@@ -66,7 +82,7 @@
 `,
       date: "June 2026",
       tag: ["Journalism", "Scrollytelling"],
-      bg: "#1A3A2A",
+      bg: "var(--color-ink)",
       link: "/tanzania-vat-reform",
       // image: "/tanzania-header.webp",
       image: "/output.gif",
@@ -79,7 +95,7 @@
         "A data investigation into the epidemic of gender-based violence across Kenya's counties — told through the women lost.",
       date: "March 2026",
       tag: ["Data Analysis"],
-      bg: "#C1440E",
+      bg: "var(--color-deep)",
       link: "/femicide",
       image: "/femicide.gif",
     },
@@ -171,7 +187,7 @@
     class:visible={heroVisible}
   >
     <p
-      class="font-mono text-sm md:text-sm tracking-[0.18em] uppercase text-gold mb-4 md:mb-5"
+      class="font-mono text-sm md:text-sm tracking-[0.18em] uppercase text-bright mb-4 md:mb-5"
     >
       Data Storytelling Studio
     </p>
@@ -179,7 +195,7 @@
       class="font-display font-bold leading-none text-paper mb-5 md:mb-6"
       style="font-size:clamp(3rem,10vw,7rem); letter-spacing:-0.01em;"
     >
-      The<br /><span class="italic text-gold"> Granule</span>
+      The<br /><span class="font-script italic font-semibold text-bright text-[1.05em]"> Granule</span>
     </h1>
     <p
       class="font-serif font-light italic text-paper/80 leading-relaxed text-base md:text-lg w-full"
@@ -210,7 +226,7 @@
 <!-- ───────────── STORIES ───────────── -->
 <section
   id="stories"
-  class="py-16 md:pt-16 md:py-24 px-6 md:px-12 bg-paper-dark border-t-[3px] border-b-[3px] border-double border-ink"
+  class="py-16 md:pt-16 md:py-24 px-6 md:px-12 bg-paper-dark border-b-[3px] border-double border-ink"
 >
   <div class="max-w-5xl mx-auto" data-section="stories">
     <!-- header: stacked on mobile, side-by-side on md+ -->
@@ -219,9 +235,9 @@
     >
       <div class="fade-up" class:visible={sectionsVisible["stories"]}>
         <div
-          class="flex items-center gap-3 font-mono text-sm tracking-[0.18em] uppercase text-rust mb-3"
+          class="flex items-center gap-3 font-mono text-sm tracking-[0.18em] uppercase text-deep mb-3"
         >
-          <span class="block w-6 h-px bg-rust"></span>Our Stories
+          <span class="zigzag-x block w-7 h-[6px] bg-deep"></span>Our Stories
         </div>
         <h2
           class="font-display font-bold leading-tight"
@@ -263,7 +279,7 @@
                 <img
                   src={story.image}
                   alt=""
-                  class="absolute inset-0 w-full h-full object-cover object-top opacity-60 transition-transform duration-500 group-hover:scale-[1.03]"
+                  class="absolute inset-0 w-full h-full object-cover object-top opacity-90 transition-transform duration-500 group-hover:scale-[1.03]"
                 />
               {:else}
                 <div
@@ -276,7 +292,7 @@
                 </div>
               {/if}
               <div
-                class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"
+                class="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent"
               ></div>
             </a>
 
@@ -286,9 +302,9 @@
                 : ''}"
             >
               <div
-                class="flex items-center gap-2 font-mono text-[0.72rem] tracking-[0.22em] uppercase text-rust mb-3"
+                class="flex items-center gap-2 font-mono text-[0.72rem] tracking-[0.22em] uppercase text-deep mb-3"
               >
-                <span class="h-2 w-2 rounded-full bg-rust inline-block"></span>
+                <span class="h-2 w-2 rounded-full bg-deep inline-block"></span>
                 {story.category}
               </div>
               <h3
@@ -299,7 +315,7 @@
               >
                 <a
                   href={story.link}
-                  class="text-ink no-underline transition-colors duration-200 hover:text-rust"
+                  class="text-ink no-underline transition-colors duration-200 hover:text-ink/60"
                   >{story.title}</a
                 >
               </h3>
@@ -319,7 +335,7 @@
                 {#if story.link}
                   <a
                     href={story.link}
-                    class="font-mono text-[0.72rem] tracking-[0.2em] uppercase text-ink no-underline border-ink transition-colors duration-200 text-rust hover:text-rust hover:border-rust"
+                    class="font-mono text-[0.72rem] tracking-[0.2em] uppercase text-ink no-underline border-ink transition-colors duration-200 text-deep hover:text-ink/60 hover:border-ink/60"
                   >
                     Read Story →
                   </a>
@@ -351,7 +367,7 @@
               style="width:{i === currentSlide
                 ? '36px'
                 : '20px'}; background:{i === currentSlide
-                ? '#C1440E'
+                ? 'var(--color-deep)'
                 : 'rgba(28,28,28,.2)'};"
               aria-label="Story {i + 1}"
             >
@@ -365,7 +381,7 @@
 <!-- ───────────── ABOUT ───────────── -->
 <section
   id="about"
-  class="py-16 md:py-24 px-6 md:px-12 bg-paper border-t-[3px] border-double border-ink"
+  class="py-16 md:py-24 px-6 md:px-12 bg-paper border-t-[3px] border-none border-ink"
 >
   <div class="max-w-5xl mx-auto" data-section="about">
     <!-- on mobile: single column stacked; on md+: two-column sticky layout -->
@@ -375,15 +391,18 @@
         class:visible={sectionsVisible["about"]}
       >
         <div
-          class="flex items-center gap-3 font-mono text-sm tracking-[0.18em] uppercase text-rust mb-3"
+          class="flex items-center gap-3 font-mono text-sm tracking-[0.18em] uppercase text-deep mb-3"
         >
-          <span class="block w-6 h-px bg-rust"></span>About Us
+          <span class="zigzag-x block w-7 h-[6px] bg-deep"></span>About Us
         </div>
         <h2
           class="font-display font-bold leading-tight"
           style="font-size:clamp(2rem,5vw,3.2rem);"
         >
-          We turn data into<br /><span class="italic text-rust">narratives</span
+          We turn data into<br /><span
+            class="font-script italic font-semibold text-deep text-[1.05em] px-1"
+            style="background:linear-gradient(transparent 58%, var(--color-bright) 58%);"
+            >narratives</span
           >
         </h2>
       </div>
@@ -394,11 +413,14 @@
         style="transition-delay:.15s;"
       >
         <p
-          class="font-serif leading-relaxed text-ink border-l-[3px] border-rust pl-4 md:pl-5 text-lg md:text-xl"
+          class="relative font-serif text-deep font-semibold leading-relaxed pl-6 md:pl-7 text-lg md:text-xl"
         >
-          The Granule Africa is a data storytelling studio built on the belief
-          that Africa's story deserves to be told accurately, rigorously, and
-          with humanity.
+          <span
+            aria-hidden="true"
+            class="zigzag absolute left-0 top-0 h-full w-[10px] bg-deep"
+          ></span>
+          The Granule Africa is a data storytelling studio built on the belief that
+          Africa's story deserves to be told accurately, rigorously, and with humanity.
         </p>
         <p
           class="font-serif leading-[1.8] text-[#2A2A2A] text-[0.97rem] md:text-base"
@@ -418,7 +440,7 @@
           boda rider in Kampala, the mother in Mombasa.
         </p>
 
-        <div class="grid grid-cols-2 border border-ink mt-2">
+        <!-- <div class="grid grid-cols-2 border border-ink mt-2">
           {#each [["01", "Journalism"], ["02", "Data Analysis"], ["03", "Storytelling"], ["04", "Technology"]] as [num, name], i}
             <div
               class="p-4 md:p-5"
@@ -429,7 +451,7 @@
                 : 'none'};"
             >
               <div
-                class="font-mono text-[0.6rem] tracking-widest text-rust mb-1"
+                class="font-mono text-[0.6rem] tracking-widest text-deep mb-1"
               >
                 {num}
               </div>
@@ -438,66 +460,63 @@
               </div>
             </div>
           {/each}
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
 </section>
 
 <!-- ───────────── TEAM ───────────── -->
-<section id="team" class="py-16 md:py-24 px-6 md:px-12 bg-ink">
-  <div class="max-w-5xl mx-auto" data-section="team">
+<section id="team" class="pt-16 md:pt-24 bg-bright">
+  <div class="max-w-5xl mx-auto px-6 md:px-12" data-section="team">
     <div class="fade-up" class:visible={sectionsVisible["team"]}>
       <div
-        class="flex items-center gap-3 font-mono text-sm tracking-[0.18em] uppercase text-gold mb-3"
+        class="flex items-center gap-3 font-mono text-sm tracking-[0.18em] uppercase text-deep mb-3"
       >
-        <span class="block w-6 h-px bg-gold"></span>The Team
+        <span class="zigzag-x block w-7 h-[6px] bg-deep"></span>The Team
       </div>
       <h2
-        class="font-display font-bold leading-tight text-paper"
+        class="font-display font-bold leading-tight text-ink"
         style="font-size:clamp(2rem,5vw,3rem);"
       >
-        The people<br />behind the stories
+        The <span class="font-script italic text-deep">team</span><br />behind
+        the stories
       </h2>
     </div>
+  </div>
 
-    <!-- stacks on mobile, side by side on md+ -->
-    <div
-      class="grid grid-cols-1 md:grid-cols-2 mt-8 md:mt-10"
-      style="gap:1px; background:rgba(245,240,232,.15);"
-    >
-      {#each team as m}
+  <!-- 2-up on desktop: circle portrait above name, role and bio -->
+  <div
+    class="max-w-5xl mx-auto px-6 md:px-12 pb-16 md:pb-24 mt-10 md:mt-14 grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-16"
+  >
+    {#each team as m}
+      <div
+        class="team-card fade-up flex flex-col items-center md:items-start text-center md:text-left"
+        class:visible={sectionsVisible["team"]}
+        style="transition-delay:{m.delay};"
+      >
         <div
-          class="team-card fade-up p-8 md:p-12 bg-ink hover:bg-[#242424] transition-colors duration-300"
-          class:visible={sectionsVisible["team"]}
-          style="transition-delay:{m.delay};"
+          class="w-56 h-56 md:w-64 md:h-64 rounded-full overflow-hidden bg-deep mb-7"
         >
-          <div
-            class="photo-wrap relative w-24 h-32 md:w-48 md:h-52 mb-6 md:mb-7"
-          >
-            <img
-              src={m.img}
-              alt={m.name}
-              class="member-img w-full h-full object-cover object-top block transition-all duration-300"
-              style="filter:grayscale(20%) contrast(1.05);"
-            />
-          </div>
-          <div
-            class="font-display font-bold text-paper text-xl md:text-2xl mb-1"
-          >
-            {m.name}
-          </div>
-          <div
-            class="font-mono text-sm tracking-[0.14em] uppercase text-gold mb-4 md:mb-5"
-          >
-            {m.role}
-          </div>
-          <p class="font-serif text-[0.93rem] leading-[1.75] text-paper/70">
-            {m.bio}
-          </p>
+          <img
+            src={m.img}
+            alt={m.name}
+            class="member-img w-full h-full object-cover object-top block"
+          />
         </div>
-      {/each}
-    </div>
+        <h3 class="font-display font-bold text-deep text-2xl md:text-3xl mb-1">
+          {m.name}
+        </h3>
+        <div
+          class="font-mono text-sm tracking-[0.14em] uppercase text-ink/50 mb-5"
+        >
+          {m.role}
+        </div>
+        <p class="font-serif text-[0.97rem] leading-[1.8] text-ink/80">
+          {m.bio}
+        </p>
+      </div>
+    {/each}
   </div>
 </section>
 
@@ -509,15 +528,16 @@
   >
     <div class="fade-up" class:visible={sectionsVisible["contact"]}>
       <div
-        class="flex items-center gap-3 font-mono text-sm tracking-[0.18em] uppercase text-rust mb-3"
+        class="flex items-center gap-3 font-mono text-sm tracking-[0.18em] uppercase text-deep mb-3"
       >
-        <span class="block w-6 h-px bg-rust"></span>Contact
+        <span class="zigzag-x block w-7 h-[6px] bg-deep"></span>Contact
       </div>
       <h2
         class="font-display font-bold leading-tight mb-4"
         style="font-size:clamp(2rem,5vw,3rem);"
       >
-        Let's tell<br />a story together
+        Let's tell<br />a story
+        <span class="font-script text-deep italic">together</span>
       </h2>
       <p class="font-serif text-[1rem] leading-[1.75] text-[#3A3A3A]">
         We work with NGOs, foundations, newsrooms, researchers, and advocates
@@ -528,7 +548,7 @@
         {#each [["Location", "Nairobi, Kenya", "#"]] as [label, value, href]}
           <a
             {href}
-            class="flex items-center gap-4 font-mono text-sm tracking-wide text-ink no-underline border-b border-ink/10 pb-4 mb-4 hover:text-rust transition-colors duration-200"
+            class="flex items-center gap-4 font-mono text-sm tracking-wide text-ink no-underline border-b border-ink/10 pb-4 mb-4 hover:text-ink/60 transition-colors duration-200"
           >
             <span
               class="font-mono text-[0.6rem] tracking-widest uppercase text-ink/40 min-w-[60px]"
@@ -540,63 +560,75 @@
       </div>
     </div>
 
-    <div
-      class="fade-up"
+    <form
+      class="fade-up flex flex-col gap-5"
       class:visible={sectionsVisible["contact"]}
       style="transition-delay:.15s;"
+      onsubmit={sendEnquiry}
     >
-      {#each [["name", "Your name", "text", "Full name"], ["email", "Email address", "email", "you@example.com"], ["org", "Organisation", "text", "Where are you from?"]] as [id, label, type, placeholder]}
-        <div
-          class="flex flex-col border border-ink"
-          style="border-bottom:none;"
-        >
+      {#each [{ id: "name", label: "Your name", type: "text", placeholder: "Full name", required: true }, { id: "email", label: "Email address", type: "email", placeholder: "you@example.com", required: true }, { id: "org", label: "Organisation", type: "text", placeholder: "Where are you from?", required: false }] as { id, label, type, placeholder, required }}
+        <div class="flex flex-col gap-2">
           <label
             for={id}
-            class="font-mono text-sm tracking-[0.14em] uppercase text-ink/50 px-4 pt-3 pb-1"
+            class="font-display font-bold text-[0.95rem] text-deep"
             >{label}</label
           >
           <input
             {id}
+            name={id}
             {type}
             {placeholder}
-            class="font-serif text-[0.95rem] border-none outline-none px-4 pb-3 bg-transparent text-ink"
+            {required}
+            class="peer font-serif text-[0.95rem] rounded-2xl px-5 py-3.5 bg-bright/25 text-ink placeholder:text-ink/40 border-2 border-transparent outline-none focus:border-deep transition-colors duration-200"
           />
+          <span
+            aria-hidden="true"
+            class="zigzag-x block w-full h-[6px] bg-deep opacity-0 peer-focus:opacity-100 transition-opacity duration-200"
+          ></span>
         </div>
       {/each}
-      <div class="flex flex-col border border-ink">
+      <div class="flex flex-col gap-2">
         <label
           for="message"
-          class="font-mono text-sm tracking-[0.14em] uppercase text-ink/50 px-4 pt-3 pb-1"
-          >Message</label
+          class="font-display font-bold text-[0.95rem] text-deep">Message</label
         >
         <textarea
           id="message"
+          name="message"
+          required
           placeholder="Tell us what you have in mind…"
-          class="font-serif text-[0.95rem] border-none outline-none px-4 pb-3 bg-transparent text-ink resize-none"
-          style="min-height:100px;"></textarea>
+          class="peer font-serif text-[0.95rem] rounded-2xl px-5 py-3.5 bg-bright/25 text-ink placeholder:text-ink/40 border-2 border-transparent outline-none focus:border-deep transition-colors duration-200 resize-none"
+          style="min-height:120px;"></textarea>
+        <span
+          aria-hidden="true"
+          class="zigzag-x block w-full h-[6px] bg-deep opacity-0 peer-focus:opacity-100 transition-opacity duration-200"
+        ></span>
       </div>
       <button
-        class="w-full mt-3 font-mono text-sm tracking-[0.14em] uppercase px-8 py-4 bg-ink text-paper border-none cursor-pointer hover:bg-rust transition-colors duration-200"
+        type="submit"
+        class="self-start font-mono text-sm tracking-[0.14em] uppercase px-10 py-4 rounded-full bg-deep text-paper border-none cursor-pointer hover:bg-bright hover:text-deep transition-colors duration-200"
       >
-        <!-- Send Message → -->
-        COMING SOON
+        Send message →
       </button>
-    </div>
+    </form>
   </div>
 </section>
 
 <!-- ───────────── FOOTER ───────────── -->
 <footer
   class="bg-ink px-6 md:px-12 pt-10 md:pt-12 pb-8"
-  style="border-top:4px solid #B8922A;"
+  style="border-top:4px solid var(--color-bright);"
 >
   <!-- stacks to single col on mobile, 3-col on md+ -->
   <div
     class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 pb-8 md:pb-10 border-b border-paper/10"
   >
     <div>
-      <div class="font-display font-bold text-paper text-3xl mb-2">
-        The Granule <span class="italic text-gold">Africa</span>
+      <div class="font-display font-bold text-deep text-3xl mb-2">
+        The Granule <span
+          class="font-script italic font-semibold text-bright text-[1.05em]"
+          >Africa</span
+        >
       </div>
       <p
         class="font-serif italic text-base leading-[1.65] text-paper/50 max-w-[280px] mt-2"
@@ -607,7 +639,7 @@
     </div>
     <div>
       <div
-        class="font-mono text-sm tracking-[0.16em] uppercase text-gold mb-4 md:mb-5"
+        class="font-mono text-sm tracking-[0.16em] uppercase text-bright mb-4 md:mb-5"
       >
         Navigate
       </div>
@@ -625,7 +657,7 @@
     </div>
     <div>
       <div
-        class="font-mono text-sm tracking-[0.16em] uppercase text-gold mb-4 md:mb-5"
+        class="font-mono text-sm tracking-[0.16em] uppercase text-bright mb-4 md:mb-5"
       >
         Focus Areas
       </div>
@@ -706,20 +738,19 @@
     animation: scrollDrop 1.4s ease-in-out infinite 0.3s;
   }
 
-  .photo-wrap::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border: 1px solid #b8922a;
-    transform: translate(6px, 6px);
-    pointer-events: none;
-    transition: transform 0.3s;
-  }
-  .team-card:hover .photo-wrap::after {
-    transform: translate(4px, 4px);
+  .team-card .member-img {
+    transition: transform 0.4s ease;
   }
   .team-card:hover .member-img {
-    filter: grayscale(0%) contrast(1.05) !important;
+    transform: scale(1.04);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .team-card .member-img {
+      transition: none;
+    }
+    .team-card:hover .member-img {
+      transform: none;
+    }
   }
 
   /* mobile menu slide */
@@ -735,5 +766,19 @@
     transform: translateY(0);
     opacity: 1;
     pointer-events: auto;
+  }
+
+  /* Zigzag rule beside the about-section quote; colour comes from bg-deep */
+  .zigzag {
+    --zz: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='12' viewBox='0 0 10 12'%3E%3Cpath d='M2 0 L8 6 L2 12' fill='none' stroke='black' stroke-width='2.2' stroke-linejoin='miter'/%3E%3C/svg%3E");
+    -webkit-mask: var(--zz) repeat-y top / 10px 12px;
+    mask: var(--zz) repeat-y top / 10px 12px;
+  }
+
+  /* Horizontal zigzag for the section eyebrow dash */
+  .zigzag-x {
+    --zz: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7' height='6' viewBox='0 0 7 6'%3E%3Cpath d='M0 1 L3.5 5 L7 1' fill='none' stroke='black' stroke-width='1.3' stroke-linejoin='miter'/%3E%3C/svg%3E");
+    -webkit-mask: var(--zz) repeat-x left center / 7px 6px;
+    mask: var(--zz) repeat-x left center / 7px 6px;
   }
 </style>

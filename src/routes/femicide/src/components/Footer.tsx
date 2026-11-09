@@ -11,7 +11,7 @@ export default function Footer() {
   return (
     <footer
       className='bg-ink px-6 md:px-12 pt-10 md:pt-12 pb-8'
-      style={{ borderTop: "4px solid #B8922A" }}
+      style={{ borderTop: "4px solid var(--color-gold)" }}
     >
       <div className='max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 pb-8 md:pb-10 border-b border-paper/10'>
         <div>
